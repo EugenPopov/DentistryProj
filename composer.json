@@ -5,6 +5,7 @@
     "php": "^7.2",
     "ext-ctype": "*",
     "ext-iconv": "*",
+    "ext-json": "*",
     "doctrine/annotations": "^1.7",
     "fzaninotto/faker": "^1.8",
     "gedmo/doctrine-extensions": "^2.4",
@@ -30,8 +31,8 @@
     "symfony/twig-bundle": "4.3.*",
     "symfony/validator": "4.3.*",
     "symfony/web-link": "4.3.*",
-    "symfony/yaml": "4.3.*",
-    "ext-json": "*"
+    "symfony/webpack-encore-bundle": "^1.7",
+    "symfony/yaml": "4.3.*"
   },
   "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^3.2",
