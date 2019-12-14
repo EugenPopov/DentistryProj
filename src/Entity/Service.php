@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ServiceRepository")
  */
-class Service
+class Service implements EntityInterface
 {
     /**
      * @ORM\Id()

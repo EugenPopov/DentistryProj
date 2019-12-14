@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SertificateRepository")
  */
-class Sertificate
+class Sertificate implements EntityInterface
 {
     /**
      * @ORM\Id()
