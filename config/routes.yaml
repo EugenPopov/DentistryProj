@@ -1,6 +1,23 @@
-index:
+#admin
+admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index
+main_page_slider_index:
+    path: /adminPanel/main_page_slider
+    controller: App\Controller\Admin\MainPageSliderController::index
+main_page_slider_create:
+    path: /adminPanel/main_page_slider/create
+    controller: App\Controller\Admin\MainPageSliderController::create
+main_page_slider_update:
+    path: /adminPanel/main_page_slider/update/{id}
+    controller: App\Controller\Admin\MainPageSliderController::update
+main_page_slider_update_queue:
+    path: /adminPanel/main_page_slider/update_queue/
+    controller: App\Controller\Admin\MainPageSliderController::updateQueue
+    methods: GET
+main_page_slider_delete:
+    path: /adminPanel/main_page_slider/delete/{id}
+    controller: App\Controller\Admin\MainPageSliderController::delete
 app_logout:
     path: /logout
     methods: GET

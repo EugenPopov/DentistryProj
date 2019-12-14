@@ -1,0 +1,14 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block name %}
+    {% if name is defined %}
+        {{ name }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if form is defined %}
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    {% endif %}
+{% endblock %}

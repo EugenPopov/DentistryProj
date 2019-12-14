@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MainPageSliderRepository")
  */
-class MainPageSlider
+class MainPageSlider implements EntityInterface
 {
     /**
      * @ORM\Id()
@@ -32,9 +32,14 @@ class MainPageSlider
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
 
     public function getId(): ?int
     {
@@ -82,9 +87,21 @@ class MainPageSlider
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }
