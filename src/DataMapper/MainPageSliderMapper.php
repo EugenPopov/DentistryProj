@@ -14,12 +14,7 @@ class MainPageSliderMapper implements DataMapperInterface
 
     public function entityToModel(EntityInterface $entity): MainPageSliderModel
     {
-        $model = new MainPageSliderModel();
-
-        return $model
-            ->setTitle($entity->getTitle())
-            ->setBoldTitle($entity->getBoldTitle())
-            ->setDescription($entity->getDescription());
+        return new MainPageSliderModel();
     }
 
     /**
@@ -31,10 +26,6 @@ class MainPageSliderMapper implements DataMapperInterface
     {
         /** @var $model MainPageSliderModel */
         /** @var $entity MainPageSlider */
-        $entity
-            ->setDescription($model->getDescription())
-            ->setBoldTitle($model->getBoldTitle())
-            ->setTitle($model->getTitle());
 
         return $entity;
 

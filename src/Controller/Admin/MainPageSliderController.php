@@ -77,7 +77,7 @@ class MainPageSliderController extends AbstractController
             return $this->redirectToRoute('main_page_slider_index');
         }
 
-        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Редактирование слайда "'.$entity->getTitle().'"']);
+        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Редактирование слайда']);
     }
 
     public function updateQueue(Request $request)
