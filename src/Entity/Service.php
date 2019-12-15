@@ -48,6 +48,11 @@ class Service implements EntityInterface
      */
     private $doctor;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
+
     public function __construct()
     {
         $this->doctor = new ArrayCollection();
@@ -140,6 +145,18 @@ class Service implements EntityInterface
         if ($this->doctor->contains($doctor)) {
             $this->doctor->removeElement($doctor);
         }
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

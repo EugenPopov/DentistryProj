@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    $(document).on('click', '.remove-slide', function () {
+    $(document).on('click', '.remove-service', function () {
         let id = $(this).attr('data-id');
-        if (confirm('Вы уверены, что хотите удалить этот слайд?')) {
-            location.href = '/adminPanel/main_page_slider/delete/' + id;
+        if (confirm('Вы уверены, что хотите удалить эту услугу?')) {
+            location.href = '/adminPanel/service/delete/' + id;
         }
     });
-    
+
     $(document).on('click', '#close-sortable', function () {
         $(this).toggleClass('opened');
 
@@ -28,13 +28,13 @@ $(document).ready(function () {
         });
         $.ajax({
             method: "POST",
-            url: '/adminPanel/main_page_slider/update_queue/',
+            url: '/adminPanel/service/update_queue/',
             data: {
                 'queue': arr
             }
         })
-        .done(function () {
-            $('#finished').fadeIn('fast').fadeOut('');
-        });
+            .done(function () {
+                $('#finished').fadeIn('fast').fadeOut('');
+            });
     });
 });

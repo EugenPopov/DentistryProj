@@ -14,10 +14,26 @@ main_page_slider_update:
 main_page_slider_update_queue:
     path: /adminPanel/main_page_slider/update_queue/
     controller: App\Controller\Admin\MainPageSliderController::updateQueue
-    methods: GET
+    methods: POST
 main_page_slider_delete:
     path: /adminPanel/main_page_slider/delete/{id}
     controller: App\Controller\Admin\MainPageSliderController::delete
+service_index:
+    path: /adminPanel/service
+    controller: App\Controller\Admin\ServiceController::index
+service_create:
+    path: /adminPanel/service/create
+    controller: App\Controller\Admin\ServiceController::create
+service_update:
+    path: /adminPanel/service/update/{id}
+    controller: App\Controller\Admin\ServiceController::update
+service_queue:
+    path: /adminPanel/service/update_queue/
+    controller: App\Controller\Admin\ServiceController::updateQueue
+    methods: POST
+service_delete:
+    path: /adminPanel/service/delete/{id}
+    controller: App\Controller\Admin\ServiceController::delete
 app_logout:
     path: /logout
     methods: GET

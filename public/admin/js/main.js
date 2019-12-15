@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $('input[type=file]').each(function () {
         if($(this).hasClass('has_image'))
-            $(this).parent().after(`<a target="_blank" href="/uploads/${$(this).attr('data-image')}"><img style="width: 250px; height: 250px; padding-top: 10px; object-fit: contain" src="/uploads/${$(this).attr('data-image')}"></a><br>Старое фото:`);
+            $(this).parent().after(`<a target="_blank" href="/uploads/${$(this).attr('data-image')}"><img style="width: 250px; height: 250px; padding-top: 10px; object-fit: cover" src="/uploads/${$(this).attr('data-image')}"></a><br>Старое фото:`);
 
     })
 });
