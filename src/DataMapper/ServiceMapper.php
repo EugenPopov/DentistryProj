@@ -25,7 +25,8 @@ class ServiceMapper implements DataMapperInterface
 
     public function modelToEntity(ModelInterface $model, EntityInterface $entity): Service
     {
-
+        /** @var ServiceModel $model */
+        /** @var Service $entity */
         return $entity
             ->setDescription($model->getDescription())
             ->setTitle($model->getTitle())

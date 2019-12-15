@@ -2,6 +2,7 @@
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index
+#slider
 main_page_slider_index:
     path: /adminPanel/main_page_slider
     controller: App\Controller\Admin\MainPageSliderController::index
@@ -18,6 +19,7 @@ main_page_slider_update_queue:
 main_page_slider_delete:
     path: /adminPanel/main_page_slider/delete/{id}
     controller: App\Controller\Admin\MainPageSliderController::delete
+#service
 service_index:
     path: /adminPanel/service
     controller: App\Controller\Admin\ServiceController::index
@@ -34,6 +36,41 @@ service_queue:
 service_delete:
     path: /adminPanel/service/delete/{id}
     controller: App\Controller\Admin\ServiceController::delete
+#doctor
+doctor_index:
+    path: /adminPanel/doctor
+    controller: App\Controller\Admin\DoctorController::index
+doctor_create:
+    path: /adminPanel/doctor/create
+    controller: App\Controller\Admin\DoctorController::create
+doctor_update:
+    path: /adminPanel/doctor/update/{id}
+    controller: App\Controller\Admin\DoctorController::update
+doctor_queue:
+    path: /adminPanel/doctor/update_queue/
+    controller: App\Controller\Admin\DoctorController::updateQueue
+    methods: POST
+doctor_delete:
+    path: /adminPanel/doctor/delete/{id}
+    controller: App\Controller\Admin\DoctorController::delete
+#certificate
+sertificate_index:
+    path: /adminPanel/sertificate
+    controller: App\Controller\Admin\SertificateController::index
+sertificate_create:
+    path: /adminPanel/sertificate/create
+    controller: App\Controller\Admin\SertificateController::create
+sertificate_update:
+    path: /adminPanel/sertificate/update/{id}
+    controller: App\Controller\Admin\SertificateController::update
+sertificate_queue:
+    path: /adminPanel/sertificate/update_queue/
+    controller: App\Controller\Admin\SertificateController::updateQueue
+    methods: POST
+sertificate_delete:
+    path: /adminPanel/sertificate/delete/{id}
+    controller: App\Controller\Admin\SertificateController::delete
+#logout
 app_logout:
     path: /logout
     methods: GET

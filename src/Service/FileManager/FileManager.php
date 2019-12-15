@@ -50,7 +50,7 @@ class FileManager implements FileManagerInterface
 
     private function hashFile(string $filename): string
     {
-        return \md5(\uniqid($filename));
+        return md5(uniqid($filename));
     }
 
     public function deleteFile(string $fileName): void

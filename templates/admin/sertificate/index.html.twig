@@ -18,13 +18,13 @@
                 <div class="col-lg-12">
                     <div class="card" style="margin-top: 10px">
                         <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
-                            <h3 class="h4">Последовательность услуг</h3>
+                            <h3 class="h4">Последовательность сертификатов</h3>
                             <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
                         </div>
                         <div class="card-body" style="display: none">
                             <ul id="sortable" class="list-group">
-                                {% for service in services %}
-                                    <li data-id="{{ service.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ service.title }}</li>
+                                {% for sertificate in sertificates %}
+                                    <li data-id="{{ sertificate.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ sertificate.title }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -39,8 +39,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="h4">Услуги</h3>
-                            <a style="margin-left: 20px" href="{{ path('service_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить услугу</a>
+                            <h3 class="h4">Сертификаты</h3>
+                            <a style="margin-left: 20px" href="{{ path('sertificate_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить сертификат</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,21 +50,23 @@
                                         <th>#</th>
                                         <th>Название</th>
                                         <th>Фото</th>
+                                        <th>Владелец</th>
                                         <th>Редактировать</th>
                                         <th>Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for service in services %}
+                                    {% for sertificate in sertificates %}
                                         <tr>
-                                            <th scope="row">{{ service.id }}</th>
-                                            <td>{{ service.title }}</td>
-                                            <td><img src="/uploads/{{ service.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <th scope="row">{{ sertificate.id }}</th>
+                                            <td>{{ sertificate.title }}</td>
+                                            <td><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <td>{{ sertificate.doctor is not empty ? sertificate.doctor.name : 'Стомасвіт' }}</td>
                                             <td>
-                                                <a href="{{ path('service_update', {'id': service.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                                <a href="{{ path('sertificate_update', {'id': sertificate.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
                                             </td>
                                             <td>
-                                                <a data-id="{{ service.id }}" class="btn btn-danger active remove-service" role="button" aria-pressed="true">Удалить</a>
+                                                <a data-id="{{ sertificate.id }}" class="btn btn-danger active remove-sertificate" role="button" aria-pressed="true">Удалить</a>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -81,5 +83,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="/admin/js/service.js"></script>
+    <script src="/admin/js/certificate.js"></script>
 {% endblock %}
