@@ -27,16 +27,6 @@ class MainPageSliderForm extends AbstractType
         }
 
         $builder
-            ->add('boldTitle', TextType::class, [
-                'label' => 'Название (жирный шрифт)',
-                'required' => false
-            ])
-            ->add('title', TextType::class, [
-                'label' => 'Название',
-            ])
-            ->add('description', TextareaType::class, [
-                'label' => 'Описание',
-            ])
             ->add('image', FileType::class,[
                 'label' => 'Фото',
                 'attr' => $attr,
