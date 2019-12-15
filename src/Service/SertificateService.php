@@ -4,42 +4,33 @@
 namespace App\Service;
 
 
-use App\DataMapper\ServiceMapper;
+use App\DataMapper\SertificateMapper;
 use App\Entity\EntityInterface;
 use App\Model\ModelInterface;
-use App\Repository\ServiceRepository;
+use App\Repository\SertificateRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\SerializerInterface;
 
-class ServiceService extends CrudManager
+class SertificateService extends CrudManager
 {
-    private const IMG_UPLOAD_DIR = 'service/';
+    private const IMG_UPLOAD_DIR = 'certificate/';
     /**
      * @var FileManager
      */
     private $fileManager;
-    /**
-     * @var JsonEncoder
-     */
-    private $jsonEncoder;
 
     /**
      * MainPageSliderService constructor.
-     * @param ServiceRepository $repository
+     * @param SertificateRepository $repository
      * @param EntityManagerInterface $entityManager
-     * @param ServiceMapper $mapper
+     * @param SertificateMapper $mapper
      * @param FileManager $fileManager
-     * @param JsonEncoder $jsonEncoder
      */
-    public function __construct(ServiceRepository $repository, EntityManagerInterface $entityManager, ServiceMapper $mapper, FileManager $fileManager, SerializerInterface $jsonEncoder)
+    public function __construct(SertificateRepository $repository, EntityManagerInterface $entityManager, SertificateMapper $mapper, FileManager $fileManager)
     {
         parent::__construct($repository ,$entityManager, $mapper);
         $this->fileManager = $fileManager;
-        $this->jsonEncoder = $jsonEncoder;
     }
 
     public function create(ModelInterface $model, EntityInterface $entity)
@@ -50,10 +41,6 @@ class ServiceService extends CrudManager
         $uploadedFile = $this->fileManager->uploadFile($model->getImage(), self::IMG_UPLOAD_DIR);
         $entity->setImage(self::IMG_UPLOAD_DIR . $uploadedFile);
 
-        $uploadedFile = $this->fileManager->uploadFile($model->getIcon(), self::IMG_UPLOAD_DIR);
-        $entity->setIcon(self::IMG_UPLOAD_DIR . $uploadedFile);
-
-
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
     }
@@ -62,15 +49,9 @@ class ServiceService extends CrudManager
     {
         $entity = $this->mapper->modelToEntity($model, $entity);
 
-
         if($model->getImage()){
             $uploadedFile = $this->fileManager->uploadFile($model->getImage(), self::IMG_UPLOAD_DIR);
             $entity->setImage(self::IMG_UPLOAD_DIR . $uploadedFile);
-        }
-
-        if($model->getIcon()){
-            $uploadedFile = $this->fileManager->uploadFile($model->getIcon(), self::IMG_UPLOAD_DIR);
-            $entity->setIcon(self::IMG_UPLOAD_DIR . $uploadedFile);
         }
 
 
@@ -96,14 +77,8 @@ class ServiceService extends CrudManager
     public function delete(EntityInterface $entity): void
     {
         $this->fileManager->deleteFile($entity->getImage());
-        $this->fileManager->deleteFile($entity->getIcon());
         $this->entityManager->remove($entity);
         $this->entityManager->flush();
-    }
-
-    public function getAllInJson()
-    {
-        return $this->jsonEncoder->serialize($this->all(), 'json');
     }
 
     private function getLastQueue(): int

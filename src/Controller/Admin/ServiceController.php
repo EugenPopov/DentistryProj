@@ -6,11 +6,8 @@ namespace App\Controller\Admin;
 
 use App\DataMapper\MainPageSliderMapper;
 use App\DataMapper\ServiceMapper;
-use App\Entity\MainPageSlider;
 use App\Entity\Service;
-use App\Form\MainPageSliderForm;
 use App\Form\ServiceForm;
-use App\Model\MainPageSliderModel;
 use App\Model\ServiceModel;
 use App\Service\MainPageSliderService;
 use App\Service\ServiceService;
@@ -45,7 +42,7 @@ class ServiceController extends AbstractController
     public function index()
     {
         return $this->render('admin/service/index.html.twig', [
-            'slides' => $this->service->findBy([], ['queue' => 'ASC'])
+            'services' => $this->service->findBy([], ['queue' => 'ASC'])
         ]);
     }
 

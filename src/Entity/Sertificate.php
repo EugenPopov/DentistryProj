@@ -26,6 +26,16 @@ class Sertificate implements EntityInterface
      */
     private $doctor;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +61,30 @@ class Sertificate implements EntityInterface
     public function setDoctor(?Doctor $doctor): self
     {
         $this->doctor = $doctor;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

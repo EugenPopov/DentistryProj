@@ -5,15 +5,17 @@ namespace App\Controller\Admin;
 
 
 use App\DataMapper\MainPageSliderMapper;
-use App\Entity\MainPageSlider;
-use App\Form\MainPageSliderForm;
-use App\Model\MainPageSliderModel;
+use App\DataMapper\SertificateMapper;
+use App\Entity\Sertificate;
+use App\Form\SertificateForm;
+use App\Model\SertificateModel;
 use App\Service\MainPageSliderService;
+use App\Service\SertificateService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class MainPageSliderController extends AbstractController
+class SertificateController extends AbstractController
 {
     /**
      * @var MainPageSliderService
@@ -27,10 +29,10 @@ class MainPageSliderController extends AbstractController
 
     /**
      * MainPageSliderController constructor.
-     * @param MainPageSliderService $service
-     * @param MainPageSliderMapper $mapper
+     * @param SertificateService $service
+     * @param SertificateMapper $mapper
      */
-    public function __construct(MainPageSliderService $service, MainPageSliderMapper $mapper)
+    public function __construct(SertificateService $service, SertificateMapper $mapper)
     {
         $this->service = $service;
         $this->mapper = $mapper;
@@ -38,31 +40,31 @@ class MainPageSliderController extends AbstractController
 
     public function index()
     {
-        return $this->render('admin/main_page_slider/index.html.twig', [
-            'slides' => $this->service->findBy([], ['queue' => 'ASC'])
+        return $this->render('admin/sertificate/index.html.twig', [
+            'sertificates' => $this->service->findBy([], ['queue' => 'ASC'])
         ]);
     }
 
     public function create(Request $request)
     {
-        $model = new MainPageSliderModel();
-        $form = $this->createForm(MainPageSliderForm::class, $model);
+        $model = new SertificateModel();
+        $form = $this->createForm(SertificateForm::class, $model);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $this->service->create($data, new MainPageSlider());
-            return $this->redirectToRoute('main_page_slider_index');
+            $this->service->create($data, new Sertificate());
+            return $this->redirectToRoute('sertificate_index');
         }
 
-        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Добавление слайда']);
+        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Добавление сертификата']);
     }
 
-    public function update(MainPageSlider $entity, Request $request)
+    public function update(Sertificate $entity, Request $request)
     {
         $model = $this->mapper->entityToModel($entity);
 
-        $form = $this->createForm(MainPageSliderForm::class, $model, [
+        $form = $this->createForm(SertificateForm::class, $model, [
             'is_create' => false, 'image' => $entity->getImage()
         ]);
         $form->handleRequest($request);
@@ -70,7 +72,7 @@ class MainPageSliderController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $this->service->update($data, $entity);
-            return $this->redirectToRoute('main_page_slider_index');
+            return $this->redirectToRoute('sertificate_index');
         }
 
         return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Редактирование слайда']);
@@ -83,9 +85,9 @@ class MainPageSliderController extends AbstractController
         return new Response(null, Response::HTTP_OK);
     }
 
-    public function delete(MainPageSlider $entity)
+    public function delete(Sertificate $entity)
     {
         $this->service->delete($entity);
-        return $this->redirectToRoute('main_page_slider_index');
+        return $this->redirectToRoute('sertificate_index');
     }
 }

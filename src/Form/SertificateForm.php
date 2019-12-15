@@ -4,15 +4,18 @@
 namespace App\Form;
 
 
-use App\Model\MainPageSliderModel;
+use App\Entity\Doctor;
+use App\Model\SertificateModel;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class MainPageSliderForm extends AbstractType
+class SertificateForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -25,6 +28,16 @@ class MainPageSliderForm extends AbstractType
         }
 
         $builder
+            ->add('title', TextType::class, [
+                'label' => 'Название'
+            ])
+            ->add('doctor', EntityType::class, [
+                'class' => Doctor::class,
+                'choice_label' => 'name',
+                'required' => false,
+                'placeholder' => 'Стомасвіт',
+                'label' => 'Владелец сертификата'
+            ])
             ->add('image', FileType::class,[
                 'label' => 'Фото',
                 'attr' => $attr,
@@ -39,8 +52,7 @@ class MainPageSliderForm extends AbstractType
         $resolver->setDefaults([
             'image' => null,
             'is_create' => true,
-            'data_class' => MainPageSliderModel::class,
+            'data_class' => SertificateModel::class,
         ]);
     }
-
 }

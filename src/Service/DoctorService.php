@@ -4,75 +4,91 @@
 namespace App\Service;
 
 
-use App\DataMapper\ServiceMapper;
+use App\DataMapper\DoctorMapper;
+use App\Entity\Doctor;
 use App\Entity\EntityInterface;
+use App\Model\DoctorModel;
 use App\Model\ModelInterface;
+use App\Repository\DoctorRepository;
 use App\Repository\ServiceRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\SerializerInterface;
 
-class ServiceService extends CrudManager
+class DoctorService extends CrudManager
 {
-    private const IMG_UPLOAD_DIR = 'service/';
+    private const IMG_UPLOAD_DIR = 'doctor/';
     /**
      * @var FileManager
      */
     private $fileManager;
     /**
-     * @var JsonEncoder
+     * @var ServiceRepository
      */
-    private $jsonEncoder;
+    private $serviceRepository;
 
     /**
      * MainPageSliderService constructor.
-     * @param ServiceRepository $repository
+     * @param DoctorRepository $repository
      * @param EntityManagerInterface $entityManager
-     * @param ServiceMapper $mapper
+     * @param DoctorMapper $mapper
      * @param FileManager $fileManager
-     * @param JsonEncoder $jsonEncoder
+     * @param ServiceRepository $serviceRepository
      */
-    public function __construct(ServiceRepository $repository, EntityManagerInterface $entityManager, ServiceMapper $mapper, FileManager $fileManager, SerializerInterface $jsonEncoder)
+    public function __construct(DoctorRepository $repository, EntityManagerInterface $entityManager, DoctorMapper $mapper, FileManager $fileManager, ServiceRepository $serviceRepository)
     {
         parent::__construct($repository ,$entityManager, $mapper);
         $this->fileManager = $fileManager;
-        $this->jsonEncoder = $jsonEncoder;
+        $this->serviceRepository = $serviceRepository;
+        $this->repository = $repository;
     }
 
     public function create(ModelInterface $model, EntityInterface $entity)
     {
+        /** @var DoctorModel $model */
+        /** @var Doctor $entity */
         $entity = $this->mapper->modelToEntity($model, $entity);
         $entity->setQueue($this->getLastQueue());
 
         $uploadedFile = $this->fileManager->uploadFile($model->getImage(), self::IMG_UPLOAD_DIR);
         $entity->setImage(self::IMG_UPLOAD_DIR . $uploadedFile);
 
-        $uploadedFile = $this->fileManager->uploadFile($model->getIcon(), self::IMG_UPLOAD_DIR);
-        $entity->setIcon(self::IMG_UPLOAD_DIR . $uploadedFile);
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
 
-
+        if($services = json_decode($model->getServices(), true)){
+            foreach ($services as $service) {
+                if($service_found = $this->serviceRepository->find($service)){
+                    $entity->addService($service_found);
+                }
+            }
+        }
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
     }
 
     public function update(ModelInterface $model , EntityInterface $entity)
     {
+        /** @var DoctorModel $model */
+        /** @var Doctor $entity */
         $entity = $this->mapper->modelToEntity($model, $entity);
 
+        foreach ($entity->getServices() as $service) {
+            $entity->removeService($service);
+        }
+
+        if($services = json_decode($model->getServices(), true)){
+            foreach ($services as $service) {
+                if($service_found = $this->serviceRepository->find($service)){
+                    $entity->addService($service_found);
+                }
+            }
+        }
 
         if($model->getImage()){
             $uploadedFile = $this->fileManager->uploadFile($model->getImage(), self::IMG_UPLOAD_DIR);
             $entity->setImage(self::IMG_UPLOAD_DIR . $uploadedFile);
         }
-
-        if($model->getIcon()){
-            $uploadedFile = $this->fileManager->uploadFile($model->getIcon(), self::IMG_UPLOAD_DIR);
-            $entity->setIcon(self::IMG_UPLOAD_DIR . $uploadedFile);
-        }
-
 
         $this->entityManager->flush();
 
@@ -95,19 +111,15 @@ class ServiceService extends CrudManager
 
     public function delete(EntityInterface $entity): void
     {
+        /** @var Doctor $entity */
         $this->fileManager->deleteFile($entity->getImage());
-        $this->fileManager->deleteFile($entity->getIcon());
         $this->entityManager->remove($entity);
         $this->entityManager->flush();
     }
 
-    public function getAllInJson()
-    {
-        return $this->jsonEncoder->serialize($this->all(), 'json');
-    }
-
     private function getLastQueue(): int
     {
+
         $queue = $this->repository->getLastQueue();
 
         return $queue ? $queue->getQueue()+1:0;

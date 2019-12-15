@@ -53,6 +53,11 @@ class Doctor implements EntityInterface
      */
     private $sertificates;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
+
     public function __construct()
     {
         $this->services = new ArrayCollection();
@@ -179,6 +184,18 @@ class Doctor implements EntityInterface
                 $sertificate->setDoctor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

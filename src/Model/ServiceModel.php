@@ -26,6 +26,7 @@ class ServiceModel implements ModelInterface
      */
     private $description;
     private $additional_info;
+    private $doctors;
 
     /**
      * @return mixed
@@ -121,6 +122,24 @@ class ServiceModel implements ModelInterface
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDoctors()
+    {
+        return $this->doctors;
+    }
+
+    /**
+     * @param mixed $doctors
+     */
+    public function setDoctors($doctors): void
+    {
+        $this->doctors = $doctors;
+    }
+
+
 
 
 
