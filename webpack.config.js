@@ -53,7 +53,11 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
-
+    // .addPlugin(new webpack.ProvidePlugin({
+    //     $: 'jquery',
+    //     jQuery: 'jquery',
+    //     Popper: 'popper.js/dist/umd/popper'
+    // }))
     // enables Sass/SCSS support
     //.enableSassLoader()
 
