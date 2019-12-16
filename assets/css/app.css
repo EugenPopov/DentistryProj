@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Futura PT Book';
+    src: url('../font/FuturaPT-Book.eot');
+    src: url('../font/FuturaPT-Book.eot?#iefix') format('embedded-opentype'),
+    url('../font/FuturaPT-Book.woff') format('woff'),
+    url('../font/FuturaPT-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Futura PT Book", sans-serif!important;
+}
+
+.main_header {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: #243671;
+    padding-left: 10px;
+    font-size: 2em;
+}
+
+.main_menu {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-around;
+}
+
+a.menu-item {
+    cursor: pointer;
+    padding: 7.5px 16px;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.menu-item:hover {
+    background-color: rgba(153, 153, 153, 0.2);
+    border-color: rgba(153, 153, 153, 0.2);
+}
+
+.menu-item:last-child {
+    color: white!important;
+    background: #67C0A6;
+    padding: 10px;
+}
+
+.dropdown-toggle {
+    margin-bottom: 0!important;
+    color: black!important;
+    font-size: 1em!important;
+}
+
+.dropdown-menu {
+    box-shadow: unset!important;
+    background: unset!important;
+}
+
+.dropdown-item {
+    transition: all .3s ease-in;
+}
+
+.dropdown-item:hover {
+    color: #CA9385!important;
+}
+
+.page_up {
+    position: fixed;
+    bottom: 0;
+    background-color: #25305e;
+    right: 50px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+footer {
+    width: 80%;
+    margin: auto;
+    padding: 100px 0 20px;
+}
+
+nav.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+nav.footer a {
+    cursor: pointer;
+}
+
