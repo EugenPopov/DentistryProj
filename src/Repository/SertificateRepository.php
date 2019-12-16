@@ -19,32 +19,11 @@ class SertificateRepository extends ServiceEntityRepository
         parent::__construct($registry, Sertificate::class);
     }
 
-    // /**
-    //  * @return Sertificate[] Returns an array of Sertificate objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getLastQueue(): ?Sertificate
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->createQueryBuilder('doctor')
+            ->orderBy('doctor.queue', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()->getOneOrNullResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Sertificate
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

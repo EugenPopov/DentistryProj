@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DoctorRepository")
  */
-class Doctor
+class Doctor implements EntityInterface
 {
     /**
      * @ORM\Id()
@@ -52,6 +52,11 @@ class Doctor
      * @ORM\OneToMany(targetEntity="App\Entity\Sertificate", mappedBy="doctor")
      */
     private $sertificates;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
 
     public function __construct()
     {
@@ -179,6 +184,18 @@ class Doctor
                 $sertificate->setDoctor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

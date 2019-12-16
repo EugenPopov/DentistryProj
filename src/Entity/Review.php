@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReviewRepository")
  */
-class Review
+class Review implements EntityInterface
 {
     /**
      * @ORM\Id()

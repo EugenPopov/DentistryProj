@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ServiceRepository")
  */
-class Service
+class Service implements EntityInterface
 {
     /**
      * @ORM\Id()
@@ -47,6 +47,11 @@ class Service
      * @ORM\ManyToMany(targetEntity="App\Entity\Doctor", inversedBy="services")
      */
     private $doctor;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
 
     public function __construct()
     {
@@ -140,6 +145,18 @@ class Service
         if ($this->doctor->contains($doctor)) {
             $this->doctor->removeElement($doctor);
         }
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

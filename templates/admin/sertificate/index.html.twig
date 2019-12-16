@@ -1,0 +1,87 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Услуги
+{% endblock %}
+
+{% block name %}
+    Услуги
+{% endblock %}
+
+{% block body %}
+    <div id="finished" class="alert alert-primary" role="alert" style="display: none; position: absolute; z-index: 10000000000;">
+        Сохранено
+    </div>
+    <section id="sort" style=" padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" style="margin-top: 10px">
+                        <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
+                            <h3 class="h4">Последовательность сертификатов</h3>
+                            <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
+                        </div>
+                        <div class="card-body" style="display: none">
+                            <ul id="sortable" class="list-group">
+                                {% for sertificate in sertificates %}
+                                    <li data-id="{{ sertificate.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ sertificate.title }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="table" style="padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Сертификаты</h3>
+                            <a style="margin-left: 20px" href="{{ path('sertificate_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить сертификат</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Название</th>
+                                        <th>Фото</th>
+                                        <th>Владелец</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for sertificate in sertificates %}
+                                        <tr>
+                                            <th scope="row">{{ sertificate.id }}</th>
+                                            <td>{{ sertificate.title }}</td>
+                                            <td><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <td>{{ sertificate.doctor is not empty ? sertificate.doctor.name : 'Стомасвіт' }}</td>
+                                            <td>
+                                                <a href="{{ path('sertificate_update', {'id': sertificate.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                            </td>
+                                            <td>
+                                                <a data-id="{{ sertificate.id }}" class="btn btn-danger active remove-sertificate" role="button" aria-pressed="true">Удалить</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/admin/js/certificate.js"></script>
+{% endblock %}
