@@ -53,9 +53,15 @@ class Service implements EntityInterface
      */
     private $queue;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MiniService", inversedBy="services")
+     */
+    private $mini_service;
+
     public function __construct()
     {
         $this->doctor = new ArrayCollection();
+        $this->mini_service = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -157,6 +163,32 @@ class Service implements EntityInterface
     public function setQueue(int $queue): self
     {
         $this->queue = $queue;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MiniService[]
+     */
+    public function getMiniService(): Collection
+    {
+        return $this->mini_service;
+    }
+
+    public function addMiniService(MiniService $miniService): self
+    {
+        if (!$this->mini_service->contains($miniService)) {
+            $this->mini_service[] = $miniService;
+        }
+
+        return $this;
+    }
+
+    public function removeMiniService(MiniService $miniService): self
+    {
+        if ($this->mini_service->contains($miniService)) {
+            $this->mini_service->removeElement($miniService);
+        }
 
         return $this;
     }

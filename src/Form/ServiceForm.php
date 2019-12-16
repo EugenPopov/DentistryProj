@@ -7,6 +7,7 @@ namespace App\Form;
 use App\Model\ServiceModel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -45,6 +46,7 @@ class ServiceForm extends AbstractType
                 'label' => 'Дополнительная информация',
                 'required' => false
             ])
+            ->add('miniServices', HiddenType::class)
             ->add('icon', FileType::class,[
                 'label' => 'Иконка',
                 'attr' => $attr_icon,

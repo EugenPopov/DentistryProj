@@ -1,1 +1,10 @@
-/* your styles go here */
+.btn{
+    color: white !important;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .card-header > h3{
+        width: 60%;
+    }
+}
