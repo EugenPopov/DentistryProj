@@ -58,7 +58,7 @@ class ServiceController extends AbstractController
             return $this->redirectToRoute('service_index');
         }
 
-        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Добавление услуги']);
+        return $this->render('admin/service/create.html.twig', ['form' => $form->createView(), 'name' => 'Добавление услуги']);
     }
 
     public function update(Service $entity, Request $request)

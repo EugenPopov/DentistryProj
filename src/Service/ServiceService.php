@@ -12,7 +12,6 @@ use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class ServiceService extends CrudManager
@@ -33,7 +32,7 @@ class ServiceService extends CrudManager
      * @param EntityManagerInterface $entityManager
      * @param ServiceMapper $mapper
      * @param FileManager $fileManager
-     * @param JsonEncoder $jsonEncoder
+     * @param SerializerInterface $jsonEncoder
      */
     public function __construct(ServiceRepository $repository, EntityManagerInterface $entityManager, ServiceMapper $mapper, FileManager $fileManager, SerializerInterface $jsonEncoder)
     {

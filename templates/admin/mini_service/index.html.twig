@@ -1,0 +1,61 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Составные услуги
+{% endblock %}
+
+{% block name %}
+    Составные услуги
+{% endblock %}
+
+{% block body %}
+    <section id="table" style="padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Составные услуги</h3>
+                            <a style="margin-left: 20px" href="{{ path('mini_service_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить услугу</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Название</th>
+                                        <th>Цена</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for service in mini_services %}
+                                        <tr>
+                                            <th scope="row">{{ service.id }}</th>
+                                            <td>{{ service.title }}</td>
+                                            <td>{{ service.price }}</td>
+                                            <td>
+                                                <a href="{{ path('mini_service_update', {'id': service.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                            </td>
+                                            <td>
+                                                <a data-id="{{ service.id }}" class="btn btn-danger active remove-doctor" role="button" aria-pressed="true">Удалить</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/admin/js/mini_service.js"></script>
+{% endblock %}
