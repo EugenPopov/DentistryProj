@@ -2,7 +2,8 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^0.28.0",
     "core-js": "^3.0.0",
-    "regenerator-runtime": "^0.13.2"
+    "regenerator-runtime": "^0.13.2",
+    "webpack-notifier": "^1.6.0"
   },
   "license": "UNLICENSED",
   "private": true,
@@ -13,8 +14,8 @@
     "build": "encore production --progress"
   },
   "dependencies": {
-    "bootstrap-material-design": "^4.1.2",
+    "bootstrap-material-design": "^4.1.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.16.0"
   }
 }
