@@ -6,6 +6,7 @@ namespace App\Service;
 
 use App\DataMapper\MiniServiceMapper;
 use App\Entity\EntityInterface;
+use App\Entity\MiniService;
 use App\Model\ModelInterface;
 use App\Repository\MiniServiceRepository;
 use App\Service\CrudManager\CrudManager;
@@ -37,6 +38,14 @@ class MiniServiceService extends CrudManager
         $entity = $this->mapper->modelToEntity($model, $entity);
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
+    }
+
+    public function createAndReturn(ModelInterface $model): EntityInterface
+    {
+        $entity = $this->mapper->modelToEntity($model, new MiniService());
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+        return $entity;
     }
 
     public function update(ModelInterface $model , EntityInterface $entity)

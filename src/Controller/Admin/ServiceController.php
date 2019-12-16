@@ -10,6 +10,7 @@ use App\Entity\Service;
 use App\Form\ServiceForm;
 use App\Model\ServiceModel;
 use App\Service\MainPageSliderService;
+use App\Service\MiniServiceService;
 use App\Service\ServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,17 +27,29 @@ class ServiceController extends AbstractController
      * @var MainPageSliderMapper
      */
     private $mapper;
+    /**
+     * @var MiniServiceService
+     */
+    private $miniServiceService;
+    /**
+     * @var ServiceService
+     */
+    private $serviceService;
 
 
     /**
      * MainPageSliderController constructor.
      * @param ServiceService $service
      * @param ServiceMapper $mapper
+     * @param MiniServiceService $miniServiceService
+     * @param ServiceService $serviceService
      */
-    public function __construct(ServiceService $service, ServiceMapper $mapper)
+    public function __construct(ServiceService $service, ServiceMapper $mapper, MiniServiceService $miniServiceService, ServiceService $serviceService)
     {
         $this->service = $service;
         $this->mapper = $mapper;
+        $this->miniServiceService = $miniServiceService;
+        $this->serviceService = $serviceService;
     }
 
     public function index()
@@ -49,6 +62,7 @@ class ServiceController extends AbstractController
     public function create(Request $request)
     {
         $model = new ServiceModel();
+        $model->setMiniServices($this->miniServiceService->getAllInJson());
         $form = $this->createForm(ServiceForm::class, $model);
         $form->handleRequest($request);
 
@@ -78,7 +92,11 @@ class ServiceController extends AbstractController
             return $this->redirectToRoute('service_index');
         }
 
-        return $this->render('admin/form.html.twig', ['form' => $form->createView(), 'name' => 'Редактирование услуги "'.$entity->getTitle().'"']);
+        return $this->render('admin/service/update.html.twig', [
+            'form' => $form->createView(),
+            'services' => $this->miniServiceService->getAllInJson(),
+            'name' => 'Редактирование услуги "'.$entity->getTitle().'"'
+        ]);
     }
 
     public function updateQueue(Request $request)

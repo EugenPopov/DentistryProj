@@ -14,6 +14,7 @@ use App\Model\MiniServiceModel;
 use App\Service\MiniServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MiniServiceController extends AbstractController
 {
@@ -35,6 +36,16 @@ class MiniServiceController extends AbstractController
     {
         $this->service = $service;
         $this->mapper = $mapper;
+    }
+
+    public function apiCreate(Request $request)
+    {
+        $title = $request->get('title');
+        $price = $request->get('price');
+        $model = $this->mapper->fieldsToModel($title, $price);
+        $entity = $this->service->createAndReturn($model);
+
+        return $this->json($entity);
     }
 
     public function index()

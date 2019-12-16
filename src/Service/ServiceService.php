@@ -6,7 +6,10 @@ namespace App\Service;
 
 use App\DataMapper\ServiceMapper;
 use App\Entity\EntityInterface;
+use App\Entity\Service;
 use App\Model\ModelInterface;
+use App\Model\ServiceModel;
+use App\Repository\MiniServiceRepository;
 use App\Repository\ServiceRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
@@ -25,6 +28,10 @@ class ServiceService extends CrudManager
      * @var JsonEncoder
      */
     private $jsonEncoder;
+    /**
+     * @var MiniServiceRepository
+     */
+    private $miniServiceRepository;
 
     /**
      * MainPageSliderService constructor.
@@ -33,18 +40,30 @@ class ServiceService extends CrudManager
      * @param ServiceMapper $mapper
      * @param FileManager $fileManager
      * @param SerializerInterface $jsonEncoder
+     * @param MiniServiceRepository $miniServiceRepository
      */
-    public function __construct(ServiceRepository $repository, EntityManagerInterface $entityManager, ServiceMapper $mapper, FileManager $fileManager, SerializerInterface $jsonEncoder)
+    public function __construct(ServiceRepository $repository, EntityManagerInterface $entityManager, ServiceMapper $mapper, FileManager $fileManager, SerializerInterface $jsonEncoder, MiniServiceRepository $miniServiceRepository)
     {
         parent::__construct($repository ,$entityManager, $mapper);
         $this->fileManager = $fileManager;
         $this->jsonEncoder = $jsonEncoder;
+        $this->miniServiceRepository = $miniServiceRepository;
     }
 
     public function create(ModelInterface $model, EntityInterface $entity)
     {
+        /** @var ServiceModel $model */
+        /** @var Service $entity */
         $entity = $this->mapper->modelToEntity($model, $entity);
         $entity->setQueue($this->getLastQueue());
+
+        if($services = json_decode($model->getMiniServices(), true)){
+            foreach ($services as $service) {
+                if($service_found = $this->miniServiceRepository->find($service)){
+                    $entity->addMiniService($service_found);
+                }
+            }
+        }
 
         $uploadedFile = $this->fileManager->uploadFile($model->getImage(), self::IMG_UPLOAD_DIR);
         $entity->setImage(self::IMG_UPLOAD_DIR . $uploadedFile);
@@ -60,6 +79,18 @@ class ServiceService extends CrudManager
     public function update(ModelInterface $model , EntityInterface $entity)
     {
         $entity = $this->mapper->modelToEntity($model, $entity);
+
+        foreach ($entity->getMiniService() as $service) {
+            $entity->removeMiniService($service);
+        }
+
+        if($services = json_decode($model->getMiniServices(), true)){
+            foreach ($services as $service) {
+                if($service_found = $this->miniServiceRepository->find($service)){
+                    $entity->addMiniService($service_found);
+                }
+            }
+        }
 
 
         if($model->getImage()){

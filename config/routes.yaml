@@ -43,6 +43,9 @@ mini_service_index:
 mini_service_create:
     path: /adminPanel/mini_service/create
     controller: App\Controller\Admin\MiniServiceController::create
+mini_service_api_create:
+    path: /adminPanel/api/mini_service/create
+    controller: App\Controller\Admin\MiniServiceController::apiCreate
 mini_service_update:
     path: /adminPanel/mini_service/update/{id}
     controller: App\Controller\Admin\MiniServiceController::update

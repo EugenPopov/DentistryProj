@@ -26,4 +26,13 @@ class MiniServiceMapper implements DataMapperInterface
             ->setTitle($model->getTitle())
             ->setPrice($model->getPrice());
     }
+
+    public function fieldsToModel($title, $price): MiniServiceModel
+    {
+        $model = new MiniServiceModel();
+
+        return $model
+            ->setTitle($title)
+            ->setPrice($price);
+    }
 }
