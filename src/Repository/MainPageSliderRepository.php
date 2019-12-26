@@ -19,32 +19,12 @@ class MainPageSliderRepository extends ServiceEntityRepository
         parent::__construct($registry, MainPageSlider::class);
     }
 
-    // /**
-    //  * @return MainPageSlider[] Returns an array of MainPageSlider objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getLastQueue(): ?MainPageSlider
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->createQueryBuilder('main_page_slider')
+            ->orderBy('main_page_slider.queue', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()->getOneOrNullResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?MainPageSlider
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

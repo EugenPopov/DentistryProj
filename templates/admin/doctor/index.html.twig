@@ -1,0 +1,85 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Врачи
+{% endblock %}
+
+{% block name %}
+    Врачи
+{% endblock %}
+
+{% block body %}
+    <div id="finished" class="alert alert-primary" role="alert" style="display: none; position: absolute; z-index: 10000000000;">
+        Сохранено
+    </div>
+    <section id="sort" style=" padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" style="margin-top: 10px">
+                        <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
+                            <h3 class="h4">Последовательность врачей</h3>
+                            <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
+                        </div>
+                        <div class="card-body" style="display: none">
+                            <ul id="sortable" class="list-group">
+                                {% for doctor in doctors %}
+                                    <li data-id="{{ doctor.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ doctor.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="table" style="padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Врачи</h3>
+                            <a style="margin-left: 20px" href="{{ path('doctor_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить врача</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Имя Фамилия</th>
+                                        <th>Фото</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for doctor in doctors %}
+                                        <tr>
+                                            <th scope="row">{{ doctor.id }}</th>
+                                            <td>{{ doctor.name }}</td>
+                                            <td><img src="/uploads/{{ doctor.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <td>
+                                                <a href="{{ path('doctor_update', {'id': doctor.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                            </td>
+                                            <td>
+                                                <a data-id="{{ doctor.id }}" class="btn btn-danger active remove-doctor" role="button" aria-pressed="true">Удалить</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/admin/js/doctor.js"></script>
+{% endblock %}

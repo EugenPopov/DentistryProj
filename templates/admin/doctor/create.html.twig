@@ -1,0 +1,43 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/admin/vendor/magisuggest/magicsuggest.min.css">
+{% endblock %}
+
+{% block name %}
+    {% if name is defined %}
+        {{ name }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if form is defined %}
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    {% endif %}
+
+    <div id="edit_services"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/admin/vendor/magisuggest/magicsuggest.min.js"></script>
+    <script>
+        $('#doctor_form_image').parent().after('<div id="service_editor" style="padding-top: 15px" class="form-group"><label for="edit_services">Услуги врача</label></div>');
+        $('#edit_services').appendTo('#service_editor');
+        let all_services = JSON.parse('{{ form.vars.value.services|raw }}');
+        $('#doctor_form_services').val('');
+        let recommend = $('#edit_services').magicSuggest({
+            allowFreeEntries: false,
+            useCommaKey: false,
+            data: all_services,
+            expandOnFocus: true,
+            displayField: 'title',
+            placeholder: 'Начните вводить текст'
+        });
+        $(recommend).on('blur', function () {
+            $('#doctor_form_services').val(JSON.stringify(this.getValue()));
+        });
+    </script>
+{% endblock %}

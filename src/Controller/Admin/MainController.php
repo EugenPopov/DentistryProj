@@ -9,6 +9,6 @@ class MainController extends AbstractController
 {
     public function index()
     {
-        return $this->render('admin/index.html.twig');
+        return $this->redirectToRoute('main_page_slider_index');
     }
 }
