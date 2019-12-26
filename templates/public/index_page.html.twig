@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('index_page') }}
+{#    {{ encore_entry_link_tags('index_page') }}#}
+    <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 {% endblock %}
 {% block body %}
@@ -10,6 +12,7 @@
     </div>
     <div class="page_top_wrapper">
         {% include './elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
         <div class="page_top">
             <div class="page_top-text">
                 <div class="page_top-text_header">
@@ -21,9 +24,9 @@
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active carousel-indicator"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="carousel-indicator"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="carousel-indicator"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -259,7 +262,7 @@
             ЗАПИСАТИСЯ НА ПРИЙОМ
         </div>
         <form>
-            <div>
+            <div class="form">
                 <div class="top_form">
                     <input type="text" id="name" placeholder="Ваше имя">
                     <input type="tel" id="tel" placeholder="Ваш номер телефону">
@@ -295,7 +298,7 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    {{ encore_entry_script_tags('index_page') }}
+{#    {{ encore_entry_script_tags('index_page') }}#}
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $('.best_slider').slick({
@@ -305,19 +308,21 @@
             prevArrow: "<button class='prev'></button>",
             nextArrow: "<button class='next'></button>",
             appendArrows: $('.best_controls'),
-            autoplay: true,
+            // autoplay: true,
             autoplaySpeed: 5000,
             responsive: [
                 {
                     breakpoint: 769,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1.8,
+                        infinite: false,
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 1.5,
+                        infinite: false,
                     }
                 }
             ]
@@ -333,13 +338,15 @@
                 {
                     breakpoint: 769,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 2.4,
+                        infinite: false,
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 1.5,
+                        infinite: false,
                     }
                 }
             ]
@@ -355,19 +362,19 @@
                 {
                     breakpoint: 769,
                     settings: {
-                        slidesToShow: 2,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
                         slidesToShow: 1,
                     }
-                }
+                },
             ]
         });
         $('.page_up').on('click', function () {
             $('.page_top_wrapper')[0].scrollIntoView({block: "center", behavior: "smooth"});
-        })
+        });
+        $('#main-header-toggle').on('click', function () {
+            $('.mobile_nav-toogle').toggleClass('active');
+            $('#mobile_nav').slideToggle(500);
+            $('.main_header').toggleClass('active');
+
+        });
     </script>
 {% endblock %}
