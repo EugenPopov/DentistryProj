@@ -34,19 +34,16 @@
     width: 50%;
 }
 .carousel-indicators {
-    left: unset!important;
+    left: unset;
 }
 
-.carousel-indicators li {
-    cursor: pointer;
-}
-
-.carousel-indicators li {
+.carousel-indicator {
     background-color: white!important;
     border-radius: 50% !important;
     height: 10px!important;
     width: 10px!important;
     border: 1px solid white;
+    cursor: pointer;
 }
 
 .carousel-indicators li.active {
@@ -81,16 +78,12 @@
     transition: all .2s ease-in;
 }
 
-.controls button:hover {
-    transform: scaleY(-1);
-}
-
 .prev {
-    background: url(../../public/img/prev.png);
+    background: url(/img/prev.png);
 
 }
 .next {
-    background: url(../../public/img/next.png);
+    background: url(/img/next.png);
 }
 
 .best_slider {
@@ -183,6 +176,10 @@ a.best_item-more:hover {
     display: flex!important;
     flex-direction: row;
     background-color: white;
+}
+
+.review_img{
+    max-width: 50%;
 }
 
 .review {

@@ -1,0 +1,44 @@
+@media (max-width: 1100px) {
+    .main-header {
+        flex-direction: column;
+    }
+
+    .main_menu {
+        width: 100%;
+    }
+}
+@media (max-width: 769px) {
+    .page_top_wrapper {
+        background: transparent!important;
+    }
+    .mobile_nav-toogle {
+        display: block;
+    }
+    .main_menu {
+        display: none;
+    }
+    .main_header {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .main_header.active{
+        background: #76e0c1;
+    }
+    #mobile_nav {
+        display: none;
+        background: #76e0c1;
+    }
+    .mobile_list {
+        padding: 15px 40px;
+        list-style: none;
+        margin-bottom: 0;
+    }
+    .header_callback {
+        width: fit-content;
+    }
+    .menu-item {
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}

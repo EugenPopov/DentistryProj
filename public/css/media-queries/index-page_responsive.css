@@ -1,0 +1,118 @@
+@media (max-width: 768px) {
+    .page_top {
+        margin: 0 auto 0;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .page_top .carousel {
+        width: 100%;
+    }
+    .page_top-text {
+        width: 95%;
+        margin: 40px auto;
+    }
+    .page_top-text_text {
+        text-align: justify;
+    }
+    .carousel-indicators {
+        left: 0!important;
+        bottom: -40px!important;
+    }
+    .carousel-indicator {
+        background-color: #76E0C1!important;
+        border-color: #76E0C1;
+    }
+    .why-best_wrapper {
+        margin: 0 0 0 auto;
+        padding-top: 30px;
+    }
+    .controls {
+        padding: 15px 0;
+    }
+    .best_slider {
+        width: 100%;
+    }
+    .doctors_wrapper {
+        width: 100%;
+    }
+    .doctors_slider {
+        margin: 0 0 0 auto;
+        width: 95%;
+    }
+    .reviews_wrapper {
+        width: 100%;
+    }
+    .reviews_title {
+        text-align: center;
+        margin: auto;;
+    }
+    .reviews_wrapper .controls {
+        margin: auto;
+    }
+    .map_card {
+        left: 10px;
+        width: 30%;
+    }
+    .map_card img {
+        width: 100%;
+    }
+    .map iframe {
+        height: 350px;
+    }
+    .contact_wrapper {
+        flex-direction: column;
+    }
+    .contact_img {
+        width: 100%;
+        margin: auto;
+        background: linear-gradient(to left, #76E0C1 55%, transparent 55%);
+        padding: 40px;
+    }
+    .contact_form {
+        width: 90%;
+        margin: auto;
+    }
+    .contact_form-title {
+        display: none;
+    }
+    .contact_form form {
+        width: 100%;
+        margin: auto;
+    }
+    .contact_form form .form {
+        margin: 30px auto 0 0;
+        width: 100%;
+    }
+    .contact_form form button {
+        width: 60%;
+        margin:  20px auto 0;
+    }
+}
+@media (max-width: 480px) {
+    .why-best_wrapper {
+        padding-top: 0;
+    }
+    .review_item {
+        flex-direction: column;
+    }
+    .review_img {
+        max-width: 100%;
+        object-fit: contain;
+        object-position: left;
+    }
+    .map_card {
+        display: none;
+    }
+    .reason {
+        width: 95%;
+        margin: auto;
+        flex-direction: column;
+    }
+    .reason div {
+        width: 100%;
+    }
+    .reason_text {
+        padding: 20px 0 0;
+        text-align: justify;
+    }
+}
