@@ -1,9 +1,10 @@
 <?php
 
 
-namespace App;
+namespace App\Twig  ;
 
 
+use App\Repository\MainPageSliderRepository;
 use App\Service\CommonSettings\CommonSettingsInterface;
 use App\Service\ServiceService;
 use Twig\Extension\AbstractExtension;
@@ -25,7 +26,7 @@ class AppExtension extends AbstractExtension
      * @param ServiceService $serviceService
      * @param CommonSettingsInterface $commonSettings
      */
-    public function __construct(ServiceService $serviceService, CommonSettingsInterface $commonSettings)
+    public function __construct(ServiceService $serviceService, CommonSettingsInterface $commonSettings, MainPageSliderRepository $mainPageSliderRepository)
     {
         $this->serviceService = $serviceService;
         $this->commonSettings = $commonSettings;
