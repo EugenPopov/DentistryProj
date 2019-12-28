@@ -10,7 +10,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for service in all_services() %}
-                    <a class="dropdown-item" href="#">{{service.title}}</a>
+                    <a class="dropdown-item" href="{{ path('service', {'slug': service.slug}) }}">{{service.title}}</a>
                 {% endfor %}
             </div>
         </div>

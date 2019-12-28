@@ -2,6 +2,13 @@
 index:
     path: /
     controller: App\Controller\Pages\MainController::index
+service:
+    path: /service-{slug}
+    controller: App\Controller\Pages\ServiceController::index
+doctor:
+    path: /doctor-{slug}
+    controller: App\Controller\Pages\DoctorController::index
+#admin_panel
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index

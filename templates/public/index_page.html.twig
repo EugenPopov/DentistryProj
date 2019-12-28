@@ -53,7 +53,7 @@
                 <div class="best_item-text">
                     {{ service.description }}
                 </div>
-                <a class="best_item-more">
+                <a class="best_item-more" href="{{ path('service', {'slug': service.slug}) }}">
                     Дізнатися більше
                 </a>
             </div>
@@ -67,13 +67,15 @@
     <div class="doctors_slider">
         {% for doctor in doctors %}
             <div class="doctor_item">
-                <img class="doctor_img" src="/uploads/{{ doctor.image }}" alt="Third slide">
-                <div class="doctor_item-title">
-                    {{ doctor.name }}
-                </div>
-                <div class="doctor_item-text">
-                    {{ doctor.speciality }}
-                </div>
+                <a href="{{ path('doctor', {'slug': doctor.slug}) }}">
+                    <img class="doctor_img" src="/uploads/{{ doctor.image }}" alt="Third slide">
+                    <div class="doctor_item-title">
+                        {{ doctor.name }}
+                    </div>
+                    <div class="doctor_item-text">
+                        {{ doctor.speciality }}
+                    </div>
+                </a>
             </div>
         {% endfor %}
     </div>
