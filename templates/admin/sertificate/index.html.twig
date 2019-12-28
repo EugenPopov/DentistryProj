@@ -60,7 +60,7 @@
                                         <tr>
                                             <th scope="row">{{ sertificate.id }}</th>
                                             <td>{{ sertificate.title }}</td>
-                                            <td><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <td><a href="/uploads/{{ sertificate.image }}" target="_blank"><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></a></td>
                                             <td>{{ sertificate.doctor is not empty ? sertificate.doctor.name : 'Стомасвіт' }}</td>
                                             <td>
                                                 <a href="{{ path('sertificate_update', {'id': sertificate.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>

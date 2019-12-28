@@ -1,6 +1,7 @@
+#pages
 index:
     path: /
-    controller: App\Controller\pages\MainController::index
+    controller: App\Controller\Pages\MainController::index
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index

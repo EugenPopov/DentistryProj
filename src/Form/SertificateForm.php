@@ -29,7 +29,7 @@ class SertificateForm extends AbstractType
 
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Название'
+                'label' => 'Название (Видно только администратору)'
             ])
             ->add('doctor', EntityType::class, [
                 'class' => Doctor::class,

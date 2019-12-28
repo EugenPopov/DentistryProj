@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Controller\pages;
+namespace App\Controller\Pages;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
