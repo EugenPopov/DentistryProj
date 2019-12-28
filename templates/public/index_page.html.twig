@@ -140,14 +140,14 @@
             <img src="{{ asset('img/house.png') }}">
             <ul class="address">
                <li>
-                   Київ, в.Данила Щербаківського
+                   {{get_setting('Адрес')}}
                </li>
                 <li>
-                    м.Берестейсая
+                    {{get_setting('Метро')}}
                 </li>
             </ul>
         </div>
-        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%D1%89%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%2052&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{get_setting('Адрес')}}&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 </div>
 <div class="contact_wrapper">
