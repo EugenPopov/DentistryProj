@@ -9,9 +9,9 @@
                 ПОСЛУГИ
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                {% for service in all_services() %}
+                    <a class="dropdown-item" href="#">{{service.title}}</a>
+                {% endfor %}
             </div>
         </div>
         <div class="menu-item">
@@ -34,7 +34,7 @@
             КОНТАКТИ
         </a>
         <div class="menu-item">
-            Данила Щербаківького ,52 <br>044 227-19-20
+            {{get_setting('Адрес')}} <br>{{get_setting('Телефон')}}
         </div>
         <a class="menu-item header_callback">
             ЗАПИСАТИСЯ НА ПРИЙОМ
