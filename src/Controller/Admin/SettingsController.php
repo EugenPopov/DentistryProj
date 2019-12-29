@@ -39,7 +39,7 @@ class SettingsController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
-            $this->commonSettings->setAll($data->getAll());
+            $this->commonSettings->save($data->getAll());
             $this->commonSettings->flush();
             return $this->redirectToRoute('common_settings_index');
         }

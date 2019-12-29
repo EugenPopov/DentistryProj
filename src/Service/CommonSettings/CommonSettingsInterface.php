@@ -13,4 +13,5 @@ interface CommonSettingsInterface
     public function set(string $key): void;
     public function setAll(ArrayCollection $array): void;
     public function flush(): void;
+    public function save(ArrayCollection $array): void;
 }

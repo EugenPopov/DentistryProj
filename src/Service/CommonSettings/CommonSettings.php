@@ -53,4 +53,10 @@ class CommonSettings implements CommonSettingsInterface
     {
         $this->settings = $array;
     }
+
+    public function save(ArrayCollection $array): void
+    {
+        $this->settings = $array;
+        $this->flush();
+    }
 }
