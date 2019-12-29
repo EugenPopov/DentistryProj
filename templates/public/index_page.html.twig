@@ -16,10 +16,10 @@
         <div class="page_top">
             <div class="page_top-text">
                 <div class="page_top-text_header">
-                    <span>{{ get_setting('Название стоматологии')|upper }}</span> - {{ get_setting('Заглавие') }}
+                    <span>{{ get_setting('name')|upper }}</span> - {{ get_setting('title') }}
                 </div>
                 <div class="page_top-text_text">
-                    {{ get_setting('Описание') }}
+                    {{ get_setting('description') }}
                 </div>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -140,14 +140,14 @@
             <img src="{{ asset('img/house.png') }}">
             <ul class="address">
                <li>
-                   {{get_setting('Адрес')}}
+                   {{get_setting('address')}}
                </li>
                 <li>
-                    {{get_setting('Метро')}}
+                    {{get_setting('metro')}}
                 </li>
             </ul>
         </div>
-        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{get_setting('Адрес')}}&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{get_setting('address')}}&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 </div>
 <div class="contact_wrapper">
@@ -185,7 +185,7 @@
             <img src="{{ asset('img/main.png') }}">
         </div>
         <div class="reason_text">
-            {{ get_setting('Название стоматологии')|upper }} - {{ get_setting('Почему к нам')    }}
+            {{ get_setting('name')|upper }} - {{ get_setting('why_we')    }}
         </div>
     </div>
 </div>

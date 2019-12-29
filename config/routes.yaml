@@ -96,6 +96,13 @@ sertificate_queue:
 sertificate_delete:
     path: /adminPanel/sertificate/delete/{id}
     controller: App\Controller\Admin\SertificateController::delete
+#common_settings
+common_settings_index:
+    path: /adminPanel/settings
+    controller: App\Controller\Admin\SettingsController::index
+common_settings_update:
+    path: /adminPanel/settings/update/
+    controller: App\Controller\Admin\SettingsController::update
 #logout
 app_logout:
     path: /logout
