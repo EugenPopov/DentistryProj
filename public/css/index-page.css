@@ -50,6 +50,12 @@
     background-color: transparent !important;
 }
 
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+
 .why-best_wrapper {
     width: 95%;
     margin: auto;
@@ -341,10 +347,15 @@ a.best_item-more:hover {
 
 .reasons_img {
     width: 50%;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(to right, #76E0C1 55%, transparent 55%);
 }
 
 .reasons_img img {
-    width: 100%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .reason_text {

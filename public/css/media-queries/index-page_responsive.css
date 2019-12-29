@@ -22,6 +22,10 @@
         background-color: #76E0C1!important;
         border-color: #76E0C1;
     }
+    .carousel-item img {
+        object-fit: contain;
+        -o-object-fit: contain;
+    }
     .why-best_wrapper {
         margin: 0 0 0 auto;
         padding-top: 30px;

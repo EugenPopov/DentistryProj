@@ -22,7 +22,7 @@
                     Сучасне обладнання, дизайн, сервіс відповідає останнім вимогам стоматології, включає широкий спектр можливостей для лікаря при максимальному комфорті для пацієнта. Висококваліфіковані і досвідчені фахівці допоможуть Вам підібрати оптимальну схему лікування, врахують всі Ваші побажання, а також в наших клініках Ви можете отримати рекомендації по догляду за порожниною рота. Персонал, який пройшов спеціальне навчання, простежить за тим, що б Ви відчували себе комфортно і затишно в кімнаті очікування і кріслі лікаря-стоматолога.
                 </div>
             </div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active carousel-indicator"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1" class="carousel-indicator"></li>
@@ -368,7 +368,7 @@
             ]
         });
         $('.page_up').on('click', function () {
-            $('.page_top_wrapper')[0].scrollIntoView({block: "center", behavior: "smooth"});
+            $('.page_top_wrapper')[0].scrollIntoView({block: "start", behavior: "smooth"});
         });
         $('#main-header-toggle').on('click', function () {
             $('.mobile_nav-toogle').toggleClass('active');
