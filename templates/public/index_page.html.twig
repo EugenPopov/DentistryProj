@@ -11,33 +11,29 @@
         <img src="{{ asset('img/up.png') }}">
     </div>
     <div class="page_top_wrapper">
-        {% include './elements/header.html.twig' %}
+        {% include '/elements/header.html.twig' %}
         {% include 'elements/mobile_header.html.twig'%}
         <div class="page_top">
             <div class="page_top-text">
                 <div class="page_top-text_header">
-                    <span>СТОМАСВІТ</span>- ЦЕ ОПЕРАТИВНА І ЯКІСНА СТОМАТОЛОГІЯ
+                    <span>{{ get_setting('name')|upper }}</span> - {{ get_setting('title') }}
                 </div>
                 <div class="page_top-text_text">
-                    Сучасне обладнання, дизайн, сервіс відповідає останнім вимогам стоматології, включає широкий спектр можливостей для лікаря при максимальному комфорті для пацієнта. Висококваліфіковані і досвідчені фахівці допоможуть Вам підібрати оптимальну схему лікування, врахують всі Ваші побажання, а також в наших клініках Ви можете отримати рекомендації по догляду за порожниною рота. Персонал, який пройшов спеціальне навчання, простежить за тим, що б Ви відчували себе комфортно і затишно в кімнаті очікування і кріслі лікаря-стоматолога.
+                    {{ get_setting('description') }}
                 </div>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active carousel-indicator"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="carousel-indicator"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="carousel-indicator"></li>
+                    {% for slide in slides %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if loop.first %}active{% endif %} carousel-indicator"></li>
+                    {% endfor %}
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ asset('img/main.png') }}" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ asset('img/main.png') }}" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ asset('img/main.png') }}" alt="Third slide">
-                    </div>
+                    {% for slide in slides %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -48,78 +44,20 @@
 
         </div>
         <div class="best_slider">
+            {% for service in services %}
             <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
+                <img class="best_img" src="/uploads/{{ service.image }}" alt="Third slide">
                 <div class="best_item-title">
-                    Діагностична рентгенографія1
+                    {{ service.title }}
                 </div>
                 <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
+                    {{ service.description }}
                 </div>
-                <a class="best_item-more">
+                <a class="best_item-more" href="{{ path('service', {'slug': service.slug}) }}">
                     Дізнатися більше
                 </a>
             </div>
-            <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
-                <div class="best_item-title">
-                    Діагностична рентгенографія2
-                </div>
-                <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
-                </div>
-                <a class="best_item-more">
-                    Дізнатися більше
-                </a>
-            </div>
-            <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
-                <div class="best_item-title">
-                    Діагностична рентгенографія3
-                </div>
-                <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
-                </div>
-                <a class="best_item-more">
-                    Дізнатися більше
-                </a>
-            </div>
-            <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
-                <div class="best_item-title">
-                    Діагностична рентгенографія4
-                </div>
-                <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
-                </div>
-                <a class="best_item-more">
-                    Дізнатися більше
-                </a>
-            </div>
-            <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
-                <div class="best_item-title">
-                    Діагностична рентгенографія5
-                </div>
-                <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
-                </div>
-                <a class="best_item-more">
-                    Дізнатися більше
-                </a>
-            </div>
-            <div class="best_item">
-                <img class="best_img" src="{{ asset('img/main.png') }}" alt="Third slide">
-                <div class="best_item-title">
-                    Діагностична рентгенографія6
-                </div>
-                <div class="best_item-text">
-                    Діагностика - один з найважливіших етапів всього стоматологічного лікування, має на увазі цілий комплекс досліджень.
-                </div>
-                <a class="best_item-more">
-                    Дізнатися більше
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 <div class="doctors_wrapper">
@@ -127,60 +65,19 @@
     <div class="controls doctors_controls">
     </div>
     <div class="doctors_slider">
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
+        {% for doctor in doctors %}
+            <div class="doctor_item">
+                <a href="{{ path('doctor', {'slug': doctor.slug}) }}">
+                    <img class="doctor_img" src="/uploads/{{ doctor.image }}" alt="Third slide">
+                    <div class="doctor_item-title">
+                        {{ doctor.name }}
+                    </div>
+                    <div class="doctor_item-text">
+                        {{ doctor.speciality }}
+                    </div>
+                </a>
             </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
-            </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
-            </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
-            </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
-            </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
-        <div class="doctor_item">
-            <img class="doctor_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="doctor_item-title">
-                ШЕЛЬЦОВА Т. Ю.
-            </div>
-            <div class="doctor_item-text">
-                Доктор-стоматолог
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <div class="reviews_wrapper">
@@ -243,14 +140,14 @@
             <img src="{{ asset('img/house.png') }}">
             <ul class="address">
                <li>
-                   Київ, в.Данила Щербаківського
+                   {{get_setting('address')}}
                </li>
                 <li>
-                    м.Берестейсая
+                    {{get_setting('metro')}}
                 </li>
             </ul>
         </div>
-        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%D1%89%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%2052&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{get_setting('address')}}&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 </div>
 <div class="contact_wrapper">
@@ -288,12 +185,12 @@
             <img src="{{ asset('img/main.png') }}">
         </div>
         <div class="reason_text">
-            СТОМАСВІТ -це оперативна і якісна стоматологія. Сучасне обладнання, дизайн, сервіс відповідає останнім вимогам стоматології, включає широкий спектр можливостей для лікаря при максимальному комфорті для пацієнта.
+            {{ get_setting('name')|upper }} - {{ get_setting('why_we')    }}
         </div>
     </div>
 </div>
 <footer>
-    {% include './elements/footer.html.twig' %}
+    {% include '/elements/footer.html.twig' %}
 </footer>
 {% endblock %}
 {% block javascripts %}

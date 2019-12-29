@@ -1,7 +1,7 @@
 <nav class="main_header">
     <div class="logo">
         <img src="{{ asset('img/logo.png') }}">
-        <span>Стомасвiт</span>
+        <span>{{get_setting('name')}}</span>
     </div>
     <div class="main_menu">
         <div class="menu-item">
@@ -9,9 +9,9 @@
                 ПОСЛУГИ
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                {% for service in all_services() %}
+                    <a class="dropdown-item" href="{{ path('service', {'slug': service.slug}) }}">{{service.title}}</a>
+                {% endfor %}
             </div>
         </div>
         <div class="menu-item">
@@ -34,7 +34,7 @@
             КОНТАКТИ
         </a>
         <div class="menu-item">
-            Данила Щербаківького ,52 <br>044 227-19-20
+            {{get_setting('address')}} <br>{{get_setting('phone')}}
         </div>
         <a class="menu-item header_callback">
             ЗАПИСАТИСЯ НА ПРИЙОМ

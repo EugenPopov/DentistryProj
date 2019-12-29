@@ -1,6 +1,14 @@
+#pages
 index:
     path: /
-    controller: App\Controller\pages\MainController::index
+    controller: App\Controller\Pages\MainController::index
+service:
+    path: /service-{slug}
+    controller: App\Controller\Pages\ServiceController::index
+doctor:
+    path: /doctor-{slug}
+    controller: App\Controller\Pages\DoctorController::index
+#admin_panel
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index
@@ -38,6 +46,22 @@ service_queue:
 service_delete:
     path: /adminPanel/service/delete/{id}
     controller: App\Controller\Admin\ServiceController::delete
+#mini_service
+mini_service_index:
+    path: /adminPanel/mini_service
+    controller: App\Controller\Admin\MiniServiceController::index
+mini_service_create:
+    path: /adminPanel/mini_service/create
+    controller: App\Controller\Admin\MiniServiceController::create
+mini_service_api_create:
+    path: /adminPanel/api/mini_service/create
+    controller: App\Controller\Admin\MiniServiceController::apiCreate
+mini_service_update:
+    path: /adminPanel/mini_service/update/{id}
+    controller: App\Controller\Admin\MiniServiceController::update
+mini_service_delete:
+    path: /adminPanel/mini_service/delete/{id}
+    controller: App\Controller\Admin\MiniServiceController::delete
 #doctor
 doctor_index:
     path: /adminPanel/doctor
@@ -72,6 +96,13 @@ sertificate_queue:
 sertificate_delete:
     path: /adminPanel/sertificate/delete/{id}
     controller: App\Controller\Admin\SertificateController::delete
+#common_settings
+common_settings_index:
+    path: /adminPanel/settings
+    controller: App\Controller\Admin\SettingsController::index
+common_settings_update:
+    path: /adminPanel/settings/update/
+    controller: App\Controller\Admin\SettingsController::update
 #logout
 app_logout:
     path: /logout
