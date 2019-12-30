@@ -2,12 +2,12 @@
 index:
     path: /
     controller: App\Controller\Pages\MainController::index
-services:
+service_main:
     path: /services
-    controller: App\Controller\Pages\ServiceController::ind
-service:
-    path: /service-{slug}
     controller: App\Controller\Pages\ServiceController::index
+service_single:
+    path: /service-{slug}
+    controller: App\Controller\Pages\ServiceController::singleService
 doctor:
     path: /doctor-{slug}
     controller: App\Controller\Pages\DoctorController::index
