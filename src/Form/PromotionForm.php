@@ -4,10 +4,9 @@
 namespace App\Form;
 
 
-use App\Entity\Doctor;
-use App\Model\SertificateModel;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Model\PromotionModel;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -15,13 +14,13 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class SertificateForm extends AbstractType
+class PromotionForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $attr = [];
+        $attr_image = [];
         if($options['image']){
-            $attr = [
+            $attr_image = [
                 'class' => 'has_image',
                 'data-image' => $options['image']
             ];
@@ -29,18 +28,22 @@ class SertificateForm extends AbstractType
 
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Название (Видно только администратору)'
+                'label' => 'Название'
             ])
-            ->add('doctor', EntityType::class, [
-                'class' => Doctor::class,
-                'choice_label' => 'name',
-                'required' => false,
-                'placeholder' => 'Стомасвіт',
-                'label' => 'Владелец сертификата'
+            ->add('description', TextType::class, [
+                'label' => 'Описание'
+            ])
+            ->add('isActive', CheckboxType::class, [
+                'label' => 'Активировать',
+                'required' => false
+            ])
+            ->add('isPublic', CheckboxType::class, [
+                'label' => 'Акция для всех',
+                'required' => false
             ])
             ->add('image', FileType::class,[
                 'label' => 'Фото',
-                'attr' => $attr,
+                'attr' => $attr_image,
                 'required' => $options['is_create'] ? true : false,
                 'constraints' => $options['is_create'] ? new NotBlank() : null
             ])
@@ -52,7 +55,7 @@ class SertificateForm extends AbstractType
         $resolver->setDefaults([
             'image' => null,
             'is_create' => true,
-            'data_class' => SertificateModel::class,
+            'data_class' => PromotionModel::class,
         ]);
     }
 }

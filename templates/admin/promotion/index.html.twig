@@ -1,11 +1,16 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block title %}
-    Услуги
+    Акции
 {% endblock %}
 
 {% block name %}
-    Услуги
+    Акции
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -18,13 +23,13 @@
                 <div class="col-lg-12">
                     <div class="card" style="margin-top: 10px">
                         <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
-                            <h3 class="h4">Последовательность сертификатов</h3>
+                            <h3 class="h4">Последовательность акций</h3>
                             <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
                         </div>
                         <div class="card-body" style="display: none">
                             <ul id="sortable" class="list-group">
-                                {% for sertificate in sertificates %}
-                                    <li data-id="{{ sertificate.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ sertificate.title }}</li>
+                                {% for promotion in promotions %}
+                                    <li data-id="{{ promotion.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ promotion.title }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -39,8 +44,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="h4">Сертификаты</h3>
-                            <a style="margin-left: 20px" href="{{ path('sertificate_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить сертификат</a>
+                            <h3 class="h4">Акции</h3>
+                            <a style="margin-left: 20px" href="{{ path('promotion_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить акцию</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,23 +55,27 @@
                                         <th>#</th>
                                         <th>Название</th>
                                         <th>Фото</th>
-                                        <th>Владелец</th>
+                                        <th>Код</th>
+                                        <th>Активировать</th>
+                                        <th>Акция для всех</th>
                                         <th>Редактировать</th>
                                         <th>Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for sertificate in sertificates %}
+                                    {% for promotion in promotions %}
                                         <tr>
-                                            <th scope="row">{{ sertificate.id }}</th>
-                                            <td>{{ sertificate.title }}</td>
-                                            <td><a href="/uploads/{{ sertificate.image }}" target="_blank"><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></a></td>
-                                            <td>{{ sertificate.doctor is not empty ? sertificate.doctor.name : 'Стомасвіт' }}</td>
+                                            <th scope="row">{{ promotion.id }}</th>
+                                            <td>{{ promotion.title }}</td>
+                                            <td><a href="/uploads/{{ promotion.image }}" target="_blank"><img src="/uploads/{{ promotion.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></a></td>
+                                            <td>{{ promotion.code }}</td>
+                                            <td><input type="checkbox" class="switch-active" {% if promotion.isActive  %}checked{% endif %} data-id="{{ promotion.id }}" data-toggle="toggle"></td>
+                                            <td><input type="checkbox" class="switch-public" {% if promotion.isPublic  %}checked{% endif %} data-id="{{ promotion.id }}" data-toggle="toggle"></td>
                                             <td>
-                                                <a href="{{ path('sertificate_update', {'id': sertificate.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                                <a href="{{ path('promotion_update', {'id': promotion.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
                                             </td>
                                             <td>
-                                                <a data-id="{{ sertificate.id }}" class="btn btn-danger active remove-sertificate" role="button" aria-pressed="true">Удалить</a>
+                                                <a data-id="{{ promotion.id }}" class="btn btn-danger active remove-promotion" role="button" aria-pressed="true">Удалить</a>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -83,5 +92,6 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="/admin/js/certificate.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="/admin/js/promotion.js"></script>
 {% endblock %}

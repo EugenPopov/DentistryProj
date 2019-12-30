@@ -22,7 +22,7 @@ class Review implements EntityInterface
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -30,6 +30,11 @@ class Review implements EntityInterface
      * @ORM\Column(type="string", length=255)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
 
     public function getId(): ?int
     {
@@ -71,6 +76,18 @@ class Review implements EntityInterface
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }

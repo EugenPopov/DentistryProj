@@ -1,11 +1,11 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block title %}
-    Услуги
+    Отзывы
 {% endblock %}
 
 {% block name %}
-    Услуги
+    Отзывы
 {% endblock %}
 
 {% block body %}
@@ -18,13 +18,13 @@
                 <div class="col-lg-12">
                     <div class="card" style="margin-top: 10px">
                         <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
-                            <h3 class="h4">Последовательность сертификатов</h3>
+                            <h3 class="h4">Последовательность отзывов</h3>
                             <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
                         </div>
                         <div class="card-body" style="display: none">
                             <ul id="sortable" class="list-group">
-                                {% for sertificate in sertificates %}
-                                    <li data-id="{{ sertificate.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ sertificate.title }}</li>
+                                {% for review in reviews %}
+                                    <li data-id="{{ review.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ review.name }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -39,8 +39,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="h4">Сертификаты</h3>
-                            <a style="margin-left: 20px" href="{{ path('sertificate_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить сертификат</a>
+                            <h3 class="h4">Отзывы</h3>
+                            <a style="margin-left: 20px" href="{{ path('review_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить отзыв</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -48,25 +48,25 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Название</th>
+                                        <th>Имя Фамилия</th>
                                         <th>Фото</th>
-                                        <th>Владелец</th>
+                                        <th>Отзыв</th>
                                         <th>Редактировать</th>
                                         <th>Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for sertificate in sertificates %}
+                                    {% for review in reviews %}
                                         <tr>
-                                            <th scope="row">{{ sertificate.id }}</th>
-                                            <td>{{ sertificate.title }}</td>
-                                            <td><a href="/uploads/{{ sertificate.image }}" target="_blank"><img src="/uploads/{{ sertificate.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></a></td>
-                                            <td>{{ sertificate.doctor is not empty ? sertificate.doctor.name : 'Стомасвіт' }}</td>
+                                            <th scope="row">{{ review.id }}</th>
+                                            <td>{{ review.name }}</td>
+                                            <td><img src="/uploads/{{ review.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></td>
+                                            <td>{{ review.description|slice(0, 100) }}</td>
                                             <td>
-                                                <a href="{{ path('sertificate_update', {'id': sertificate.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                                <a href="{{ path('review_update', {'id': review.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
                                             </td>
                                             <td>
-                                                <a data-id="{{ sertificate.id }}" class="btn btn-danger active remove-sertificate" role="button" aria-pressed="true">Удалить</a>
+                                                <a data-id="{{ review.id }}" class="btn btn-danger active remove-review" role="button" aria-pressed="true">Удалить</a>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -83,5 +83,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="/admin/js/certificate.js"></script>
+    <script src="/admin/js/review.js"></script>
 {% endblock %}

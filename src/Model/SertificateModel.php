@@ -66,8 +66,4 @@ class SertificateModel implements ModelInterface
     {
         $this->image = $image;
     }
-
-
-
-
 }

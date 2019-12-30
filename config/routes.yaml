@@ -1,6 +1,14 @@
+#pages
 index:
     path: /
-    controller: App\Controller\pages\MainController::index
+    controller: App\Controller\Pages\MainController::index
+service:
+    path: /service-{slug}
+    controller: App\Controller\Pages\ServiceController::index
+doctor:
+    path: /doctor-{slug}
+    controller: App\Controller\Pages\DoctorController::index
+#admin_panel
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index
@@ -88,6 +96,55 @@ sertificate_queue:
 sertificate_delete:
     path: /adminPanel/sertificate/delete/{id}
     controller: App\Controller\Admin\SertificateController::delete
+#review
+review_index:
+    path: /adminPanel/review
+    controller: App\Controller\Admin\ReviewController::index
+review_create:
+    path: /adminPanel/review/create
+    controller: App\Controller\Admin\ReviewController::create
+review_update:
+    path: /adminPanel/review/update/{id}
+    controller: App\Controller\Admin\ReviewController::update
+review_queue:
+    path: /adminPanel/review/update_queue/
+    controller: App\Controller\Admin\ReviewController::updateQueue
+    methods: POST
+review_delete:
+    path: /adminPanel/review/delete/{id}
+    controller: App\Controller\Admin\ReviewController::delete
+#promotion
+promotion_index:
+    path: /adminPanel/promotion
+    controller: App\Controller\Admin\PromotionController::index
+promotion_create:
+    path: /adminPanel/promotion/create
+    controller: App\Controller\Admin\PromotionController::create
+promotion_update:
+    path: /adminPanel/promotion/update/{id}
+    controller: App\Controller\Admin\PromotionController::update
+promotion_update_active:
+    path: /adminPanel/promotion/update_active/
+    controller: App\Controller\Admin\PromotionController::updateActive
+    methods: POST
+promotion_update_public:
+    path: /adminPanel/promotion/update_public/
+    controller: App\Controller\Admin\PromotionController::updatePublic
+    methods: POST
+promotion_queue:
+    path: /adminPanel/promotion/update_queue/
+    controller: App\Controller\Admin\PromotionController::updateQueue
+    methods: POST
+promotion_delete:
+    path: /adminPanel/promotion/delete/{id}
+    controller: App\Controller\Admin\PromotionController::delete
+#common_settings
+common_settings_index:
+    path: /adminPanel/settings
+    controller: App\Controller\Admin\SettingsController::index
+common_settings_update:
+    path: /adminPanel/settings/update/
+    controller: App\Controller\Admin\SettingsController::update
 #logout
 app_logout:
     path: /logout
