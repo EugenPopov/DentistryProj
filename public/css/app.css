@@ -128,8 +128,8 @@ a.menu-item:hover {
 }
 
 .dropdown-menu {
-    box-shadow: unset!important;
-    background: unset!important;
+    box-shadow: 2px 2px 3px 2px lightgrey!important;
+    background: #fafafa!important;
 }
 
 .dropdown-item {

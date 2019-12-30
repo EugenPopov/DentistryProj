@@ -1,0 +1,64 @@
+.breadcrumb {
+    background: unset;
+}
+.page_top-content {
+    width: 95%;
+    margin: auto;
+}
+.service_wrapper {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+.left_part {
+    width: 50%;
+}
+.service {
+    display: flex;
+}
+.service img {
+    border-bottom-right-radius: 75%;
+    width: 100%;
+    object-fit: contain;
+}
+.service_title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.service_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: lowercase;
+}
+.service_extra {
+    width: 30%;
+    padding: 20px;
+}
+.right_part {
+    width: 50%;
+}
+.right_part thead {
+    background: #25305e;
+}
+.right_part thead th {
+    color: white;
+    text-transform: uppercase;
+}
+.right_part thead th:first-child {
+    border-right: 2px white solid;
+}
+.right_part tbody tr {
+    text-align: center;
+}
+.right_part tbody tr td {
+    border: unset;
+}

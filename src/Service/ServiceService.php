@@ -136,6 +136,11 @@ class ServiceService extends CrudManager
         return $this->jsonEncoder->serialize($this->all(), 'json');
     }
 
+    public function getServiceWithSubServices(Service $service)
+    {
+        return $this->repository->getSubServicesByService($service->getId());
+    }
+
     private function getLastQueue(): int
     {
         $queue = $this->repository->getLastQueue();

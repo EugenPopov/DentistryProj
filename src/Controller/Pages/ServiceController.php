@@ -33,6 +33,8 @@ class ServiceController extends AbstractController
 
     public function singleService(Service $service)
     {
-        dd($service);
+        return $this->render('public/services/single.html.twig', [
+            'service' => $this->service->getServiceWithSubServices($service)
+        ]);
     }
 }
