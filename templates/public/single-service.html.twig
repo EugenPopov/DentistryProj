@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/single-service.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/single-service_responsive.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                        <li class="breadcrumb-item"><a href="#">Послуги</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">профілактика, анестезія</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+        <div class="service_wrapper">
+            <div class="left_part">
+                <div class="service">
+                    <img src="{{ asset('img/doctor.png') }}">
+                    <div class="service_info">
+                        <div class="service_title">профілактика, анестезія</div>
+                        <div class="service_text">
+                            Завдання сучасної стоматології - викорінити стереотипи минулих років і стимулювати дітей та дорослих відвідувати стоматолога вчасно без страху і болю.
+                        </div>
+                    </div>
+                </div>
+                <div class="service_extra">
+                    Протипоказання:
+                    гострі захворювання печінки,
+                    гострі інфекційні ураження,
+                    вагітність.
+                </div>
+            </div>
+            <div class="right_part">
+                <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <th scope="col">Назва послуги</th>
+                        <th scope="col">вартість</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Осмотр, консультация развернутая</td>
+                        <td>270</td>
+                    </tr>
+                    <tr>
+                        <td>Осмотр, консультация развернутая</td>
+                        <td>270</td>
+                    </tr>
+                    <tr>
+                        <td>Осмотр, консультация развернутая</td>
+                        <td>270</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

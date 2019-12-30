@@ -11,7 +11,7 @@ class ServiceController extends AbstractController
 {
     public function index(Service $service)
     {
-        dd($service->getSlug());
+        return $this->render('public/single-service.html.twig');
     }
 
     public function ind()
