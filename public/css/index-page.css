@@ -1,5 +1,5 @@
 .page_top_wrapper {
-    background: linear-gradient(to bottom, transparent 90%, #fafafa 90%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
 }
 
 .page_top {
@@ -52,8 +52,8 @@
 
 .carousel-item img {
     height: 400px;
-    object-fit: cover;
-    -o-object-fit: cover;
+    object-fit: contain;
+    -o-object-fit: contain;
 }
 
 .why-best_wrapper {
@@ -102,6 +102,8 @@
 .best_img {
     width: 100%;
     border-bottom-right-radius: 75%;
+    height: 400px;
+    object-fit: contain;
 }
 
 .best_item-title {
@@ -186,6 +188,8 @@ a.best_item-more:hover {
 
 .review_img{
     max-width: 50%;
+    height: 400px;
+    object-fit: contain;
 }
 
 .review {

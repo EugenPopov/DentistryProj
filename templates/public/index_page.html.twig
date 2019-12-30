@@ -5,11 +5,9 @@
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 {% endblock %}
 {% block body %}
-    <div class="page_up">
-        <img src="{{ asset('img/up.png') }}">
-    </div>
     <div class="page_top_wrapper">
         {% include '/elements/header.html.twig' %}
         {% include 'elements/mobile_header.html.twig'%}
@@ -22,7 +20,7 @@
                     {{ get_setting('description') }}
                 </div>
             </div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <ol class="carousel-indicators">
                     {% for slide in slides %}
                         <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if loop.first %}active{% endif %} carousel-indicator"></li>

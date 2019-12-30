@@ -2,6 +2,9 @@
 index:
     path: /
     controller: App\Controller\Pages\MainController::index
+services:
+    path: /services
+    controller: App\Controller\Pages\ServiceController::ind
 service:
     path: /service-{slug}
     controller: App\Controller\Pages\ServiceController::index

@@ -1,0 +1,11 @@
+@media (max-width: 480px) {
+    .service {
+        padding: 0;
+    }
+    .service_title {
+        font-size: 20px;
+    }
+    footer {
+        padding-top: 40px;
+    }
+}
