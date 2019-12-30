@@ -85,50 +85,19 @@
     <div class="controls reviews_controls">
     </div>
     <div class="reviews_slider">
-        <div class="review_item">
-            <img class="review_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="review">
-                <div class="review_item-title">
-                    Тимур Муцураев
-                </div>
-                <div class="review_item-text">
-                    З дитинства мене супроводжує карієс. тому на жаль, тут я постійний клієнт. зате роблять швидко, акуратно і без наслідків. спасибі клініці за хороших лікарів!
-                </div>
-            </div>
-        </div>
-        <div class="review_item">
-            <img class="review_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="review">
-                <div class="review_item-title">
-                    Тимур Муцураев
-                </div>
-                <div class="review_item-text">
-                    З дитинства мене супроводжує карієс. тому на жаль, тут я постійний клієнт. зате роблять швидко, акуратно і без наслідків. спасибі клініці за хороших лікарів!
+        {% for review in reviews %}
+            <div class="review_item">
+                <img class="review_img" src="/uploads/{{ review.image }}" alt="Third slide">
+                <div class="review">
+                    <div class="review_item-title">
+                        {{ review.name }}
+                    </div>
+                    <div class="review_item-text">
+                        {{ review.description }}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="review_item">
-            <img class="review_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="review">
-                <div class="review_item-title">
-                    Тимур Муцураев
-                </div>
-                <div class="review_item-text">
-                    З дитинства мене супроводжує карієс. тому на жаль, тут я постійний клієнт. зате роблять швидко, акуратно і без наслідків. спасибі клініці за хороших лікарів!
-                </div>
-            </div>
-        </div>
-        <div class="review_item">
-            <img class="review_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
-            <div class="review">
-                <div class="review_item-title">
-                    Тимур Муцураев
-                </div>
-                <div class="review_item-text">
-                    З дитинства мене супроводжує карієс. тому на жаль, тут я постійний клієнт. зате роблять швидко, акуратно і без наслідків. спасибі клініці за хороших лікарів!
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <div class="map_wrapper">
