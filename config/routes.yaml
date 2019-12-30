@@ -96,6 +96,23 @@ sertificate_queue:
 sertificate_delete:
     path: /adminPanel/sertificate/delete/{id}
     controller: App\Controller\Admin\SertificateController::delete
+#review
+review_index:
+    path: /adminPanel/review
+    controller: App\Controller\Admin\ReviewController::index
+review_create:
+    path: /adminPanel/review/create
+    controller: App\Controller\Admin\ReviewController::create
+review_update:
+    path: /adminPanel/review/update/{id}
+    controller: App\Controller\Admin\ReviewController::update
+review_queue:
+    path: /adminPanel/review/update_queue/
+    controller: App\Controller\Admin\ReviewController::updateQueue
+    methods: POST
+review_delete:
+    path: /adminPanel/review/delete/{id}
+    controller: App\Controller\Admin\ReviewController::delete
 #common_settings
 common_settings_index:
     path: /adminPanel/settings
