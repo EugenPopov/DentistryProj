@@ -1,0 +1,97 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Акции
+{% endblock %}
+
+{% block name %}
+    Акции
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div id="finished" class="alert alert-primary" role="alert" style="display: none; position: absolute; z-index: 10000000000;">
+        Сохранено
+    </div>
+    <section id="sort" style=" padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card" style="margin-top: 10px">
+                        <div class="card-header d-flex align-items-center" style="display: flex; justify-content: space-between">
+                            <h3 class="h4">Последовательность акций</h3>
+                            <button id="close-sortable" type="button" class="btn btn-secondary opened">Скрыть / Открыть</button>
+                        </div>
+                        <div class="card-body" style="display: none">
+                            <ul id="sortable" class="list-group">
+                                {% for promotion in promotions %}
+                                    <li data-id="{{ promotion.id }}" class="ui-state-default list-group-item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{ promotion.title }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="table" style="padding: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Акции</h3>
+                            <a style="margin-left: 20px" href="{{ path('promotion_create') }}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить акцию</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Название</th>
+                                        <th>Фото</th>
+                                        <th>Код</th>
+                                        <th>Активировать</th>
+                                        <th>Акция для всех</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for promotion in promotions %}
+                                        <tr>
+                                            <th scope="row">{{ promotion.id }}</th>
+                                            <td>{{ promotion.title }}</td>
+                                            <td><a href="/uploads/{{ promotion.image }}" target="_blank"><img src="/uploads/{{ promotion.image }}" style="width: 150px; height: 150px; object-fit: contain" alt></a></td>
+                                            <td>{{ promotion.code }}</td>
+                                            <td><input type="checkbox" class="switch-active" {% if promotion.isActive  %}checked{% endif %} data-id="{{ promotion.id }}" data-toggle="toggle"></td>
+                                            <td><input type="checkbox" class="switch-public" {% if promotion.isPublic  %}checked{% endif %} data-id="{{ promotion.id }}" data-toggle="toggle"></td>
+                                            <td>
+                                                <a href="{{ path('promotion_update', {'id': promotion.id}) }}" class="btn btn-warning active" role="button" aria-pressed="true">Редактировать</a>
+                                            </td>
+                                            <td>
+                                                <a data-id="{{ promotion.id }}" class="btn btn-danger active remove-promotion" role="button" aria-pressed="true">Удалить</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="/admin/js/promotion.js"></script>
+{% endblock %}

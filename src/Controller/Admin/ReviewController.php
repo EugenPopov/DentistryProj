@@ -1,11 +1,8 @@
 <?php
 
-
 namespace App\Controller\Admin;
 
-
 use App\DataMapper\ReviewMapper;
-use App\Entity\Doctor;
 use App\Entity\Review;
 use App\Form\ReviewForm;
 use App\Model\ReviewModel;
