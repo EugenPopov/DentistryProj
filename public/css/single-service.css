@@ -62,10 +62,23 @@
 .right_part tbody tr td:first-child {
     text-align: center;
 }
+.sign_up_wrapper {
+    width: fit-content;
+    margin: auto;
+}
+.sign_up {
+    padding: 10px 60px;
+    background: #76E0C1;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+.sign_up:hover {
+    background: transparent;
+}
 .extra_services_wrapper {
     width: 95%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 25px;
 }
 
 .extra_services_title {
