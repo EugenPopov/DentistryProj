@@ -1,0 +1,33 @@
+@media (max-width: 1050px) {
+    .service_wrapper {
+        flex-direction: column;
+    }
+    .left_part {
+        width: 100%;
+    }
+    .right_part {
+        width: 100%;
+    }
+}
+@media (max-width: 769px) {
+    .controls {
+        padding: 30px 0;
+    }
+    .extra_services_wrapper {
+        width: 100%;
+    }
+    .extra_services_slider {
+        width: 100%;
+    }
+    footer {
+        padding-top: 50px;
+    }
+}
+@media (max-width: 480px) {
+    .service {
+        flex-direction: column;
+    }
+    .service_extra {
+        width: 100%;
+    }
+}
