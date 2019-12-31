@@ -119,4 +119,10 @@
         padding: 20px 0 0;
         text-align: justify;
     }
+    .best_item {
+        padding: 10px;
+    }
+    .doctor_item {
+        padding: 10px;
+    }
 }

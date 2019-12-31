@@ -56,9 +56,97 @@
 .right_part thead th:first-child {
     border-right: 2px white solid;
 }
-.right_part tbody tr {
-    text-align: center;
-}
 .right_part tbody tr td {
     border: unset;
+}
+.right_part tbody tr td:first-child {
+    text-align: center;
+}
+.sign_up_wrapper {
+    width: fit-content;
+    margin: auto;
+}
+.sign_up {
+    padding: 10px 60px;
+    background: #76E0C1;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+.sign_up:hover {
+    background: transparent;
+}
+.extra_services_wrapper {
+    width: 95%;
+    margin: auto;
+    padding-top: 25px;
+}
+
+.extra_services_title {
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.controls button {
+    width: 58px;
+    height: 12px;
+    border: unset;
+    padding: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.prev {
+    background: url(/img/prev.png);
+
+}
+.next {
+    background: url(/img/next.png);
+}
+
+.extra_services_slider {
+    width: 90%;
+    margin: auto;
+}
+.extra_services_item {
+    padding: 10px 30px;
+}
+.extra_services_img {
+    width: 100%;
+    border-bottom-right-radius: 75%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.extra_services_item-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: end;
+    width: 80%;
+    margin-left: auto;
+    padding: 10px 0;
+}
+
+a.extra_services_item-more {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    cursor: pointer;
+    color: black;
+    transition: all .3s ease-in;
+}
+
+a.extra_services_item-more:hover {
+    background: #25305E;
+    color: white;
+    text-decoration: unset;
 }

@@ -3,6 +3,8 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/single-service.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/single-service_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
@@ -54,19 +56,40 @@
                 </table>
             </div>
         </div>
+            <div class="sign_up_wrapper">
+                <a class="sign_up">Записаться</a>
+            </div>
     </div>
+
+    <div class="extra_services_wrapper">
+                <div class="extra_services_title">Iншi послуги</div>
+                <div class="controls extra_services_controls">
+
+                </div>
+                <div class="extra_services_slider">
+                    {% for add_service in additional_services %}
+                        <div class="extra_services_item">
+                            <img class="extra_services_img" src="/uploads/{{ add_service.image }}" alt="Third slide">
+                            <div class="extra_services_item-title">
+                                {{ add_service.title }}
+                            </div>
+                            <div class="extra_services_item-text">
+                                {{ add_service.description }}
+                            </div>
+                            <a class="extra_services_item-more" href="{{ path('service_single', {'slug': add_service.slug}) }}">
+                                Дізнатися більше
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
     <footer>
         {% include '/elements/footer.html.twig' %}
     </footer>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script>
-        $('#main-header-toggle').on('click', function () {
-            $('.mobile_nav-toogle').toggleClass('active');
-            $('#mobile_nav').slideToggle(500);
-            $('.main_header').toggleClass('active');
-
-        });
-    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/single_service.js') }}"></script>
 {% endblock %}

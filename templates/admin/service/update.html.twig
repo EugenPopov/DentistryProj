@@ -51,7 +51,6 @@
         $('#edit_services').appendTo('#service_editor').after($('#new_service'));
         let already_set = JSON.parse('{{ form.vars.value.miniServices|raw }}');
         let all_services = JSON.parse('{{ services|raw }}');
-        console.log(already_set, all_services);
         $('#service_form_miniServices').val('');
         let recommend = $('#edit_services').magicSuggest({
             allowFreeEntries: false,
@@ -62,6 +61,7 @@
             placeholder: 'Начните вводить текст'
         });
         recommend.addToSelection(already_set);
+        $('#service_form_miniServices').val(JSON.stringify(recommend.getValue()));
         $(recommend).on('blur', function () {
             $('#service_form_miniServices').val(JSON.stringify(this.getValue()));
         });

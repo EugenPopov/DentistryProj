@@ -46,4 +46,13 @@ class ServiceRepository extends ServiceEntityRepository
             ->setParameter('id', $id)
             ->getQuery()->getOneOrNullResult();
     }
+
+    public function getAnyButNotThis(int $id, int $limit = 3)
+    {
+        return $this->createQueryBuilder('service')
+            ->where('service.id !=:id')
+            ->setParameter('id', $id)
+            ->setMaxResults($limit)
+            ->getQuery()->getResult();
+    }
 }

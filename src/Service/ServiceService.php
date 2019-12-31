@@ -141,6 +141,11 @@ class ServiceService extends CrudManager
         return $this->repository->getSubServicesByService($service->getId());
     }
 
+    public function getAnyButNotThis(Service $service, int $limit = 3)
+    {
+        return $this->repository->getAnyButNotThis($service->getId(), $limit);
+    }
+
     private function getLastQueue(): int
     {
         $queue = $this->repository->getLastQueue();

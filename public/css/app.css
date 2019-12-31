@@ -140,6 +140,10 @@ a.menu-item:hover {
     color: #CA9385!important;
 }
 
+.breadcrumb-item {
+    text-transform: capitalize;
+}
+
 .page_up {
     position: fixed;
     bottom: 0;
