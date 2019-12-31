@@ -3,6 +3,8 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/single-service.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/single-service_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
@@ -64,10 +66,58 @@
             </div>
         </div>
     </div>
+
+    <div class="extra_services_wrapper">
+                <div class="extra_services_title">Iншi послуги</div>
+                <div class="controls extra_services_controls">
+
+                </div>
+                <div class="extra_services_slider">
+                    <div class="extra_services_item">
+                        <img class="extra_services_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
+                        <div class="extra_services_item-title">
+                            qqqqqqqqqqqq
+                        </div>
+                        <div class="extra_services_item-text">
+                            qqqqqqqqqqqqqqqqqqqq
+                        </div>
+                        <a class="extra_services_item-more" href="#">
+                            Дізнатися більше
+                        </a>
+                    </div>
+                    <div class="extra_services_item">
+                        <img class="extra_services_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
+                        <div class="extra_services_item-title">
+                            qqqqqqqqqqqq
+                        </div>
+                        <div class="extra_services_item-text">
+                            qqqqqqqqqqqqqqqqqqqq
+                        </div>
+                        <a class="extra_services_item-more" href="#">
+                            Дізнатися більше
+                        </a>
+                    </div>
+                    <div class="extra_services_item">
+                        <img class="extra_services_img" src="{{ asset('img/doctor.png') }}" alt="Third slide">
+                        <div class="extra_services_item-title">
+                            qqqqqqqqqqqq
+                        </div>
+                        <div class="extra_services_item-text">
+                            qqqqqqqqqqqqqqqqqqqq
+                        </div>
+                        <a class="extra_services_item-more" href="#">
+                            Дізнатися більше
+                        </a>
+                    </div>
+                </div>
+            </div>
+
     <footer>
         {% include '/elements/footer.html.twig' %}
     </footer>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/single_service.js') }}"></script>
 {% endblock %}
