@@ -8,9 +8,12 @@ service_main:
 service_single:
     path: /service-{slug}
     controller: App\Controller\Pages\ServiceController::singleService
-doctor:
-    path: /doctor-{slug}
+doctor_main:
+    path: /doctors
     controller: App\Controller\Pages\DoctorController::index
+doctor_single:
+    path: /doctor-{slug}
+    controller: App\Controller\Pages\DoctorController::singleDoctor
 #admin_panel
 admin_index:
     path: /adminPanel

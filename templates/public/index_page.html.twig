@@ -65,7 +65,7 @@
     <div class="doctors_slider">
         {% for doctor in doctors %}
             <div class="doctor_item">
-                <a href="{{ path('doctor', {'slug': doctor.slug}) }}">
+                <a href="{{ path('doctor_single', {'slug': doctor.slug}) }}">
                     <img class="doctor_img" src="/uploads/{{ doctor.image }}" alt="Third slide">
                     <div class="doctor_item-title">
                         {{ doctor.name }}
