@@ -14,6 +14,7 @@ use App\Repository\ServiceRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Comment\Doc;
 
 class DoctorService extends CrudManager
 {
@@ -119,9 +120,13 @@ class DoctorService extends CrudManager
 
     private function getLastQueue(): int
     {
-
         $queue = $this->repository->getLastQueue();
 
         return $queue ? $queue->getQueue()+1:0;
+    }
+
+    public function getAllRelatedTables(Doctor $doctor): ?Doctor
+    {
+        return $this->repository->getAllRelatedTables($doctor->getId());
     }
 }

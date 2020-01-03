@@ -56,7 +56,7 @@ class Doctor implements EntityInterface
     private $services;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Sertificate", mappedBy="doctor")
+     * @ORM\OneToMany(targetEntity="App\Entity\Sertificate", mappedBy="doctor", cascade={"remove"})
      */
     private $sertificates;
 

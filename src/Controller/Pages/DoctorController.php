@@ -9,6 +9,7 @@ use App\Service\CommonSettings\CommonSettingsInterface;
 use App\Service\DoctorService;
 use App\Service\MainPageSliderService;
 use App\Service\ReviewService;
+use App\Service\SertificateService;
 use App\Service\ServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -18,25 +19,35 @@ class DoctorController extends AbstractController
      * @var DoctorService
      */
     private $doctorService;
+    /**
+     * @var SertificateService
+     */
+    private $sertificateService;
 
     /**
      * MainController constructor.
      * @param DoctorService $doctorService
+     * @param SertificateService $sertificateService
      */
     public function __construct(
-        DoctorService $doctorService
+        DoctorService $doctorService,
+        SertificateService $sertificateService
     )
     {
         $this->doctorService = $doctorService;
+        $this->sertificateService = $sertificateService;
     }
 
     public function index()
     {
         return $this->render('public/doctors/index.html.twig',[
-            'doctors' => $this->doctorService->findBy([], ['queue' => 'ASC'])]);
+            'doctors' => $this->doctorService->findBy([], ['queue' => 'ASC']),
+            'sertificates' => $this->sertificateService->findBy([], ['doctor' => 'ASC', 'queue' => 'ASC'])
+        ]);
     }
 
-    public function singleDoctor($slug)
+    public function singleDoctor(Doctor $doctor)
     {
+        return $this->render('public/doctors/single.html.twig');
     }
 }
