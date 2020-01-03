@@ -5,17 +5,37 @@ namespace App\Controller\Pages;
 
 
 use App\Entity\Service;
+use App\Service\ServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ServiceController extends AbstractController
 {
-    public function index(Service $service)
+    /**
+     * @var ServiceService
+     */
+    private $service;
+
+    /**
+     * ServiceController constructor.
+     * @param ServiceService $service
+     */
+    public function __construct(ServiceService $service)
     {
-        dd($service->getSlug());
+        $this->service = $service;
     }
 
-    public function ind()
+    public function index()
     {
-        return $this->render('public/services.html.twig');
+        return $this->render('public/services/index.html.twig', [
+            'services' => $this->service->all()
+        ]);
+    }
+
+    public function singleService(Service $service)
+    {
+        return $this->render('public/services/single.html.twig', [
+            'service' => $this->service->getServiceWithSubServices($service),
+            'additional_services' => $this->service->getAnyButNotThis($service)
+        ]);
     }
 }

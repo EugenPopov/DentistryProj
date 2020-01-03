@@ -1,0 +1,151 @@
+.breadcrumb {
+    background: unset;
+}
+.page_top-content {
+    width: 95%;
+    margin: auto;
+}
+.service_wrapper {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+.left_part {
+    width: 50%;
+}
+.service {
+    display: flex;
+}
+.service img {
+    border-bottom-right-radius: 75%;
+    width: 100%;
+    object-fit: contain;
+}
+.service_title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.service_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: lowercase;
+}
+.service_extra {
+    width: 30%;
+    padding: 20px;
+}
+.right_part {
+    width: 50%;
+}
+.right_part thead {
+    background: #25305e;
+}
+.right_part thead th {
+    color: white;
+    text-transform: uppercase;
+}
+.right_part thead th:first-child {
+    border-right: 2px white solid;
+}
+.right_part tbody tr td {
+    border: unset;
+}
+.right_part tbody tr td:first-child {
+    text-align: center;
+}
+.sign_up_wrapper {
+    width: fit-content;
+    margin: auto;
+}
+.sign_up {
+    padding: 10px 60px;
+    background: #76E0C1;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+.sign_up:hover {
+    background: transparent;
+}
+.extra_services_wrapper {
+    width: 95%;
+    margin: auto;
+    padding-top: 25px;
+}
+
+.extra_services_title {
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.controls button {
+    width: 58px;
+    height: 12px;
+    border: unset;
+    padding: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.prev {
+    background: url(/img/prev.png);
+
+}
+.next {
+    background: url(/img/next.png);
+}
+
+.extra_services_slider {
+    width: 90%;
+    margin: auto;
+}
+.extra_services_item {
+    padding: 10px 30px;
+}
+.extra_services_img {
+    width: 100%;
+    border-bottom-right-radius: 75%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.extra_services_item-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: end;
+    width: 80%;
+    margin-left: auto;
+    padding: 10px 0;
+}
+
+a.extra_services_item-more {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    cursor: pointer;
+    color: black;
+    transition: all .3s ease-in;
+}
+
+a.extra_services_item-more:hover {
+    background: #25305E;
+    color: white;
+    text-decoration: unset;
+}

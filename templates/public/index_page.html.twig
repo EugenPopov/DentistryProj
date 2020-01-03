@@ -51,7 +51,7 @@
                 <div class="best_item-text">
                     {{ service.description }}
                 </div>
-                <a class="best_item-more" href="{{ path('service', {'slug': service.slug}) }}">
+                <a class="best_item-more" href="{{ path('service_single', {'slug': service.slug}) }}">
                     Дізнатися більше
                 </a>
             </div>
@@ -164,81 +164,5 @@
     {{ parent() }}
 {#    {{ encore_entry_script_tags('index_page') }}#}
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-        $('.best_slider').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            prevArrow: "<button class='prev'></button>",
-            nextArrow: "<button class='next'></button>",
-            appendArrows: $('.best_controls'),
-            // autoplay: true,
-            autoplaySpeed: 5000,
-            responsive: [
-                {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 1.8,
-                        infinite: false,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1.5,
-                        infinite: false,
-                    }
-                }
-            ]
-        });
-        $('.doctors_slider').slick({
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            prevArrow: "<button class='prev'></button>",
-            nextArrow: "<button class='next'></button>",
-            appendArrows: $('.doctors_controls'),
-            responsive: [
-                {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 2.4,
-                        infinite: false,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1.5,
-                        infinite: false,
-                    }
-                }
-            ]
-        });
-        $('.reviews_slider').slick({
-            infinite: false,
-            slidesToShow: 1.5,
-            slidesToScroll: 1,
-            prevArrow: "<button class='prev'></button>",
-            nextArrow: "<button class='next'></button>",
-            appendArrows: $('.reviews_controls'),
-            responsive: [
-                {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                },
-            ]
-        });
-        $('.page_up').on('click', function () {
-            $('.page_top_wrapper')[0].scrollIntoView({block: "start", behavior: "smooth"});
-        });
-        $('#main-header-toggle').on('click', function () {
-            $('.mobile_nav-toogle').toggleClass('active');
-            $('#mobile_nav').slideToggle(500);
-            $('.main_header').toggleClass('active');
-
-        });
-    </script>
+    <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
 {% endblock %}

@@ -360,6 +360,7 @@ a.best_item-more:hover {
     width: 90%;
     height: 90%;
     object-fit: contain;
+    margin: auto;
 }
 
 .reason_text {
