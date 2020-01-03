@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/doctors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/doctors_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">qq</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="doctors_wrapper">
+                <div class="doctors_title">Наші лікарі</div>
+                <div class="controls doctors_controls">
+                </div>
+                <div class="doctors_slider">
+                    {% for doctor in doctors %}
+                        <div class="doctor_item">
+                            <a href="{{ path('doctor_single', {'slug': doctor.slug}) }}">
+                                <img class="doctor_img" src="/uploads/{{ doctor.image }}" alt="Third slide">
+                                <div class="doctor_item-title">
+                                    {{ doctor.name }}
+                                </div>
+                                <div class="doctor_item-text">
+                                    {{ doctor.speciality }}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="certificates_wrapper">
+            <div class="controls certificates_controls">
+            </div>
+            <div class="certificates_slider">
+                <img src="{{ asset('img/doctor.png') }}">
+                <img src="{{ asset('img/doctor.png') }}">
+                <img src="{{ asset('img/doctor.png') }}">
+                <img src="{{ asset('img/doctor.png') }}">
+                <img src="{{ asset('img/doctor.png') }}">
+            </div>
+        </div>
+        <div class="contact_wrapper">
+            <div class="contact_img">
+                <img src="{{ asset('img/main.png') }}">
+            </div>
+            <div class="contact_form">
+                <div class="contact_form-title">
+                    ЗАПИСАТИСЯ НА ПРИЙОМ
+                </div>
+                <form>
+                    <div class="form">
+                        <div class="top_form">
+                            <input type="text" id="name" placeholder="Ваше имя">
+                            <input type="tel" id="tel" placeholder="Ваш номер телефону">
+                        </div>
+                        <div class="middle_form">
+                            <input type="date" id="date" placeholder="Виберіть бажаему дату">
+                            <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                        </div>
+                        <div class="bottom_form">
+                            <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-contact_form">Записатися</button>
+                </form>
+            </div>
+        </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/doctors.js') }}"></script>
+{% endblock %}

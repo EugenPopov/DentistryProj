@@ -18,7 +18,7 @@
 }
 .service img {
     border-bottom-right-radius: 75%;
-    width: 100%;
+    width: 50%;
     object-fit: contain;
 }
 .service_title {
@@ -27,17 +27,23 @@
     line-height: 31px;
     text-transform: uppercase;
     margin-bottom: 15px;
+    word-break: break-word;
+    width: 100%;
 }
 .service_info {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     padding: 20px;
     font-size: 18px;
     line-height: 23px;
     text-transform: lowercase;
+}
+.service_text {
+    word-break: break-word;
+    width: 100%;
 }
 .service_extra {
     width: 30%;

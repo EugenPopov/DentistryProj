@@ -143,6 +143,9 @@ a.menu-item:hover {
 .breadcrumb-item {
     text-transform: capitalize;
 }
+.breadcrumb {
+    background-color: transparent;
+}
 
 .page_up {
     position: fixed;
