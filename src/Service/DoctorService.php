@@ -14,7 +14,6 @@ use App\Repository\ServiceRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
-use PhpParser\Comment\Doc;
 
 class DoctorService extends CrudManager
 {

@@ -5,12 +5,8 @@ namespace App\Controller\Pages;
 
 
 use App\Entity\Doctor;
-use App\Service\CommonSettings\CommonSettingsInterface;
 use App\Service\DoctorService;
-use App\Service\MainPageSliderService;
-use App\Service\ReviewService;
 use App\Service\SertificateService;
-use App\Service\ServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DoctorController extends AbstractController
@@ -48,6 +44,6 @@ class DoctorController extends AbstractController
 
     public function singleDoctor(Doctor $doctor)
     {
-        return $this->render('public/doctors/single.html.twig');
+        return $this->render('public/doctors/single.html.twig', ['doctor' => $doctor]);
     }
 }
