@@ -38,5 +38,6 @@ class DoctorController extends AbstractController
 
     public function singleDoctor($slug)
     {
+        return $this->render('public/doctors/single.html.twig');
     }
 }

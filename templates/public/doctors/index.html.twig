@@ -40,43 +40,47 @@
                 </div>
             </div>
         </div>
-        <div class="certificates_wrapper">
-            <div class="controls certificates_controls">
-            </div>
-            <div class="certificates_slider">
-                <img src="{{ asset('img/doctor.png') }}">
-                <img src="{{ asset('img/doctor.png') }}">
-                <img src="{{ asset('img/doctor.png') }}">
-                <img src="{{ asset('img/doctor.png') }}">
-                <img src="{{ asset('img/doctor.png') }}">
-            </div>
+    </div>
+    <div class="certificates_wrapper">
+        <div class="controls certificates_controls">
         </div>
-        <div class="contact_wrapper">
-            <div class="contact_img">
-                <img src="{{ asset('img/main.png') }}">
+        <div class="certificates_slider">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+        </div>
+    </div>
+    <div class="contact_wrapper">
+        <div class="contact_img">
+            <div class="contact_form-title mobile">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
             </div>
-            <div class="contact_form">
-                <div class="contact_form-title">
-                    ЗАПИСАТИСЯ НА ПРИЙОМ
-                </div>
-                <form>
-                    <div class="form">
-                        <div class="top_form">
-                            <input type="text" id="name" placeholder="Ваше имя">
-                            <input type="tel" id="tel" placeholder="Ваш номер телефону">
-                        </div>
-                        <div class="middle_form">
-                            <input type="date" id="date" placeholder="Виберіть бажаему дату">
-                            <input type="time" id="time" placeholder="Виберіть бажаемий час">
-                        </div>
-                        <div class="bottom_form">
-                            <input type="text" id="comment" placeholder="Залешить ваш коментар">
-                        </div>
+            <img src="{{ asset('img/main.png') }}">
+        </div>
+        <div class="contact_form">
+            <div class="contact_form-title desktop">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
+            </div>
+            <form>
+                <div class="form">
+                    <div class="top_form">
+                        <input type="text" id="name" placeholder="Ваше имя">
+                        <input type="tel" id="tel" placeholder="Ваш номер телефону">
                     </div>
-                    <button type="submit" class="btn btn-contact_form">Записатися</button>
-                </form>
-            </div>
+                    <div class="middle_form">
+                        <input type="date" id="date" placeholder="Виберіть бажаему дату">
+                        <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                    </div>
+                    <div class="bottom_form">
+                        <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-contact_form">Записатися</button>
+            </form>
         </div>
+    </div>
     <footer>
         {% include '/elements/footer.html.twig' %}
     </footer>

@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+    .contact_wrapper {
+        flex-direction: column;
+    }
+    .contact_wrapper div {
+        width: 100%;
+    }
+    .contact_img {
+        align-items: center;
+        background: linear-gradient(to left, #76E0C1 55%, transparent 55%);
+        padding: 25px;
+    }
+    .contact_form-title.mobile {
+        display: block;
+        text-align: left;
+        padding: 15px;
+    }
+    .contact_form-title.desktop {
+        display: none;
+    }
+    .contact_form {
+        padding: 15px 0;
+    }
+    .contact_form form {
+        width: 85%;
+    }
+    .btn-contact_form {
+        margin: 40px auto 0;
+        width: 50%;
+    }
+}
