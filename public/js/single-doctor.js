@@ -22,3 +22,28 @@ $('.certificates_slider').slick({
         }
     ]
 });
+$('.gallery_slider').slick({
+    infinite: false,
+    slidesToShow: 4.3,
+    slidesToScroll: 1,
+    prevArrow: "<button class='prev'></button>",
+    nextArrow: "<button class='next'></button>",
+    appendArrows: $('.gallery_controls'),
+    responsive: [
+        {
+            breakpoint: 769,
+            settings: {
+                slidesToShow: 2.4,
+                infinite: false,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1.5,
+                infinite: false,
+            }
+        }
+    ]
+});
+

@@ -53,9 +53,13 @@
     padding: 30px;
 }
 
-ul.doctor_funtions {
+ul.doctor_functions {
     list-style: none;
     padding: 0;
+}
+
+ul.doctor_functions.mobile {
+    display: none;
 }
 
 .doctor_function:before {
@@ -205,4 +209,39 @@ ul.doctor_funtions {
 .btn-contact_form:hover{
     background-color: transparent!important;
     color: black!important;
+}
+
+.gallery_wrapper {
+    margin-top: 100px;
+    padding-bottom: 45px;
+    background: linear-gradient(to right, #76E0C1 50%, transparent 50%);
+}
+
+.gallery_title {
+    width: 80%;
+    margin: auto;
+    text-align: end;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    text-transform: uppercase;
+}
+
+.controls.gallery_controls {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.gallery_slider.slick-initialized.slick-slider {
+    width: 90%;
+    margin-left: auto;
+}
+
+.gallery_slider img {
+    padding: 15px;
+}
+
+footer {
+    padding-top: 50px;
 }
