@@ -39,10 +39,10 @@
         <div class="reviews_controls controls"></div>
         <div class="reviews_slider">
             <div class="reviews_page">
-            {% for key, review in reviews %}
+            {% for review in reviews %}
                 <div class="review">
-                    <div class="review_title">Тимур Муцураев</div>
-                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_title">{{ review.name }}</div>
+                    <div class="review_text">{{ review.description|slice(0, 55) }}{% if review.description|length>55 %}...{% endif %}</div>
                     <div class="review_view-more">Читати детальніше</div>
                 </div>
             {% endfor %}
