@@ -33,6 +33,42 @@
 .carousel {
     width: 50%;
 }
+
+.top_carousel {
+    width: 50%;
+}
+
+.slick-dots {
+    font-size: 0;
+    display: flex;
+    padding: 0;
+    width: 90%;
+    margin-top: -30px;
+    justify-content: flex-end;
+    position: absolute;
+}
+
+.slick-dots li {
+    padding: 5px;
+}
+
+.slick-dots button {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: unset;
+    background: white;
+    box-shadow: 0 0 0 2px white;
+}
+
+.slick-active button {
+    background: transparent;
+}
+
+.top_carousel_img {
+    width: 100%;
+    object-fit: contain;
+}
 .carousel-indicators {
     left: unset;
 }
@@ -284,6 +320,11 @@ a.best_item-more:hover {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: unset;
+    transition: all .3s ease-in;
+}
+
+.contact_form form.active {
+    height: 100%;
 }
 
 .contact_form input {
@@ -298,7 +339,7 @@ a.best_item-more:hover {
 }
 
 .middle_form {
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 .middle_form input {
@@ -308,7 +349,7 @@ a.best_item-more:hover {
 }
 
 .bottom_form {
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 .bottom_form input {
@@ -325,12 +366,66 @@ a.best_item-more:hover {
 .btn-contact_form {
     background-color: #25305E!important;
     color: white!important;
+    margin-bottom: 0;
     transition: all .3s ease-in!important;
 }
 
 .btn-contact_form:hover{
     background-color: transparent!important;
     color: black!important;
+}
+
+.promocode {
+    padding: 20px 0 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.promocode_body {
+    display: none;
+    flex-direction: column;
+}
+
+.promocode_body.active {
+    display: flex;
+}
+
+.promocode .bmd-form-group{
+    padding: 0;
+}
+
+.promocode_input {
+    display: flex;
+}
+
+.promocode_use {
+    margin-left: 10px;
+    box-shadow: 0 1px 0 0px #25305e;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.promocode_use:hover {
+    color: #25305e;
+    box-shadow: unset;
+}
+
+.promocode input {
+    border: unset;
+    border-bottom: 1px solid lightgray;
+}
+
+.promocode_change {
+    cursor: pointer;
+    padding-top: 5px;
+    width: fit-content;
+    box-shadow: 0 1px 0 0px #25305e;
+    transition: all .3s ease-in;
+}
+
+.promocode_change:hover {
+    color: #25305e;
+    box-shadow: unset;
 }
 
 .reasons_wrapper {

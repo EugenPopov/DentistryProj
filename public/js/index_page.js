@@ -1,3 +1,12 @@
+$('.top_carousel').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dots: true,
+    arrows: false
+});
 $('.best_slider').slick({
     infinite: true,
     slidesToShow: 3,
@@ -63,4 +72,8 @@ $('.reviews_slider').slick({
             }
         },
     ]
+});
+$('#promo').click(function() {
+    $('.contact_form form').toggleClass('active');
+    $('.promocode_body').slideToggle(this.checked);
 });

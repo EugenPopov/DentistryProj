@@ -20,22 +20,31 @@
                     {{ get_setting('description') }}
                 </div>
             </div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-                <ol class="carousel-indicators">
-                    {% for slide in slides %}
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if loop.first %}active{% endif %} carousel-indicator"></li>
-                    {% endfor %}
-                </ol>
-                <div class="carousel-inner">
-                    {% for slide in slides %}
-                        <div class="carousel-item {% if loop.first %}active{% endif %}">
-                            <a href="https://google.com">
-                                <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">
-                            </a>
-                        </div>
-                    {% endfor %}
+            <div class="top_carousel">
+                {% for slide in slides %}
+                <div class="top_carousel_item">
+                    <a target="_blank" href="https://google.com">
+                        <img class="top_carousel_img" src="/uploads/{{ slide.image }}" alt="First slide">
+                    </a>
                 </div>
+                {% endfor %}
             </div>
+{#            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">#}
+{#                <ol class="carousel-indicators">#}
+{#                    {% for slide in slides %}#}
+{#                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if loop.first %}active{% endif %} carousel-indicator"></li>#}
+{#                    {% endfor %}#}
+{#                </ol>#}
+{#                <div class="carousel-inner">#}
+{#                    {% for slide in slides %}#}
+{#                        <div class="carousel-item {% if loop.first %}active{% endif %}">#}
+{#                            <a href="https://google.com">#}
+{#                                <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </div>
     <div class="why-best_wrapper">
@@ -130,15 +139,29 @@
         <form>
             <div class="form">
                 <div class="top_form">
-                    <input type="text" id="name" placeholder="Ваше имя">
-                    <input type="tel" id="tel" placeholder="Ваш номер телефону">
+                    <input type="text" id="name" placeholder="Ваше имя" required>
+                    <input type="tel" id="tel" placeholder="Ваш номер телефону" required>
                 </div>
                 <div class="middle_form">
-                    <input type="date" id="date" placeholder="Виберіть бажаему дату">
-                    <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                    <input type="date" id="date" placeholder="Виберіть бажаему дату" required>
+                    <input type="time" id="time" placeholder="Виберіть бажаемий час" required>
                 </div>
                 <div class="bottom_form">
                     <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                </div>
+                <div class="promocode">
+                    <label>
+                        <input type="checkbox" id="promo">
+                        У меня есть промокод
+                    </label>
+                    <div class="promocode_body">
+                        <div class="promocode_input">
+                            <input type="text" placeholder="Введiть промокод">
+                            <div class="promocode_use">Застовувати</div>
+                        </div>
+                        <span class="promocode_message">Активний промокод: <span class="promocode_active">Название акции</span></span>
+                        <div class="promocode_change">Змiнити промокод</div>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-contact_form">Записатися</button>
