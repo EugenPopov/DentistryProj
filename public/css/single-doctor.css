@@ -1,41 +1,83 @@
 .page_top_wrapper {
     width: 95%;
     margin: auto;
-    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+    background: linear-gradient(to bottom, transparent 75%, #fafafa 75%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
 }
-.doctors_wrapper {
-    margin: 60px auto 60px;
-    width: 95%;
-}
-.controls {
-    width: 40%;
-    margin-left: auto;
+.page_top {
+    margin: auto;
+    width: 80%;
 }
 
-.doctors_title {
+.doctor_wrapper {
+    display: flex;
+    max-width: 1105px;
+    margin: auto;
+    width: 85%;
+}
+
+.info_part {
+    width: 50%;
+}
+
+.doctor_name {
+    font-weight: 500;
     font-size: 36px;
-    text-transform: uppercase;
-    font-weight: 600;
     line-height: 46px;
 }
 
-.doctors_slider {
-    width: 90%;
-    margin: auto;
-}
-
-.doctor_item {
-    padding: 10px 30px;
-}
-.doctor_img {
-    width: 100%;
-}
-
-.doctor_item-title {
+.doctor_speciality {
+    font-weight: 450;
     font-size: 18px;
-    font-weight: bold;
-    padding: 10px 0;
+    line-height: 23px;
+    padding: 50px 0 30px;
 }
+
+.doctor_university {
+    font-size: 18px;
+    line-height: 23px;
+    padding: 5px 30px;
+}
+
+.doctor_experience {
+    font-size: 18px;
+    line-height: 23px;
+    padding: 5px 30px;
+}
+
+.doctor_functions-title {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 30px;
+}
+
+ul.doctor_functions {
+    list-style: none;
+    padding: 0;
+}
+
+ul.doctor_functions.mobile {
+    display: none;
+}
+
+.doctor_function:before {
+    content: "—";
+    padding: 0 5px;
+}
+
+.doctor_img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.doctor_img img {
+    object-fit: contain;
+    height: 100%;
+}
+
 .controls button {
     width: 58px;
     height: 12px;
@@ -52,6 +94,17 @@
 }
 .next {
     background: url(/img/next.png);
+}
+
+.certificates_wrapper {
+    width: 90%;
+    margin: auto;
+    padding: 150px 0 60px;
+}
+
+.controls.certificates_controls {
+    display: flex;
+    justify-content: center;
 }
 
 .certificates_slider img {
@@ -73,7 +126,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: flex-end;
     background: linear-gradient(to right, #76E0C1 55%, transparent 55%);
 }
 
@@ -156,4 +209,39 @@
 .btn-contact_form:hover{
     background-color: transparent!important;
     color: black!important;
+}
+
+.gallery_wrapper {
+    margin-top: 100px;
+    padding-bottom: 45px;
+    background: linear-gradient(to right, #76E0C1 50%, transparent 50%);
+}
+
+.gallery_title {
+    width: 80%;
+    margin: auto;
+    text-align: end;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    text-transform: uppercase;
+}
+
+.controls.gallery_controls {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.gallery_slider.slick-initialized.slick-slider {
+    width: 90%;
+    margin-left: auto;
+}
+
+.gallery_slider img {
+    padding: 15px;
+}
+
+footer {
+    padding-top: 50px;
 }

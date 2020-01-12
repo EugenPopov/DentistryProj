@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/single-doctor.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/single-doctor_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+         {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('doctor_main') }}">Лiкарi</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ doctor.name }}</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="doctor_wrapper">
+                <div class="info_part">
+                    <div class="doctor_name">
+                        {{ doctor.name }}
+                    </div>
+                    <div class="doctor_speciality">
+                        {{ doctor.speciality }}
+                    </div>
+                    <div class="doctor_university">
+                        {{ doctor.university }}
+                    </div>
+                    <div class="doctor_experience">
+                        {{ doctor.experience }}
+                    </div>
+                    <div class="doctor_functions-title">
+                        Основні напрямки лікарської роботи
+                    </div>
+                    <ul class="doctor_functions desktop">
+                        {% for service in doctor.services %}
+                            <li class="doctor_function">{{ service.title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="doctor_img">
+                    <img src="/uploads/{{ doctor.image }}">
+                </div>
+            </div>
+            <ul class="doctor_functions mobile">
+                {% for service in doctor.services %}
+                    <li class="doctor_function">{{ service.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="certificates_wrapper">
+        <div class="controls certificates_controls">
+        </div>
+        <div class="certificates_slider">
+            {% for sertificate in doctor.sertificates %}
+                <img src="/uploads/{{ sertificate.image }}">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="contact_wrapper">
+        <div class="contact_img">
+            <div class="contact_form-title mobile">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
+            </div>
+            <img src="{{ asset('img/main.png') }}">
+        </div>
+        <div class="contact_form">
+            <div class="contact_form-title desktop">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
+            </div>
+            <form>
+                <div class="form">
+                    <div class="top_form">
+                        <input type="text" id="name" placeholder="Ваше имя">
+                        <input type="tel" id="tel" placeholder="Ваш номер телефону">
+                    </div>
+                    <div class="middle_form">
+                        <input type="date" id="date" placeholder="Виберіть бажаему дату">
+                        <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                    </div>
+                    <div class="bottom_form">
+                        <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-contact_form">Записатися</button>
+            </form>
+        </div>
+    </div>
+    <div class="gallery_wrapper">
+        <div class="gallery_title">
+            ГАЛЕРЕЯ РОБІТ
+        </div>
+        <div class="controls gallery_controls">
+        </div>
+        <div class="gallery_slider">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+            <img src="{{ asset('img/doctor.png') }}">
+        </div>
+    </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/single-doctor.js') }}"></script>
+{% endblock %}

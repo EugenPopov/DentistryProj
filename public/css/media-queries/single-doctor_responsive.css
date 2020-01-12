@@ -1,0 +1,110 @@
+@media (max-width: 768px) {
+    .page_top_wrapper {
+        width: 100%;
+        background: linear-gradient(to bottom, transparent 75%, #fafafa 75%), linear-gradient(to left, #76E0C1 40%, transparent 40%) !important;
+    }
+    .page_top {
+        width: 95%;
+    }
+    .doctor_wrapper {
+        width: 95%;
+    }
+    .doctor_img img {
+        width: 100%;
+    }
+    .doctor_name {
+        font-size: 24px;
+        line-height: 31px;
+    }
+    .doctor_speciality {
+        font-size: 18px;
+        line-height: 23px;
+        padding: 20px 0;
+    }
+    .certificates_wrapper{
+        padding: 70px 0 30px;
+    }
+    .contact_wrapper {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .contact_img {
+        width: 100%;
+        background: linear-gradient(to left, #76E0C1 45%, transparent 45%);
+        padding-bottom: 30px;
+    }
+    .contact_form-title.mobile {
+        display: flex;
+        text-align: left;
+        padding: 20px;
+    }
+    .contact_form-title.desktop {
+        display: none;
+    }
+    .contact_form {
+        width: 100%;
+    }
+    .btn-contact_form {
+        width: 50%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    .gallery_wrapper {
+        margin-top: 50px;
+    }
+}
+@media (max-width: 480px) {
+    .doctor_img {
+        align-self: flex-start;
+    }
+    .doctor_name {
+        font-size: 18px;
+        line-height: 23px;
+    }
+    .doctor_speciality {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .doctor_university {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0;
+    }
+    .doctor_experience {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 10px 0;
+    }
+    .doctor_functions-title {
+        display: none;
+    }
+    ul.doctor_functions.desktop {
+        display: none;
+    }
+    ul.doctor_functions.mobile {
+        display: flex;
+        width: 95vw;
+        margin: auto;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .certificates_wrapper {
+        padding-top: 30px;
+    }
+    .contact_wrapper {
+        margin-top: 0;
+        width: 100%;
+    }
+    .contact_img img {
+        margin: auto;
+    }
+    .contact_form form {
+        width: 95%;
+    }
+    .gallery_wrapper {
+        margin-top: 30px;
+    }
+    .gallery_slider.slick-initialized.slick-slider {
+        width: 95%;
+    }
+}

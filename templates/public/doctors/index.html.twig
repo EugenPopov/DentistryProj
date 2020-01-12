@@ -49,32 +49,36 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="contact_wrapper">
-            <div class="contact_img">
-                <img src="{{ asset('img/main.png') }}">
+    </div>
+    <div class="contact_wrapper">
+        <div class="contact_img">
+            <div class="contact_form-title mobile">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
             </div>
-            <div class="contact_form">
-                <div class="contact_form-title">
-                    ЗАПИСАТИСЯ НА ПРИЙОМ
-                </div>
-                <form>
-                    <div class="form">
-                        <div class="top_form">
-                            <input type="text" id="name" placeholder="Ваше имя">
-                            <input type="tel" id="tel" placeholder="Ваш номер телефону">
-                        </div>
-                        <div class="middle_form">
-                            <input type="date" id="date" placeholder="Виберіть бажаему дату">
-                            <input type="time" id="time" placeholder="Виберіть бажаемий час">
-                        </div>
-                        <div class="bottom_form">
-                            <input type="text" id="comment" placeholder="Залешить ваш коментар">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-contact_form">Записатися</button>
-                </form>
-            </div>
+            <img src="{{ asset('img/main.png') }}">
         </div>
+        <div class="contact_form">
+            <div class="contact_form-title desktop">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
+            </div>
+            <form>
+                <div class="form">
+                    <div class="top_form">
+                        <input type="text" id="name" placeholder="Ваше имя">
+                        <input type="tel" id="tel" placeholder="Ваш номер телефону">
+                    </div>
+                    <div class="middle_form">
+                        <input type="date" id="date" placeholder="Виберіть бажаему дату">
+                        <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                    </div>
+                    <div class="bottom_form">
+                        <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-contact_form">Записатися</button>
+            </form>
+        </div>
+    </div>
     <footer>
         {% include '/elements/footer.html.twig' %}
     </footer>

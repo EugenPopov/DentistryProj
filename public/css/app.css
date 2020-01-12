@@ -104,11 +104,13 @@ a.menu-item {
     cursor: pointer;
     padding: 7.5px 16px;
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color: black;
 }
 
 a.menu-item:hover {
     background-color: rgba(153, 153, 153, 0.2);
     border-color: rgba(153, 153, 153, 0.2);
+    text-decoration: none;
 }
 
 .mobile_nav {
@@ -173,3 +175,6 @@ nav.footer a {
     cursor: pointer;
 }
 
+.breadcrumb-item+.breadcrumb-item:before {
+    content: "•";
+}
