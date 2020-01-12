@@ -1,0 +1,142 @@
+.page_top_wrapper {
+    background: linear-gradient(to bottom, transparent 80%, #fafafa 80%), linear-gradient(to left, #76E0C1 50%, transparent 50%);
+}
+
+.page_top-content {
+    width: 80%;
+    margin: auto;
+}
+
+.page_title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    padding-bottom: 30px;
+}
+
+.active-review{
+    display: flex;
+}
+
+.active-review .review_photo {
+    width: 60%;
+}
+
+.active-review .review {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fafafa;
+}
+
+.active-review .review_title {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 31px;
+    padding-bottom: 20px;
+}
+
+.active-review .review_text {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.reviews_page {
+    display: grid!important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3);
+}
+
+.reviews_wrapper {
+    margin: 100px auto;
+    width: 85%;
+}
+
+.reviews_controls.controls {
+    width: 80%;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.reviews_page .review {
+    padding: 20px 0;
+}
+
+.reviews_page .review_title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+}
+
+.reviews_page .review_text {
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.reviews_page .review_view-more {
+    padding: 10px 15px;
+    text-align: center;
+    color: black;
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.reviews_page .review_view-more:hover {
+    background: #25305E;
+    color: white;
+}
+
+.controls button {
+    width: 58px;
+    height: 12px;
+    border: unset;
+    padding: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.prev {
+    background: url(/img/prev.png);
+
+}
+.next {
+    background: url(/img/next.png);
+}
+
+.slick-dots {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.slick-dots li button {
+    color: black;
+    background: transparent;
+    border: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.slick-dots .slick-active button {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    color: white;
+    background: #25305E;
+}

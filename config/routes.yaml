@@ -14,6 +14,9 @@ doctor_main:
 doctor_single:
     path: /doctor-{slug}
     controller: App\Controller\Pages\DoctorController::singleDoctor
+reviews:
+    path: /reviews
+    controller: App\Controller\Pages\ReviewController::index
 #admin_panel
 admin_index:
     path: /adminPanel
