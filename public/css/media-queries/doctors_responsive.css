@@ -1,4 +1,10 @@
 @media (max-width: 768px) {
+    .page_top_wrapper {
+        width: 100%;
+    }
+    .doctors_slider {
+        width: 100%;
+    }
     .contact_wrapper {
         flex-direction: column;
     }

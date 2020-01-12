@@ -1,5 +1,5 @@
 $('.page_up').on('click', function () {
-    $('.page_top_wrapper')[0].scrollIntoView({block: "start", behavior: "smooth"});
+    $('html,body').animate({scrollTop: $('.page_top_wrapper').offset().top}, 500, 'swing');
 });
 $('#main-header-toggle').on('click', function () {
     $('.mobile_nav-toogle').toggleClass('active');

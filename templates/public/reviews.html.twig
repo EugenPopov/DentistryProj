@@ -1,0 +1,401 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/reviews.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/reviews_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Пацiентам</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="page_title">Вiдгуки про нашу клiнiку</div>
+           <div class="active-review">
+               <div class="review_photo">
+                    <img src="{{ asset('img/doctor.png') }}">
+               </div>
+               <div class="review">
+                   <div class="review_title">
+                       Тимур Муцураев
+                   </div>
+                   <div class="review_text">
+                       Шукав, де недорого і без проблем зробити панорамний знімок. Вибрав цю клініку і не помилився. Був приємно здивований ціною, якістю роботи і ввічливістю персоналу. На жаль не знаю імен. Тому - спасибі всім.
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="reviews_wrapper">
+        <div class="reviews_controls controls"></div>
+        <div class="reviews_slider">
+            <div class="reviews_page">
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+            </div>
+            <div class="reviews_page">
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+            </div>
+            <div class="reviews_page">
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+            </div>
+            <div class="reviews_page">
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+            </div>
+            <div class="reviews_page">
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">Тимур Муцураев</div>
+                    <div class="review_text">Шукав, де недорого і без проблем зробити панорамний знім...</div>
+                    <div class="review_view-more">Читати детальніше</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    <div class="certificates_wrapper">#}
+{#        <div class="controls certificates_controls">#}
+{#        </div>#}
+{#        <div class="certificates_slider">#}
+{#            <img src="{{ asset('img/doctor.png') }}">#}
+{#            <img src="{{ asset('img/doctor.png') }}">#}
+{#            <img src="{{ asset('img/doctor.png') }}">#}
+{#            <img src="{{ asset('img/doctor.png') }}">#}
+{#            <img src="{{ asset('img/doctor.png') }}">#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="contact_wrapper">#}
+{#        <div class="contact_img">#}
+{#            <div class="contact_form-title mobile">#}
+{#                ЗАПИСАТИСЯ НА ПРИЙОМ#}
+{#            </div>#}
+{#            <img src="{{ asset('img/main.png') }}">#}
+{#        </div>#}
+{#        <div class="contact_form">#}
+{#            <div class="contact_form-title desktop">#}
+{#                ЗАПИСАТИСЯ НА ПРИЙОМ#}
+{#            </div>#}
+{#            <form>#}
+{#                <div class="form">#}
+{#                    <div class="top_form">#}
+{#                        <input type="text" id="name" placeholder="Ваше имя">#}
+{#                        <input type="tel" id="tel" placeholder="Ваш номер телефону">#}
+{#                    </div>#}
+{#                    <div class="middle_form">#}
+{#                        <input type="date" id="date" placeholder="Виберіть бажаему дату">#}
+{#                        <input type="time" id="time" placeholder="Виберіть бажаемий час">#}
+{#                    </div>#}
+{#                    <div class="bottom_form">#}
+{#                        <input type="text" id="comment" placeholder="Залешить ваш коментар">#}
+{#                    </div>#}
+{#                </div>#}
+{#                <button type="submit" class="btn btn-contact_form">Записатися</button>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/reviews.js') }}"></script>
+{% endblock %}

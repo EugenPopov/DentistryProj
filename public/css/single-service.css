@@ -126,7 +126,7 @@
 .extra_services_img {
     width: 100%;
     border-bottom-right-radius: 75%;
-    height: 400px;
+    height: 40vh;
     object-fit: contain;
 }
 

@@ -29,6 +29,8 @@
 }
 .doctor_img {
     width: 100%;
+    height: 40vh;
+    object-fit: contain;
 }
 
 .doctor_item-title {
