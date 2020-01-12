@@ -41,9 +41,22 @@
         padding: 10px;
         cursor: pointer;
     }
+    .menu-item a {
+        color: black;
+        text-decoration: unset;
+    }
+    footer {
+        padding-top: 40px;
+    }
 }
 @media (max-width: 480px) {
     .mobile_nav-toogle {
         right: 1rem;
+    }
+    footer {
+        width: 95%;
+    }
+    nav.footer {
+        width: 70%;
     }
 }

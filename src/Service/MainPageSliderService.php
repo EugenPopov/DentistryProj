@@ -6,8 +6,6 @@ namespace App\Service;
 
 use App\DataMapper\MainPageSliderMapper;
 use App\Entity\EntityInterface;
-use App\Entity\MainPageSlider;
-use App\Model\MainPageSliderModel;
 use App\Model\ModelInterface;
 use App\Repository\MainPageSliderRepository;
 use App\Service\CrudManager\CrudManager;

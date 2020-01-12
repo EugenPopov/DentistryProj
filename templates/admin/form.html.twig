@@ -12,3 +12,15 @@
         {{ form_end(form) }}
     {% endif %}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/admin/js/ckeditor.js"></script>
+    <script src="/admin/js/ru.js"></script>
+    <script>
+        $('.enable-ckeditor').each(function () {
+            let textarea = $(this);
+            ClassicEditor.create( textarea[0], { language: 'ru' } );
+        });
+    </script>
+{% endblock %}

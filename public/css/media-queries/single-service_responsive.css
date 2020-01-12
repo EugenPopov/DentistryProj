@@ -24,10 +24,16 @@
     }
 }
 @media (max-width: 480px) {
+    .service_wrapper {
+        width: 100%;
+    }
     .service {
         flex-direction: column;
     }
     .service_extra {
+        width: 100%;
+    }
+    .service img {
         width: 100%;
     }
 }

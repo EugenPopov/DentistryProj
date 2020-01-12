@@ -1,0 +1,247 @@
+.page_top_wrapper {
+    width: 95%;
+    margin: auto;
+    background: linear-gradient(to bottom, transparent 75%, #fafafa 75%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+}
+.page_top {
+    margin: auto;
+    width: 80%;
+}
+
+.doctor_wrapper {
+    display: flex;
+    max-width: 1105px;
+    margin: auto;
+    width: 85%;
+}
+
+.info_part {
+    width: 50%;
+}
+
+.doctor_name {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.doctor_speciality {
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 50px 0 30px;
+}
+
+.doctor_university {
+    font-size: 18px;
+    line-height: 23px;
+    padding: 5px 30px;
+}
+
+.doctor_experience {
+    font-size: 18px;
+    line-height: 23px;
+    padding: 5px 30px;
+}
+
+.doctor_functions-title {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 30px;
+}
+
+ul.doctor_functions {
+    list-style: none;
+    padding: 0;
+}
+
+ul.doctor_functions.mobile {
+    display: none;
+}
+
+.doctor_function:before {
+    content: "—";
+    padding: 0 5px;
+}
+
+.doctor_img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.doctor_img img {
+    object-fit: contain;
+    height: 100%;
+}
+
+.controls button {
+    width: 58px;
+    height: 12px;
+    border: unset;
+    padding: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.prev {
+    background: url(/img/prev.png);
+
+}
+.next {
+    background: url(/img/next.png);
+}
+
+.certificates_wrapper {
+    width: 90%;
+    margin: auto;
+    padding: 150px 0 60px;
+}
+
+.controls.certificates_controls {
+    display: flex;
+    justify-content: center;
+}
+
+.certificates_slider img {
+    padding: 15px;
+    transition: all .3s ease-in;
+}
+
+.certificates_slider img:hover {
+    transform: scale(1.05);
+}
+
+.contact_wrapper {
+    width: 95%;
+    display: flex;
+    margin: 60px auto 0;
+}
+
+.contact_img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to right, #76E0C1 55%, transparent 55%);
+}
+
+.contact_img img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.contact_form {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact_form-title {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    height: 30%;
+}
+
+.contact_form-title.mobile {
+    display: none;
+}
+
+.contact_form form {
+    width: 75%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: unset;
+}
+
+.contact_form input {
+    transition: all .3s ease-in;
+    background-color: #fafafa;
+}
+
+.top_form input {
+    border: unset;
+    border-bottom: 1px solid lightgray;
+    width: 49%;
+}
+
+.middle_form {
+    padding-top: 25px;
+}
+
+.middle_form input {
+    border: unset;
+    border-bottom: 1px solid lightgray;
+    width: 49%;
+}
+
+.bottom_form {
+    padding-top: 25px;
+}
+
+.bottom_form input {
+    border: unset;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.contact_form input:focus {
+    outline: unset;
+    border-bottom-color: #25305E;
+}
+
+.btn-contact_form {
+    background-color: #25305E!important;
+    color: white!important;
+    transition: all .3s ease-in!important;
+}
+
+.btn-contact_form:hover{
+    background-color: transparent!important;
+    color: black!important;
+}
+
+.gallery_wrapper {
+    margin-top: 100px;
+    padding-bottom: 45px;
+    background: linear-gradient(to right, #76E0C1 50%, transparent 50%);
+}
+
+.gallery_title {
+    width: 80%;
+    margin: auto;
+    text-align: end;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    text-transform: uppercase;
+}
+
+.controls.gallery_controls {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.gallery_slider.slick-initialized.slick-slider {
+    width: 90%;
+    margin-left: auto;
+}
+
+.gallery_slider img {
+    padding: 15px;
+}
+
+footer {
+    padding-top: 50px;
+}

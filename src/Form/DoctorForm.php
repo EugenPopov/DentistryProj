@@ -5,6 +5,7 @@ namespace App\Form;
 
 
 use App\Model\DoctorModel;
+use Faker\Provider\Text;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -48,6 +49,14 @@ class DoctorForm extends AbstractType
                 'constraints' => $options['is_create'] ? new NotBlank() : null
             ])
             ->add('services', HiddenType::class)
+            ->add('seoTitle', TextType::class, [
+                'label' => 'Сео тайтл',
+                'required' => false
+            ])
+            ->add('seoDescription', TextType::class, [
+                'label' => 'Сео описание',
+                'required' => false
+            ])
             ->add('save', SubmitType::class, ['label' => 'Сохранить'])
             ->getForm();
     }

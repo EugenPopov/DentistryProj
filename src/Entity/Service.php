@@ -65,6 +65,16 @@ class Service implements EntityInterface
      */
     private $mini_service;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $seo_title;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $seo_description;
+
     public function __construct()
     {
         $this->doctor = new ArrayCollection();
@@ -201,6 +211,30 @@ class Service implements EntityInterface
         if ($this->mini_service->contains($miniService)) {
             $this->mini_service->removeElement($miniService);
         }
+
+        return $this;
+    }
+
+    public function getSeoTitle(): ?string
+    {
+        return $this->seo_title;
+    }
+
+    public function setSeoTitle(?string $seo_title): self
+    {
+        $this->seo_title = $seo_title;
+
+        return $this;
+    }
+
+    public function getSeoDescription(): ?string
+    {
+        return $this->seo_description;
+    }
+
+    public function setSeoDescription(?string $seo_description): self
+    {
+        $this->seo_description = $seo_description;
 
         return $this;
     }
