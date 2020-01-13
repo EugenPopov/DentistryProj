@@ -4,51 +4,30 @@
 namespace App\Form;
 
 
-use App\Model\PromotionModel;
+use App\Model\WorksGalleryModel;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class PromotionForm extends AbstractType
+class WorksGalleryForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $attr_image = [];
+        $attr = [];
         if($options['image']){
-            $attr_image = [
+            $attr = [
                 'class' => 'has_image',
                 'data-image' => $options['image']
             ];
         }
 
         $builder
-            ->add('title', TextType::class, [
-                'label' => 'Название'
-            ])
-            ->add('description', TextareaType::class, [
-                'label' => 'Описание *Обязательно',
-                'attr' => [
-                    'class' => 'enable-ckeditor'
-                ],
-                'required' => false
-            ])
-            ->add('isActive', CheckboxType::class, [
-                'label' => 'Активировать',
-                'required' => false
-            ])
-            ->add('isPublic', CheckboxType::class, [
-                'label' => 'Акция для всех',
-                'required' => false
-            ])
             ->add('image', FileType::class,[
                 'label' => 'Фото',
-                'attr' => $attr_image,
+                'attr' => $attr,
                 'required' => $options['is_create'] ? true : false,
                 'constraints' => $options['is_create'] ? new NotBlank() : null
             ])
@@ -60,7 +39,7 @@ class PromotionForm extends AbstractType
         $resolver->setDefaults([
             'image' => null,
             'is_create' => true,
-            'data_class' => PromotionModel::class,
+            'data_class' => WorksGalleryModel::class,
         ]);
     }
 }

@@ -7,51 +7,49 @@
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
-        {% include '/elements/header.html.twig' %}
+         {% include '/elements/header.html.twig' %}
         {% include 'elements/mobile_header.html.twig'%}
         <div class="page_top-content">
             <div class="page_top">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
-                        <li class="breadcrumb-item"><a href="{{ path('doctor_main') }}">Доктори</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">qq</li>
+                        <li class="breadcrumb-item"><a href="{{ path('doctor_main') }}">Лiкарi</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ doctor.name }}</li>
                     </ol>
                 </nav>
             </div>
             <div class="doctor_wrapper">
                 <div class="info_part">
                     <div class="doctor_name">
-                        ШИЛЬЦОВА ТАТЬЯНА ЮРЬЕВНА
+                        {{ doctor.name }}
                     </div>
                     <div class="doctor_speciality">
-                        Доктор-стоматолог-ортодонт
+                        {{ doctor.speciality }}
                     </div>
                     <div class="doctor_university">
-                        Киевской Стоматологический Университет
+                        {{ doctor.university }}
                     </div>
                     <div class="doctor_experience">
-                        стаж роботи лікарем 15 років
+                        {{ doctor.experience }}
                     </div>
                     <div class="doctor_functions-title">
                         Основні напрямки лікарської роботи
                     </div>
                     <ul class="doctor_functions desktop">
-                        <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                        <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                        <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                        <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
+                        {% for service in doctor.services %}
+                            <li class="doctor_function"><a href="{{ path('service_single', {'slug': service.slug}) }}">{{ service.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="doctor_img">
-                    <img src="{{ asset('img/doctor.png') }}">
+                    <img src="/uploads/{{ doctor.image }}">
                 </div>
             </div>
             <ul class="doctor_functions mobile">
-                <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
-                <li class="doctor_function">Відбілювання і косметичний відновлення зубів</li>
+                {% for service in doctor.services %}
+                    <li class="doctor_function">{{ service.title }}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -59,11 +57,9 @@
         <div class="controls certificates_controls">
         </div>
         <div class="certificates_slider">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
+            {% for sertificate in doctor.sertificates %}
+                <img src="/uploads/{{ sertificate.image }}">
+            {% endfor %}
         </div>
     </div>
     <div class="contact_wrapper">
@@ -102,11 +98,9 @@
         <div class="controls gallery_controls">
         </div>
         <div class="gallery_slider">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
+            {% for work in works %}
+                <img src="/uploads/{{ work.image }}">
+            {% endfor %}
         </div>
     </div>
     <footer>

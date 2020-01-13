@@ -4,11 +4,18 @@
 namespace App\Model;
 
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PromotionModel implements ModelInterface
 {
+    /**
+     * @Assert\NotBlank()
+     */
     private $title;
+    /**
+     * @Assert\NotBlank()
+     */
     private $description;
     private $image;
     private $is_public;
@@ -26,7 +33,7 @@ class PromotionModel implements ModelInterface
      * @param mixed $title
      * @return PromotionModel
      */
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 

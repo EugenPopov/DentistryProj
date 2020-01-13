@@ -4,17 +4,17 @@
 namespace App\Service;
 
 
-use App\DataMapper\MainPageSliderMapper;
+use App\DataMapper\WorksGalleryMapper;
 use App\Entity\EntityInterface;
 use App\Model\ModelInterface;
-use App\Repository\MainPageSliderRepository;
+use App\Repository\WorksGalleryRepository;
 use App\Service\CrudManager\CrudManager;
 use App\Service\FileManager\FileManager;
 use Doctrine\ORM\EntityManagerInterface;
 
-class MainPageSliderService extends CrudManager
+class WorksGalleryService extends CrudManager
 {
-    private const IMG_UPLOAD_DIR = 'slider/';
+    private const IMG_UPLOAD_DIR = 'gallery/';
     /**
      * @var FileManager
      */
@@ -22,12 +22,12 @@ class MainPageSliderService extends CrudManager
 
     /**
      * MainPageSliderService constructor.
-     * @param  MainPageSliderRepository $repository
+     * @param WorksGalleryRepository $repository
      * @param EntityManagerInterface $entityManager
-     * @param MainPageSliderMapper $mapper
+     * @param WorksGalleryMapper $mapper
      * @param FileManager $fileManager
      */
-    public function __construct(MainPageSliderRepository $repository, EntityManagerInterface $entityManager, MainPageSliderMapper $mapper, FileManager $fileManager)
+    public function __construct(WorksGalleryRepository $repository, EntityManagerInterface $entityManager, WorksGalleryMapper $mapper, FileManager $fileManager)
     {
         parent::__construct($repository ,$entityManager, $mapper);
         $this->fileManager = $fileManager;

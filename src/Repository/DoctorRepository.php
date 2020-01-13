@@ -26,4 +26,14 @@ class DoctorRepository extends ServiceEntityRepository
             ->setMaxResults(1)
             ->getQuery()->getOneOrNullResult();
     }
+
+    public function getAllRelatedTables(int $id): ?Doctor
+    {
+        return $this->createQueryBuilder('doctor')
+            ->leftJoin('doctor.services', 'services')
+            ->leftJoin('doctor.sertificates', 'sertificates')
+            ->where('doctor.id =:id')
+            ->setParameter('id', $id)
+            ->getQuery()->getOneOrNullResult();
+    }
 }

@@ -40,16 +40,14 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="certificates_wrapper">
-        <div class="controls certificates_controls">
-        </div>
-        <div class="certificates_slider">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
+        <div class="certificates_wrapper">
+            <div class="controls certificates_controls">
+            </div>
+            <div class="certificates_slider">
+                {% for sertificate in sertificates %}
+                    <img src="/uploads/{{ sertificate.image }}">
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="contact_wrapper">

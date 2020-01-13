@@ -47,6 +47,8 @@ class ServiceMapper implements DataMapperInterface
         return $model
             ->setAdditionalInfo($entity->getAdditionalInfo())
             ->setTitle($entity->getTitle())
+            ->setSeoTitle($entity->getSeoTitle())
+            ->setSeoDescription($entity->getSeoDescription())
             ->setDescription($entity->getDescription());
     }
 
@@ -57,6 +59,8 @@ class ServiceMapper implements DataMapperInterface
         return $entity
             ->setDescription($model->getDescription())
             ->setTitle($model->getTitle())
+            ->setSeoTitle($model->getSeoTitle())
+            ->setSeoDescription($model->getSeoDescription())
             ->setAdditionalInfo($model->getAdditionalInfo());
     }
 }

@@ -42,6 +42,8 @@ class DoctorMapper implements DataMapperInterface
             ->setUniversity($entity->getUniversity())
             ->setSpeciality($entity->getSpeciality())
             ->setExperience($entity->getExperience())
+            ->setSeoTitle($entity->getSeoTitle())
+            ->setSeoDescription($entity->getSeoDescription())
             ->setName($entity->getName());
     }
 
@@ -54,6 +56,8 @@ class DoctorMapper implements DataMapperInterface
             ->setName($model->getName())
             ->setExperience($model->getExperience())
             ->setSpeciality($model->getSpeciality())
+            ->setSeoTitle($model->getSeoTitle())
+            ->setSeoDescription($model->getSeoDescription())
             ->setUniversity($model->getUniversity());
     }
 }

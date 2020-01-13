@@ -88,7 +88,7 @@ class DoctorController extends AbstractController
         return $this->render('admin/doctor/update.html.twig', [
             'form' => $form->createView(),
             'services' => $this->serviceService->getAllInJson(),
-            'name' => 'Редактирование слайда'
+            'name' => 'Редактирование врача'
         ]);
     }
 

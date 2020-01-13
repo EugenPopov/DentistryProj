@@ -5,16 +5,12 @@ namespace App\Controller\Admin;
 
 
 use App\DataMapper\MiniServiceMapper;
-use App\Entity\MainPageSlider;
 use App\Entity\MiniService;
-use App\Form\MainPageSliderForm;
 use App\Form\MiniServiceForm;
-use App\Model\MainPageSliderModel;
 use App\Model\MiniServiceModel;
 use App\Service\MiniServiceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class MiniServiceController extends AbstractController
 {
