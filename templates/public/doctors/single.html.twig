@@ -38,7 +38,7 @@
                     </div>
                     <ul class="doctor_functions desktop">
                         {% for service in doctor.services %}
-                            <li class="doctor_function">{{ service.title }}</li>
+                            <li class="doctor_function"><a href="{{ path('service_single', {'slug': service.slug}) }}">{{ service.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -98,11 +98,9 @@
         <div class="controls gallery_controls">
         </div>
         <div class="gallery_slider">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
+            {% for work in works %}
+                <img src="/uploads/{{ work.image }}">
+            {% endfor %}
         </div>
     </div>
     <footer>
