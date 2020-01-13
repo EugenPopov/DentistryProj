@@ -28,7 +28,7 @@ class ApiController extends AbstractController
 
     public function checkPromotion(Request $request)
     {
-        $promotion = $this->promotionService->findOneBy(['code' => $request->get('promotion')]);
+        $promotion = $this->promotionService->findOneBy(['code' => $request->get('promotion'), 'is_active' => true]);
         return new JsonResponse(['exists' => $promotion? $promotion->getTitle():false], Response::HTTP_OK);
     }
 }
