@@ -84,6 +84,7 @@ $('#promo').click(function() {
     }
 
     $('.promocode_body').slideToggle(this.checked);
+    $('#promocode_input').focus();
 });
 $(document).on('click', '.promocode_use', function () {
     let input = $('#promocode_input');
@@ -100,6 +101,7 @@ $(document).on('click', '.promocode_use', function () {
         })
             .done(function (data) {
                 if(data.exists){
+                    promotion = input.val();
                     let parent_span = $('<span class="promocode_message"></span>').html('<i style="color: green" class="fas fa-check-circle"></i> Активний промокод: ');
                     let child_span = $('<span class="promocode_active"></span>').text(data.exists);
                     let promotion_div = $('<div class="promocode_change">Змiнити промокод</div>');
@@ -107,6 +109,8 @@ $(document).on('click', '.promocode_use', function () {
                     $('.promocode_body').append(parent_span).append(promotion_div);
                 }
                 else{
+                    input.focus();
+                    promotion = false;
                     let parent_span = $('<span class="promocode_message" style="color: red"></span>').html('<i class="fas fa-exclamation-triangle"></i> Невiрний промокод');
                     $('.promocode_body').append(parent_span);
                 }
@@ -119,4 +123,34 @@ $(document).on('click', '.promocode_change', function () {
     $('#promocode_input').val('');
     $('.promocode_message').remove();
     $('.promocode_change').remove();
+    $('#promocode_input').focus();
+});
+
+
+$('#tel').mask('+38 (999) 999 - 99 - 99', {
+    placeholder: '+38(___)___-__-__'
+});
+
+
+$(function() {
+    $("form[name='form_order']").validate({
+        language: 'ru',
+        rules: {
+            name: {
+                required: true,
+            },
+            telephone: {
+                required: true,
+            }
+        },
+        messages: {
+            name: 'Введите ваше имя',
+            telephone: 'Введите ваш телефон'
+        },
+
+        submitHandler: function(form) {
+            console.log(promotion);
+            // form.submit();
+        }
+    });
 });

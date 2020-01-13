@@ -137,15 +137,15 @@
         <div class="contact_form-title">
             ЗАПИСАТИСЯ НА ПРИЙОМ
         </div>
-        <form>
+        <form name="form_order">
             <div class="form">
                 <div class="top_form">
-                    <input type="text" id="name" placeholder="Ваше имя" required>
-                    <input type="tel" id="tel" placeholder="Ваш номер телефону" required>
+                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="tel" name="telephone" id="tel" placeholder="Ваш номер телефону">
                 </div>
                 <div class="middle_form">
-                    <input type="date" id="date" placeholder="Виберіть бажаему дату" required>
-                    <input type="time" id="time" placeholder="Виберіть бажаемий час" required>
+                    <input type="date" id="date" placeholder="Виберіть бажаему дату">
+                    <input type="time" id="time" placeholder="Виберіть бажаемий час">
                 </div>
                 <div class="bottom_form">
                     <input type="text" id="comment" placeholder="Залешить ваш коментар">
@@ -187,6 +187,8 @@
 {% block javascripts %}
     {{ parent() }}
 {#    {{ encore_entry_script_tags('index_page') }}#}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
 {% endblock %}
