@@ -29,7 +29,9 @@
                 <div class="carousel-inner">
                     {% for slide in slides %}
                         <div class="carousel-item {% if loop.first %}active{% endif %}">
-                            <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">
+                            <a href="https://google.com">
+                                <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">
+                            </a>
                         </div>
                     {% endfor %}
                 </div>

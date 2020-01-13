@@ -34,7 +34,7 @@
 }
 .service img {
     width: 100%;
-    height: 120px;
+    height: 35vh;
     object-fit: contain;
 }
 .service_title {
@@ -59,4 +59,5 @@
 .service_view-more:hover {
     background: #25305E;
     color: white!important;
+    text-decoration: none;
 }

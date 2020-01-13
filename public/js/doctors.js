@@ -1,6 +1,6 @@
 $('.doctors_slider').slick({
     infinite: false,
-    slidesToShow: 1.3,
+    slidesToShow: 3.8,
     slidesToScroll: 1,
     prevArrow: "<button class='prev'></button>",
     nextArrow: "<button class='next'></button>",
@@ -9,14 +9,14 @@ $('.doctors_slider').slick({
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 2.4,
+                slidesToShow: 2.3,
                 infinite: false,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.5,
+                slidesToShow: 1.4,
                 infinite: false,
             }
         }
@@ -33,14 +33,14 @@ $('.certificates_slider').slick({
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 2.4,
+                slidesToShow: 3.6,
                 infinite: false,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.5,
+                slidesToShow: 2.6,
                 infinite: false,
             }
         }

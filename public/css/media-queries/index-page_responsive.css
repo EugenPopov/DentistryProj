@@ -60,9 +60,6 @@
     .map_card img {
         width: 100%;
     }
-    .map iframe {
-        height: 350px;
-    }
     .contact_wrapper {
         flex-direction: column;
     }
