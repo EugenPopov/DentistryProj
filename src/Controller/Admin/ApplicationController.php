@@ -7,7 +7,9 @@ namespace App\Controller\Admin;
 use App\Entity\Application;
 use App\Service\ApplicationService;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class ApplicationController extends AbstractController
 {
@@ -31,10 +33,15 @@ class ApplicationController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    public function index()
+    public function index(Request $request, PaginatorInterface $paginator)
     {
+        $applications = $paginator->paginate(
+            $this->applicationService->getSearchQuery(),
+            $request->query->getInt('page', 1),
+            5
+        );
         return $this->render('admin/application/index.html.twig', [
-            'applications' => $this->applicationService->findBy([], ['is_new' => 'DESC', 'created_at' => 'DESC'])
+            'applications' => $applications
         ]);
     }
 

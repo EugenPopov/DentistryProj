@@ -27,4 +27,12 @@ class ApplicationRepository extends ServiceEntityRepository
             ->setParameter('is_new', true)
             ->getQuery()->getOneOrNullResult();
     }
+
+    public function getSearchQuery()
+    {
+        return $this->createQueryBuilder('application')
+            ->orderBy('application.is_new', 'DESC')
+            ->addOrderBy('application.created_at', 'DESC')
+            ->getQuery();
+    }
 }

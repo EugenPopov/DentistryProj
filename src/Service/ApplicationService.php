@@ -78,4 +78,9 @@ class ApplicationService
     {
         return $this->applicationRepository->findBy($parameters, $order, $limit);
     }
+
+    public function getSearchQuery()
+    {
+        return $this->applicationRepository->getSearchQuery();
+    }
 }
