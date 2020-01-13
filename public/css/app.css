@@ -173,6 +173,8 @@ nav.footer {
 
 nav.footer a {
     cursor: pointer;
+    color: black!important;
+    text-decoration: none;
 }
 
 .breadcrumb-item+.breadcrumb-item:before {
