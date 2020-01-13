@@ -144,6 +144,23 @@ promotion_queue:
 promotion_delete:
     path: /adminPanel/promotion/delete/{id}
     controller: App\Controller\Admin\PromotionController::delete
+#gallery
+gallery_index:
+    path: /adminPanel/gallery
+    controller: App\Controller\Admin\WorksGalleryController::index
+gallery_create:
+    path: /adminPanel/gallery/create
+    controller: App\Controller\Admin\WorksGalleryController::create
+gallery_update:
+    path: /adminPanel/gallery/update/{id}
+    controller: App\Controller\Admin\WorksGalleryController::update
+gallery_queue:
+    path: /adminPanel/gallery/update_queue/
+    controller: App\Controller\Admin\WorksGalleryController::updateQueue
+    methods: POST
+gallery_delete:
+    path: /adminPanel/gallery/delete/{id}
+    controller: App\Controller\Admin\WorksGalleryController::delete
 #common_settings
 common_settings_index:
     path: /adminPanel/settings

@@ -21,6 +21,11 @@ class WorksGallery implements EntityInterface
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $queue;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class WorksGallery implements EntityInterface
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getQueue(): ?int
+    {
+        return $this->queue;
+    }
+
+    public function setQueue(int $queue): self
+    {
+        $this->queue = $queue;
 
         return $this;
     }
