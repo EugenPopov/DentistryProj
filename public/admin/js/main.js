@@ -32,7 +32,7 @@ $(document).ready(function () {
         url: '/adminPanel/api/getNewApplications',
     })
         .done(function (amount) {
-            $('.application-amount').text(amount?amount:'');
-            $('.application-amount-li').text(amount?amount:'нет');
+            $('.application-amount').text(amount ? amount : '');
+            $('.application-amount-li').text(amount ? amount : 'нет');
         });
 });
