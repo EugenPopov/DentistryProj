@@ -6,7 +6,7 @@ namespace App\Model;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class MainPageSliderModel implements ModelInterface
+class WorksGalleryModel implements ModelInterface
 {
     /**
      * @Assert\Image()
@@ -31,6 +31,4 @@ class MainPageSliderModel implements ModelInterface
 
         return $this;
     }
-
-
 }

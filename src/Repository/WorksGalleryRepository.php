@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\MainPageSlider;
 use App\Entity\WorksGallery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -19,32 +20,11 @@ class WorksGalleryRepository extends ServiceEntityRepository
         parent::__construct($registry, WorksGallery::class);
     }
 
-    // /**
-    //  * @return WorksGallery[] Returns an array of WorksGallery objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getLastQueue(): ?WorksGallery
     {
-        return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('w.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->createQueryBuilder('works_gallery')
+            ->orderBy('works_gallery.queue', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()->getOneOrNullResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?WorksGallery
-    {
-        return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
