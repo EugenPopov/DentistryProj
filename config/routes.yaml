@@ -22,6 +22,10 @@ check_promotion:
     path: /api/v1/promotion
     controller: App\Controller\ApiController::checkPromotion
     methods: POST
+submit_application:
+    path: /api/v1/submit_application
+    controller: App\Controller\ApiController::submitApplication
+    methods: POST
 #admin_panel
 admin_index:
     path: /adminPanel

@@ -148,9 +148,28 @@ $(function() {
             telephone: 'Введите ваш телефон'
         },
 
-        submitHandler: function(form) {
-            console.log(promotion);
-            // form.submit();
+        submitHandler: function() {
+            let data = $("form[name='form_order']").serializeArray();
+            let form_data = new FormData();
+            data.forEach(function (elem) {
+                form_data.append(elem['name'], elem['value']);
+            });
+            form_data.append('promotion', promotion);
+            try {
+                $.ajax({
+                    method: "POST",
+                    url: '/api/v1/submit_application',
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                })
+                    .done(function (data) {
+                        console.log(data);
+                    });
+            }
+            catch (e) {
+                console.log(e);
+            }
         }
     });
 });
