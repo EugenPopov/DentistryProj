@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 {% endblock %}
 {% block body %}
@@ -156,11 +157,9 @@
                     </label>
                     <div class="promocode_body">
                         <div class="promocode_input">
-                            <input type="text" placeholder="Введiть промокод">
-                            <div class="promocode_use">Застовувати</div>
+                            <input type="text" placeholder="Введiть промокод" id="promocode_input">
+                            <div class="promocode_use">Застосувати</div>
                         </div>
-                        <span class="promocode_message">Активний промокод: <span class="promocode_active">Название акции</span></span>
-                        <div class="promocode_change">Змiнити промокод</div>
                     </div>
                 </div>
             </div>

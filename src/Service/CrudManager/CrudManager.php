@@ -39,6 +39,11 @@ abstract class CrudManager implements CrudManagerInterface
         return $this->repository->findBy($parameters, $order, $limit);
     }
 
+    public function findOneBy(array $parameters = [], array $order = [])
+    {
+        return $this->repository->findOneBy($parameters, $order);
+    }
+
     public function create(ModelInterface $model, EntityInterface $entity)
     {
         $article  = $this->mapper->modelToEntity($model,  $entity);

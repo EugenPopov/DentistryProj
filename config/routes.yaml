@@ -17,6 +17,11 @@ doctor_single:
 reviews:
     path: /reviews
     controller: App\Controller\Pages\ReviewController::index
+#api
+check_promotion:
+    path: /api/v1/promotion
+    controller: App\Controller\ApiController::checkPromotion
+    methods: POST
 #admin_panel
 admin_index:
     path: /adminPanel
