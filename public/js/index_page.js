@@ -148,7 +148,7 @@ $(function() {
             telephone: 'Введите ваш телефон'
         },
 
-        submitHandler: function() {
+        submitHandler: function(form) {
             let data = $("form[name='form_order']").serializeArray();
             let form_data = new FormData();
             data.forEach(function (elem) {
@@ -164,7 +164,10 @@ $(function() {
                     contentType: false,
                 })
                     .done(function (id) {
-                        alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`)
+                        alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`);
+                        // form.reset();
+                        // $('.promocode_message').remove();
+                        // $('.promocode_change').remove();
                     });
             }
             catch (e) {

@@ -41,6 +41,16 @@ class Application
      */
     private $promotion;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_new;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +112,30 @@ class Application
     public function setPromotion(?Promotion $promotion): self
     {
         $this->promotion = $promotion;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getIsNew(): ?bool
+    {
+        return $this->is_new;
+    }
+
+    public function setIsNew(bool $is_new): self
+    {
+        $this->is_new = $is_new;
 
         return $this;
     }

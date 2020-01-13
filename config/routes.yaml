@@ -30,6 +30,10 @@ submit_application:
 admin_index:
     path: /adminPanel
     controller: App\Controller\Admin\MainController::index
+#admin_api
+get_new_applications:
+    path: /adminPanel/api/getNewApplications
+    controller: App\Controller\Admin\ApiController::getNewApplicationsAmount
 #slider
 main_page_slider_index:
     path: /adminPanel/main_page_slider
@@ -173,6 +177,13 @@ gallery_queue:
 gallery_delete:
     path: /adminPanel/gallery/delete/{id}
     controller: App\Controller\Admin\WorksGalleryController::delete
+#application
+application_index:
+    path: /adminPanel/application
+    controller: App\Controller\Admin\ApplicationController::index
+application_update_is_new:
+    path: /adminPanel/application/updateIsNew/{id}
+    controller: App\Controller\Admin\ApplicationController::updateIsNew
 #common_settings
 common_settings_index:
     path: /adminPanel/settings

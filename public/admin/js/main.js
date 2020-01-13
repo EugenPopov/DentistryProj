@@ -25,5 +25,14 @@ $(document).ready(function () {
         if($(this).hasClass('has_image'))
             $(this).parent().after(`<a target="_blank" href="/uploads/${$(this).attr('data-image')}"><img style="width: 250px; height: 250px; padding-top: 10px; object-fit: cover" src="/uploads/${$(this).attr('data-image')}"></a><br>Старое фото:`);
 
+    });
+
+    $.ajax({
+        method: "GET",
+        url: '/adminPanel/api/getNewApplications',
     })
+        .done(function (amount) {
+            $('.application-amount').text(amount?amount:'');
+            $('.application-amount-li').text(amount?amount:'нет');
+        });
 });

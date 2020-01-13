@@ -37,7 +37,7 @@ class ApplicationService
         $this->entityManager = $entityManager;
     }
 
-    public function makeOrder(string $name, string $phone, string $date, string $time, string $comment, $promotion)
+    public function create(string $name, string $phone, string $date, string $time, string $comment, $promotion)
     {
         try {
             $date = $date ? new DateTime($date . ' ' . $time) : null;
@@ -45,18 +45,37 @@ class ApplicationService
             $date = null;
         }
 
-        $promotion = $this->promotionService->findOneBy(['code' => $promotion]);
+        $promotion = $this->promotionService->findOneBy(['code' => $promotion, 'is_active' => true]);
 
         $application = new Application();
         $application->setName($name)
+            ->setCreatedAt(new DateTime())
             ->setPhone($phone)
             ->setDate($date)
             ->setComment($comment)
+            ->setIsNew(true)
             ->setPromotion($promotion);
 
         $this->entityManager->persist($application);
         $this->entityManager->flush();
 
         return $application;
+    }
+
+    public function getNewApplicationsAmount(): int
+    {
+        $amount = $this->applicationRepository->getNewApplicationsAmount();
+        $amount = $amount['1'] ?? 0;
+        return $amount;
+    }
+
+    public function all()
+    {
+        return $this->applicationRepository->findAll();
+    }
+
+    public function findBy(array $parameters = [], array $order = [], int $limit = null)
+    {
+        return $this->applicationRepository->findBy($parameters, $order, $limit);
     }
 }

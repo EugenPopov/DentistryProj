@@ -47,7 +47,7 @@ class ApiController extends AbstractController
         $time = $request->get('time');
         $comment = $request->get('comment');
         $promotion = $request->get('promotion');
-        $application = $this->orderService->makeOrder($name, $phone, $date, $time, $comment, $promotion);
+        $application = $this->orderService->create($name, $phone, $date, $time, $comment, $promotion);
 
         return new JsonResponse($application->getId());
     }
