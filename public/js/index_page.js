@@ -163,8 +163,8 @@ $(function() {
                     processData: false,
                     contentType: false,
                 })
-                    .done(function (data) {
-                        console.log(data);
+                    .done(function (id) {
+                        alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`)
                     });
             }
             catch (e) {

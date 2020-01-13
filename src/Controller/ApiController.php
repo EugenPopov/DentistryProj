@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-use App\Service\OrderService;
+use App\Service\ApplicationService;
 use App\Service\PromotionService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,16 +18,16 @@ class ApiController extends AbstractController
      */
     private $promotionService;
     /**
-     * @var OrderService
+     * @var ApplicationService
      */
     private $orderService;
 
     /**
      * ApiController constructor.
      * @param PromotionService $promotionService
-     * @param OrderService $orderService
+     * @param ApplicationService $orderService
      */
-    public function __construct(PromotionService $promotionService, OrderService $orderService)
+    public function __construct(PromotionService $promotionService, ApplicationService $orderService)
     {
         $this->promotionService = $promotionService;
         $this->orderService = $orderService;
@@ -35,7 +35,6 @@ class ApiController extends AbstractController
 
     public function checkPromotion(Request $request)
     {
-
         $promotion = $this->promotionService->findOneBy(['code' => $request->get('promotion'), 'is_active' => true]);
         return new JsonResponse(['exists' => $promotion? $promotion->getTitle():false], Response::HTTP_OK);
     }
@@ -48,8 +47,8 @@ class ApiController extends AbstractController
         $time = $request->get('time');
         $comment = $request->get('comment');
         $promotion = $request->get('promotion');
-        $this->orderService->makeOrder($name, $phone, $date, $time, $comment, $promotion);
+        $application = $this->orderService->makeOrder($name, $phone, $date, $time, $comment, $promotion);
 
-        return new JsonResponse($request->request->all());
+        return new JsonResponse($application->getId());
     }
 }
