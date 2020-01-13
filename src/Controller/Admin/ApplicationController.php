@@ -38,7 +38,7 @@ class ApplicationController extends AbstractController
         $applications = $paginator->paginate(
             $this->applicationService->getSearchQuery(),
             $request->query->getInt('page', 1),
-            5
+            10
         );
         return $this->render('admin/application/index.html.twig', [
             'applications' => $applications
