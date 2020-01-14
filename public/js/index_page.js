@@ -84,7 +84,9 @@ $('#promo').click(function() {
     }
 
     $('.promocode_body').slideToggle(this.checked);
-    $('#promocode_input').focus();
+    if(this.checked)
+        $('#promocode_input').focus();
+
 });
 $(document).on('click', '.promocode_use', function () {
     let input = $('#promocode_input');
@@ -155,25 +157,21 @@ $(function() {
                 form_data.append(elem['name'], elem['value']);
             });
             form_data.append('promotion', promotion);
-            try {
-                $.ajax({
-                    method: "POST",
-                    url: '/api/v1/submit_application',
-                    data: form_data,
-                    processData: false,
-                    contentType: false,
-                })
-                    .done(function (id) {
-                        modalWindow("Запит на запис до лікаря надіслано, ми з вами зв'яжемося в найближчий час!");
-                        // alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`);
-                        // form.reset();
-                        // $('.promocode_message').remove();
-                        // $('.promocode_change').remove();
-                    });
-            }
-            catch (e) {
-                console.log(e);
-            }
+            $.ajax({
+                method: "POST",
+                url: '/api/v1/submit_application',
+                data: form_data,
+                processData: false,
+                contentType: false,
+            })
+                .done(function () {
+                    modalWindow("Запит на запис до лікаря надіслано, ми з вами зв'яжемося в найближчий час!");
+                    form.reset();
+                    $('.promocode_message').remove();
+                    $('.promocode_change').remove();
+                    promotion = false;
+                    $('.promocode_body').slideToggle(false);
+                });
         }
     });
 });
