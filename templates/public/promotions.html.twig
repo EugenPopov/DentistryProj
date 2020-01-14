@@ -28,6 +28,7 @@
             <div class="promotion_wrapper">
                 <img src="/uploads/{{ promotion.image }}">
                 <div class="promotion">
+                    <div class="promotion_title">{{ promotion.title }}</div>
                     <div class="promotion_text">{{ promotion.description|raw }}</div>
                     <div class="promotion_use" data-code="{{ promotion.code }}">Использовать</div>
                 </div>
