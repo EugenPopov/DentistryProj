@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    .page_top-content {
+        width: 95%;
+    }
+    .page_top_wrapper {
+        background: linear-gradient(to bottom, transparent 80%, #fafafa 80%), linear-gradient(to left, #76E0C1 50%, transparent 50%)!important;
+    }
+    .active-review .review_photo {
+        width: 50%;
+    }
+    .active-review .review {
+        width: 50%;
+        margin-left: 25px;
+    }
+    .reviews_wrapper {
+        margin: 0 auto;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .active-review {
+        flex-direction: column;
+    }
+    .active-review .review_photo {
+        width: 100%;
+    }
+    .active-review .review {
+        width: 100%;
+        margin-left: 0;
+    }
+}
