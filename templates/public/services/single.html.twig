@@ -74,7 +74,7 @@
                                 {{ add_service.title }}
                             </div>
                             <div class="extra_services_item-text">
-                                {{ add_service.description }}
+                                {{ add_service.description|striptags|raw|slice(0, 100) }}{{ add_service.description|striptags|raw|length>100?'...' }}
                             </div>
                             <a class="extra_services_item-more" href="{{ path('service_single', {'slug': add_service.slug}) }}">
                                 Дізнатися більше

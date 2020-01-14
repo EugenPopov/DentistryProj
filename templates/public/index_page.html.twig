@@ -24,28 +24,16 @@
             <div class="top_carousel">
                 {% for slide in slides %}
                 <div class="top_carousel_item">
-                    <a target="_blank" href="https://google.com">
+                    {% if slide.link is not empty %}
+                        <a target="_blank" href="{{ slide.link }}">
+                    {% endif %}
                         <img class="top_carousel_img" src="/uploads/{{ slide.image }}" alt="First slide">
-                    </a>
+                    {% if slide.link is not empty %}
+                        </a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
-{#            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">#}
-{#                <ol class="carousel-indicators">#}
-{#                    {% for slide in slides %}#}
-{#                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if loop.first %}active{% endif %} carousel-indicator"></li>#}
-{#                    {% endfor %}#}
-{#                </ol>#}
-{#                <div class="carousel-inner">#}
-{#                    {% for slide in slides %}#}
-{#                        <div class="carousel-item {% if loop.first %}active{% endif %}">#}
-{#                            <a href="https://google.com">#}
-{#                                <img class="d-block w-100" src="/uploads/{{ slide.image }}" alt="First slide">#}
-{#                            </a>#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#            </div>#}
         </div>
     </div>
     <div class="why-best_wrapper">
@@ -61,7 +49,7 @@
                     {{ service.title }}
                 </div>
                 <div class="best_item-text">
-                    {{ service.description }}
+                    {{ service.description|striptags|raw|slice(0, 100) }}{{ service.description|striptags|raw|length>100?'...' }}
                 </div>
                 <a class="best_item-more" href="{{ path('service_single', {'slug': service.slug}) }}">
                     Дізнатися більше

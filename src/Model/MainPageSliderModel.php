@@ -13,6 +13,8 @@ class MainPageSliderModel implements ModelInterface
      */
     private $image;
 
+    private $link;
+
     /**
      * @return mixed
      */
@@ -31,6 +33,27 @@ class MainPageSliderModel implements ModelInterface
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param mixed $link
+     * @return MainPageSliderModel
+     */
+    public function setLink($link): self
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+
 
 
 }

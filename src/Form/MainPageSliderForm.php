@@ -8,6 +8,7 @@ use App\Model\MainPageSliderModel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -30,6 +31,10 @@ class MainPageSliderForm extends AbstractType
                 'attr' => $attr,
                 'required' => $options['is_create'] ? true : false,
                 'constraints' => $options['is_create'] ? new NotBlank() : null
+            ])
+            ->add('link', TextType::class, [
+                'label' => 'Ссылка',
+                'required' => false
             ])
             ->add('save', SubmitType::class, ['label' => 'Сохранить'])
             ->getForm();
