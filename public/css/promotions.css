@@ -1,0 +1,64 @@
+.page_top_wrapper {
+    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+}
+
+.page_top-content {
+    margin: auto;
+    width: 80%;
+}
+
+.page_title {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 46px;
+}
+
+.page_top-img {
+    margin-left: auto;
+    width: 60%;
+}
+
+.page_top-img img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.promotions {
+    width: 85%;
+    margin: 100px auto 0;
+}
+
+.promotion_wrapper {
+    display: flex;
+    max-height: 30vh;
+    padding: 20px 0;
+}
+
+.promotion_wrapper img {
+    width: 20%;
+    object-fit: contain;
+}
+
+.promotion {
+    padding: 10px 20px 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.promotion_use {
+    width: fit-content;
+    margin: 0 auto;
+    background: #25305E;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.promotion_use:hover {
+    background: transparent;
+    color: black;
+}
