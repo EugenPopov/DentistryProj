@@ -17,6 +17,9 @@ doctor_single:
 reviews:
     path: /reviews
     controller: App\Controller\Pages\ReviewController::index
+promotions:
+    path: /promotions
+    controller: App\Controller\Pages\PromotionsController::index
 #api
 check_promotion:
     path: /api/v1/promotion

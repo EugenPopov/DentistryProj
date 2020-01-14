@@ -73,6 +73,29 @@ $('.reviews_slider').slick({
         },
     ]
 });
+if(localStorage.getItem('promotion') !== null){
+    $.ajax({
+        method: "POST",
+        url: '/api/v1/promotion',
+        data: {
+            'promotion': localStorage.getItem('promotion')
+        }
+    })
+        .done(function (data) {
+            let input = $('#promocode_input');
+            if(data.exists){
+                $('#promo').click();
+                promotion = localStorage.getItem('promotion');
+                input.val(localStorage.getItem('promotion'));
+                let parent_span = $('<span class="promocode_message"></span>').html('<i style="color: green" class="fas fa-check-circle"></i> Активний промокод: ');
+                let child_span = $('<span class="promocode_active"></span>').text(data.exists);
+                let promotion_div = $('<div class="promocode_change">Змiнити промокод</div>');
+                parent_span.append(child_span);
+                $('.promocode_body').append(parent_span).append(promotion_div);
+            }
+            localStorage.removeItem('promotion');
+        });
+}
 let promotion = false;
 $('#promo').click(function() {
     $('.contact_form form').toggleClass('active');

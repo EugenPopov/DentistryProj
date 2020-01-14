@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/promotions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/promotions_responsive.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Акции</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="page_title">Акции</div>
+            <div class="page_top-img">
+                <img src="{{ asset('img/main.png') }}">
+            </div>
+        </div>
+    </div>
+    <div class="promotions">
+        {% for promotion in promotions %}
+            <div class="promotion_wrapper">
+                <img src="/uploads/{{ promotion.image }}">
+                <div class="promotion">
+                    <div class="promotion_text">{{ promotion.description|raw }}</div>
+                    <div class="promotion_use" data-code="{{ promotion.code }}">Использовать</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/promotions.js') }}"></script>
+{% endblock %}
