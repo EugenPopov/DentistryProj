@@ -24,27 +24,15 @@
         </div>
     </div>
     <div class="promotions">
-        <div class="promotion_wrapper">
-            <img src="{{ asset('img/main.png') }}">
-            <div class="promotion">
-                <div class="promotion_text">qqqqqqq</div>
-                <div class="promotion_use">Использовать</div>
+        {% for promotion in promotions %}
+            <div class="promotion_wrapper">
+                <img src="/uploads/{{ promotion.image }}">
+                <div class="promotion">
+                    <div class="promotion_text">{{ promotion.description|raw }}</div>
+                    <div class="promotion_use" data-code="{{ promotion.code }}">Использовать</div>
+                </div>
             </div>
-        </div>
-        <div class="promotion_wrapper">
-            <img src="{{ asset('img/main.png') }}">
-            <div class="promotion">
-                <div class="promotion_text">qqqqqqq</div>
-                <div class="promotion_use">Использовать</div>
-            </div>
-        </div>
-        <div class="promotion_wrapper">
-            <img src="{{ asset('img/main.png') }}">
-            <div class="promotion">
-                <div class="promotion_text">qqqqqqq</div>
-                <div class="promotion_use">Использовать</div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <footer>
         {% include '/elements/footer.html.twig' %}
@@ -52,5 +40,5 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="{{ asset('js/reviews.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/promotions.js') }}"></script>
 {% endblock %}

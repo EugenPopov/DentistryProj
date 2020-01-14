@@ -4,6 +4,9 @@
         <span>{{get_setting('name')}}</span>
     </div>
     <div class="main_menu">
+        <a class="menu-item" href="{{ path('index') }}">
+            ГОЛОВНА
+        </a>
         <div class="menu-item">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ПОСЛУГИ
@@ -12,16 +15,6 @@
                 {% for service in all_services() %}
                     <a class="dropdown-item" href="{{ path('service_single', {'slug': service.slug}) }}">{{service.title}}</a>
                 {% endfor %}
-            </div>
-        </div>
-        <div class="menu-item">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ПРО НАС
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
             </div>
         </div>
         <a class="menu-item" href="{{ path('promotions') }}">
@@ -36,10 +29,15 @@
         <a class="menu-item">
             КОНТАКТИ
         </a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="menu-item" href="{{ path('admin_index') }}">
+                АДМИН ПАНЕЛЬ
+            </a>
+        {% endif %}
         <div class="menu-item">
             {{get_setting('address')}} <br>{{get_setting('phone')}}
         </div>
-        <a class="menu-item header_callback">
+        <a class="menu-item header_callback" href="/#contact_wrapper">
             ЗАПИСАТИСЯ НА ПРИЙОМ
         </a>
     </div>
