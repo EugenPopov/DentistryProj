@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+    .page_top_wrapper {
+        background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%)!important;
+    }
+    .promotions {
+        margin-top: 30px;
+    }
+    .promotion_wrapper img {
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .page_top-img {
+        display: none;
+    }
+    .promotions {
+        margin-top: 15px;
+    }
+    .promotion_wrapper {
+        max-height: unset;
+        flex-direction: column;
+    }
+    .promotion_wrapper img {
+        width: 100%;
+    }
+    .promotion {
+        width: 100%;
+    }
+}

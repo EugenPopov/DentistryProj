@@ -113,6 +113,10 @@ a.menu-item:hover {
     text-decoration: none;
 }
 
+div.menu-item {
+    word-break: break-all;
+}
+
 .mobile_nav {
     display: none;
 }
@@ -202,4 +206,9 @@ nav.footer a {
 .modal-footer button {
     background: #25305e!important;
     color: white!important;
+}
+
+.modal-footer button:hover {
+    background: transparent!important;
+    color: black!important;
 }
