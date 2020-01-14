@@ -26,6 +26,11 @@ class MainPageSlider implements EntityInterface
      */
     private $queue;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class MainPageSlider implements EntityInterface
     public function setQueue(int $queue): self
     {
         $this->queue = $queue;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }
