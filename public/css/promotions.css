@@ -48,9 +48,12 @@
     justify-content: space-between;
 }
 
+.promotion_text {
+    padding: 10px 0;
+}
+
 .promotion_use {
     width: fit-content;
-    margin: 0 auto;
     background: #25305E;
     color: white;
     padding: 10px 20px;

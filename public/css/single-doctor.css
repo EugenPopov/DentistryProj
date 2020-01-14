@@ -76,6 +76,8 @@ ul.doctor_functions.mobile {
 .doctor_img img {
     object-fit: contain;
     height: 100%;
+    width: 100%;
+    max-height: 45vh;
 }
 
 .controls button {

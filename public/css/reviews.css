@@ -25,6 +25,7 @@
 .active-review .review_photo img {
     width: 100%;
     object-fit: contain;
+    max-height: 40vh;
 }
 
 .active-review .review {
@@ -50,14 +51,8 @@
     line-height: 23px;
 }
 
-.reviews_page {
-    display: grid!important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3);
-}
-
 .reviews_wrapper {
-    margin: 100px auto;
+    margin: 100px auto 0;
     width: 85%;
 }
 
