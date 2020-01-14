@@ -16,6 +16,19 @@
     <div class="page_up">
         <img src="{{ asset('img/up.png') }}">
     </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ asset('img/service.png') }}">
+                    <div class="modal_text"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

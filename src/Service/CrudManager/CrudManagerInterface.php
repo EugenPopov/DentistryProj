@@ -21,4 +21,6 @@ interface CrudManagerInterface
 
     public function findBy(array $parameters = [], array $order = [], int $limit = null);
 
+    public function findOneBy(array $parameters = [], array $order = []);
+
 }

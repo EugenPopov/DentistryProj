@@ -22,6 +22,11 @@
     width: 60%;
 }
 
+.active-review .review_photo img {
+    width: 100%;
+    object-fit: contain;
+}
+
 .active-review .review {
     width: 40%;
     display: flex;
@@ -64,25 +69,25 @@
     padding: 20px;
 }
 
-.reviews_page .review {
+.review {
     padding: 20px 0;
 }
 
-.reviews_page .review_title {
+.review .review_title {
     font-weight: 600;
     font-size: 18px;
     line-height: 23px;
     text-align: center;
 }
 
-.reviews_page .review_text {
+.review .review_text {
     font-size: 18px;
     line-height: 23px;
     text-align: center;
     padding: 20px 0;
 }
 
-.reviews_page .review_view-more {
+.review .review_view-more {
     padding: 10px 15px;
     text-align: center;
     color: black;
@@ -92,7 +97,7 @@
     transition: all .3s ease-in;
 }
 
-.reviews_page .review_view-more:hover {
+.review .review_view-more:hover {
     background: #25305E;
     color: white;
 }
@@ -119,6 +124,7 @@
     display: flex;
     list-style: none;
     justify-content: center;
+    padding: 0;
 }
 
 .slick-dots li button {

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -57,6 +59,16 @@ class Promotion implements EntityInterface
      * @ORM\Column(type="string", length=255)
      */
     private $image;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Application", mappedBy="promotion")
+     */
+    private $applications;
+
+    public function __construct()
+    {
+        $this->applications = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -148,6 +160,37 @@ class Promotion implements EntityInterface
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Application[]
+     */
+    public function getApplications(): Collection
+    {
+        return $this->applications;
+    }
+
+    public function addApplication(Application $application): self
+    {
+        if (!$this->applications->contains($application)) {
+            $this->applications[] = $application;
+            $application->setPromotion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeApplication(Application $application): self
+    {
+        if ($this->applications->contains($application)) {
+            $this->applications->removeElement($application);
+            // set the owning side to null (unless already changed)
+            if ($application->getPromotion() === $this) {
+                $application->setPromotion(null);
+            }
+        }
 
         return $this;
     }

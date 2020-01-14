@@ -332,10 +332,24 @@ a.best_item-more:hover {
     background-color: #fafafa;
 }
 
+.top_form {
+    display: flex;
+}
+
+.top_form .bmd-form-group{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.top_form .bmd-form-group:last-child {
+    margin: auto;
+}
+
 .top_form input {
     border: unset;
     border-bottom: 1px solid lightgray;
-    width: 49%;
+    width: 100%;
 }
 
 .middle_form {
