@@ -50,84 +50,16 @@
     <div class="news_wrapper">
         <div class="news_main_title">Новини</div>
         <div class="news_slider">
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
-            <div class="news">
-                <img src="{{ asset('img/main.png') }}">
-                <div class="news_title">qqqqq</div>
-                <div class="news_text">qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
-                <div class="news_view">Дивитись</div>
-            </div>
+            {% for article in articles %}
+                <div class="news">
+                        <img src="/uploads/{{ article.image }}">
+                        <div class="news_title">{{ article.title }}</div>
+                        <div class="news_text">
+                            {{ article.description|striptags|raw|slice(0, 100) }}{{ article.description|striptags|raw|length>100?'...' }}
+                        </div>
+                        <div class="news_view">Дивитись</div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {#    <div class="certificates_wrapper">#}

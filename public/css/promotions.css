@@ -48,6 +48,11 @@
     justify-content: space-between;
 }
 
+.promotion_title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
 .promotion_text {
     padding: 10px 0;
 }

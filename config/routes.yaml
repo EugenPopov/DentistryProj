@@ -138,6 +138,23 @@ review_queue:
 review_delete:
     path: /adminPanel/review/delete/{id}
     controller: App\Controller\Admin\ReviewController::delete
+#blog
+blog_index:
+    path: /adminPanel/blog
+    controller: App\Controller\Admin\BlogController::index
+blog_create:
+    path: /adminPanel/blog/create
+    controller: App\Controller\Admin\BlogController::create
+blog_update:
+    path: /adminPanel/blog/update/{id}
+    controller: App\Controller\Admin\BlogController::update
+blog_queue:
+    path: /adminPanel/blog/update_queue/
+    controller: App\Controller\Admin\BlogController::updateQueue
+    methods: POST
+blog_delete:
+    path: /adminPanel/blog/delete/{id}
+    controller: App\Controller\Admin\BlogController::delete
 #promotion
 promotion_index:
     path: /adminPanel/promotion
