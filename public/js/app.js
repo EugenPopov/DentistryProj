@@ -7,3 +7,7 @@ $('#main-header-toggle').on('click', function () {
     $('.main_header').toggleClass('active');
 
 });
+function modalWindow(word) {
+    $(".modal_text").text(word);
+    $("#modal").modal("show");
+}

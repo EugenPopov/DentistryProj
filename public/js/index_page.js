@@ -164,7 +164,8 @@ $(function() {
                     contentType: false,
                 })
                     .done(function (id) {
-                        alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`);
+                        modalWindow("Запит на запис до лікаря надіслано, ми з вами зв'яжемося в найближчий час!");
+                        // alert(`Спасибо за вашу заявку. Ваш номер ${id} (245, на телогреечке печать)`);
                         // form.reset();
                         // $('.promocode_message').remove();
                         // $('.promocode_change').remove();
@@ -176,3 +177,4 @@ $(function() {
         }
     });
 });
+
