@@ -21,3 +21,26 @@ $('.reviews_slider').slick({
         }
     ]
 });
+$('.news_slider').slick({
+    dots: true,
+    rows: 3,
+    slidesPerRow: 3,
+    arrows: false,
+    responsive: [
+        {
+            breakpoint: 769,
+            settings: {
+                slidesPerRow: 2,
+                rows: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesPerRow: 1,
+                rows:3
+            }
+        }
+    ]
+});
+

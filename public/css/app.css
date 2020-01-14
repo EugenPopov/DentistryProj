@@ -125,6 +125,7 @@ div.menu-item {
     color: white!important;
     background: #67C0A6;
     padding: 10px;
+    text-align: center;
 }
 
 .dropdown-toggle {

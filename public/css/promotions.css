@@ -31,13 +31,13 @@
 
 .promotion_wrapper {
     display: flex;
-    max-height: 30vh;
     padding: 20px 0;
 }
 
 .promotion_wrapper img {
     width: 20%;
     object-fit: contain;
+    height: 100%;
 }
 
 .promotion {

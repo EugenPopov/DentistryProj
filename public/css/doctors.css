@@ -4,7 +4,7 @@
     background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
 }
 .doctors_wrapper {
-    margin: 60px auto 60px;
+    margin: 60px auto 20px;
     width: 95%;
 }
 .controls {

@@ -35,3 +35,15 @@
         width: 50%;
     }
 }
+
+@media (max-width: 480px) {
+    .doctors_wrapper {
+        margin-top: 20px;
+    }
+    .controls {
+        width: 55%;
+    }
+    .contact_wrapper {
+        margin-top: 20px;
+    }
+}
