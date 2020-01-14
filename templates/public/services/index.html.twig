@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/services.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/media-queries/services_responsive.css') }}">
-{% endblock %}
-{% block body %}
+    {% block title %}{{ get_setting('seo_title_service') }}{% endblock %}
+    {% block description %}{{ get_setting('seo_description_service') }}{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <link rel="stylesheet" href="{{ asset('css/services.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/media-queries/services_responsive.css') }}">
+    {% endblock %}
+    {% block body %}
     <div class="page_top_wrapper">
         {% include 'elements/header.html.twig' %}
         {% include 'elements/mobile_header.html.twig'%}

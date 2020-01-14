@@ -34,8 +34,8 @@
     <script>
         $('#doctor_form_image').parent().after('<div id="service_editor" style="padding-top: 15px" class="form-group"><label for="edit_services">Услуги врача</label></div>');
         $('#edit_services').appendTo('#service_editor');
-        let already_set = JSON.parse('{{ form.vars.value.services|raw }}');
-        let all_services = JSON.parse('{{ services|raw }}');
+        let already_set = JSON.parse('{{ form.vars.value.services|escape('js') }}');
+        let all_services = JSON.parse('{{ services|escape('js') }}');
         let recommend = $('#edit_services').magicSuggest({
             allowFreeEntries: false,
             useCommaKey: false,

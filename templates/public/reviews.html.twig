@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
+{% block title %}{{ get_setting('seo_title_reviews') }}{% endblock %}
+{% block description %}{{ get_setting('seo_description_reviews') }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/reviews.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/reviews_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">

@@ -40,7 +40,7 @@ class ServiceMapper implements DataMapperInterface
         $model = new ServiceModel();
 
         if($entity->getMiniService())
-            $model->setMiniServices($this->serializer->serialize($entity->getMiniService(), 'json'));
+            $model->setMiniServices($this->miniServiceService->getByServiceIdInJson($entity->getId()));
         else
             $model->setMiniServices(json_encode([]));
 

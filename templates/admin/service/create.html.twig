@@ -41,7 +41,6 @@
             <button id="submit_new_service" type="button" class="btn btn-success btn-sm">Сохранить</button>
         </div>
     </div>
-    {{ dump(form.vars.value.miniServices) }}
 {% endblock %}
 
 {% block javascripts %}
@@ -60,7 +59,7 @@
         $('#edit_services').appendTo('#service_editor').after($('#new_service'));
         let all_services;
         try {
-            all_services = JSON.parse('{{ form.vars.value.miniServices|raw }}');
+            all_services = JSON.parse('{{ form.vars.value.miniServices|escape('js') }}');
             if(all_services[0] !== undefined && all_services[0]['id'] === undefined)
                 location.pathname = window.location.pathname;
         }

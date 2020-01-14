@@ -20,6 +20,8 @@ class BlogModel implements ModelInterface
      * @Assert\Image()
      */
     private $image;
+    private $seo_title;
+    private $seo_description;
 
     /**
      * @return mixed
@@ -77,5 +79,44 @@ class BlogModel implements ModelInterface
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoTitle()
+    {
+        return $this->seo_title;
+    }
+
+    /**
+     * @param mixed $seo_title
+     * @return BlogModel
+     */
+    public function setSeoTitle($seo_title): self
+    {
+        $this->seo_title = $seo_title;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoDescription()
+    {
+        return $this->seo_description;
+    }
+
+    /**
+     * @param mixed $seo_description
+     * @return BlogModel
+     */
+    public function setSeoDescription($seo_description): self
+    {
+        $this->seo_description = $seo_description;
+
+        return $this;
+    }
+
 
 }

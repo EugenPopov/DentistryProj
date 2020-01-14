@@ -14,14 +14,42 @@ address:
     label: Адрес
     value: 'Данила Щербаківького ,52'
 phone:
-    label: Телефон
+    label: 'Телефон в хедере'
     value: '044 227-19-20'
+phone_textarea:
+    label: 'Телефоны на странице контактов'
+    value: '<p>044 227-19-20</p><p>055-5353-5353</p><p>425053-5353-53-535</p>'
+    textarea: true
 why_we:
     label: 'Почему стоит обратиться к нам'
     value: 'це оперативна і якісна стоматологія. Сучасне обладнання, дизайн, сервіс відповідає останнім вимогам стоматології, включає широкий спектр можливостей для лікаря при максимальному комфорті для пацієнта.'
 seo_title_main:
     label: 'Сео тайтл на главной'
-    value: 'стомасвит  title'
+    value: Стомасвит
 seo_description_main:
     label: 'Сео описание на главной'
-    value: 'стомасвит descrip'
+    value: 'Стомасвит описание'
+seo_title_service:
+    label: 'Сео тайтл в услугах'
+    value: 'Услуги стомасвит'
+seo_description_service:
+    label: 'Сео описание в услугах'
+    value: 'Услуги стомасвит описание'
+seo_title_promotion:
+    label: 'Сео тайтл в акциях'
+    value: 'Акции стомасвит'
+seo_description_promotion:
+    label: 'Сео описание в акциях'
+    value: 'Акции стомасвит описание'
+seo_title_doctors:
+    label: 'Сео тайтл на врачах'
+    value: 'Врачи стомасвит'
+seo_description_doctors:
+    label: 'Сео описание на врачах'
+    value: 'Врачи стомасвит описание'
+seo_title_reviews:
+    label: 'Сео тайтл на пациентах'
+    value: 'Пациентам стомасвит'
+seo_description_reviews:
+    label: 'Сео описание на пациентах'
+    value: 'Пациентам стомасвит описание'

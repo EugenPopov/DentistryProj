@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% block title %}{{ service.seoTitle?service.seoTitle:get_setting('seo_title_service') }}{% endblock %}
+{% block description %}{{ service.seoDescription?service.seoDescription:get_setting('seo_description_service') }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/single-service.css') }}">

@@ -19,32 +19,18 @@ class MiniServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, MiniService::class);
     }
 
-    // /**
-    //  * @return MiniService[] Returns an array of MiniService objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getMiniServiceArray($id = null): array
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $query = $this->createQueryBuilder('mini_service')
+            ->select('mini_service.id', 'mini_service.title');
 
-    /*
-    public function findOneBySomeField($value): ?MiniService
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        if($id){
+            $query
+                ->leftJoin('mini_service.services', 'services')
+                ->where('services.id =:id')
+                ->setParameter('id', $id);
+        }
+
+        return $query->getQuery()->getResult();
     }
-    */
 }

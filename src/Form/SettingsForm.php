@@ -17,7 +17,10 @@ class SettingsForm extends AbstractType
     {
         foreach ($options['array'] as $key => $value) {
             $builder->add($key, TextareaType::class, [
-                'label' => $value['label']
+                'label' => $value['label'],
+                'attr' =>[
+                    'class' => $key === 'phone_textarea'?'enable-ckeditor':null
+                ]
             ]);
         }
         $builder

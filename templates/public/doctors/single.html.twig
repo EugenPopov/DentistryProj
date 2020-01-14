@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% block title %}{{ doctor.seoTitle?doctor.seoTitle:get_setting('seo_title_doctors') }}{% endblock %}
+{% block description %}{{ doctor.seoDescription?doctor.seoDescription:get_setting('seo_description_doctors') }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/single-doctor.css') }}">

@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
+    {% block title %}{{ get_setting('seo_title_main') }}{% endblock %}
+    {% block description %}{{ get_setting('seo_description_main') }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-{#    {{ encore_entry_link_tags('index_page') }}#}
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>

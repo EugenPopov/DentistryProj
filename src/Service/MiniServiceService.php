@@ -86,6 +86,11 @@ class MiniServiceService extends CrudManager
 
     public function getAllInJson()
     {
-        return $this->serializer->serialize($this->all(), 'json');
+        return json_encode($this->repository->getMiniServiceArray());
+    }
+
+    public function getByServiceIdInJson($id)
+    {
+        return json_encode($this->repository->getMiniServiceArray($id));
     }
 }

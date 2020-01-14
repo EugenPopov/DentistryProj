@@ -17,7 +17,9 @@ class BlogMapper implements DataMapperInterface
         $model = new BlogModel();
         return $model
             ->setTitle($entity->getTitle())
-            ->setDescription($entity->getDescription());
+            ->setDescription($entity->getDescription())
+            ->setSeoTitle($entity->getSeoTitle())
+            ->setSeoDescription($entity->getSeoDescription());
     }
 
     public function modelToEntity(ModelInterface $model, EntityInterface $entity)
@@ -25,6 +27,8 @@ class BlogMapper implements DataMapperInterface
         /** @var Blog $entity */
         return $entity
             ->setTitle($model->getTitle())
-            ->setDescription($model->getDescription());
+            ->setDescription($model->getDescription())
+            ->setSeoTitle($model->getSeoTitle())
+            ->setSeoDescription($model->getSeoDescription());
     }
 }

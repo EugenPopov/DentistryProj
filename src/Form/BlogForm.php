@@ -46,6 +46,14 @@ class BlogForm extends AbstractType
                 'required' => $options['is_create'] ? true : false,
                 'constraints' => $options['is_create'] ? new NotBlank() : null
             ])
+            ->add('seoTitle', TextType::class,[
+                'label' => 'Сео тайтл',
+                'required' => false
+            ])
+            ->add('seoDescription', TextType::class,[
+                'label' => 'Сео описание',
+                'required' => false
+            ])
             ->add('save', SubmitType::class, ['label' => 'Сохранить'])
             ->getForm();
     }

@@ -31,7 +31,7 @@
                                     {% for item in array %}
                                         <tr>
                                             <td>{{ item.label }}</td>
-                                            <td>{{ item.value }}</td>
+                                            <td>{{ item.value|raw }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
