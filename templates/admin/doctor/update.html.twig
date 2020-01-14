@@ -23,6 +23,14 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="/admin/vendor/magisuggest/magicsuggest.min.js"></script>
+    <script src="/admin/js/ckeditor.js"></script>
+    <script src="/admin/js/ru.js"></script>
+    <script>
+        $('.enable-ckeditor').each(function () {
+            let textarea = $(this);
+            ClassicEditor.create( textarea[0], { language: 'ru' } );
+        });
+    </script>
     <script>
         $('#doctor_form_image').parent().after('<div id="service_editor" style="padding-top: 15px" class="form-group"><label for="edit_services">Услуги врача</label></div>');
         $('#edit_services').appendTo('#service_editor');

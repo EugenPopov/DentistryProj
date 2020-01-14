@@ -40,7 +40,11 @@ class ServiceForm extends AbstractType
                 'label' => 'Название'
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'Описание'
+                'label' => 'Описание *Обязательно',
+                'attr' => [
+                    'class' => 'enable-ckeditor'
+                ],
+                'required' => false
             ])
             ->add('additionalInfo', TextType::class, [
                 'label' => 'Дополнительная информация',
