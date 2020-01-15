@@ -87,4 +87,9 @@ class ReviewService extends CrudManager
 
         return $queue ? $queue->getQueue()+1:0;
     }
+
+    public function getInArray(): ?array
+    {
+        return $this->repository->getAllByQueueArray();
+    }
 }

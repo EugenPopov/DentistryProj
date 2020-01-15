@@ -50,7 +50,7 @@
                     {{ service.title }}
                 </div>
                 <div class="best_item-text">
-                    {{ service.description|striptags|raw|slice(0, 100) }}{{ service.description|striptags|raw|length>100?'...' }}
+                    {{ service.shortDescription|slice(0, 100) }}{{  service.shortDescription|length>100?'...' }}
                 </div>
                 <a class="best_item-more" href="{{ path('service_single', {'slug': service.slug}) }}">
                     Дізнатися більше

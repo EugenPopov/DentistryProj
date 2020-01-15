@@ -46,6 +46,11 @@ class Blog implements EntityInterface
      */
     private $seo_description;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $short_description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +124,18 @@ class Blog implements EntityInterface
     public function setSeoDescription(?string $seo_description): self
     {
         $this->seo_description = $seo_description;
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->short_description;
+    }
+
+    public function setShortDescription(string $short_description): self
+    {
+        $this->short_description = $short_description;
 
         return $this;
     }

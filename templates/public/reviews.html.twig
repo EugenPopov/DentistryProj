@@ -23,13 +23,13 @@
             <div class="page_title">Вiдгуки про нашу клiнiку</div>
            <div class="active-review">
                <div class="review_photo">
-                    <img src="{{ asset('img/doctor.png') }}">
+                    <img src="{{ asset('img/doctor.png') }}" id="review_photo">
                </div>
                <div class="review">
-                   <div class="review_title">
+                   <div class="review_title" id="review_title">
                        Тимур Муцураев
                    </div>
-                   <div class="review_text">
+                   <div class="review_text" id="review_text">
                        Шукав, де недорого і без проблем зробити панорамний знімок. Вибрав цю клініку і не помилився. Був приємно здивований ціною, якістю роботи і ввічливістю персоналу. На жаль не знаю імен. Тому - спасибі всім.
                    </div>
                </div>
@@ -42,8 +42,8 @@
             {% for review in reviews %}
                 <div class="review">
                     <div class="review_title">{{ review.name }}</div>
-                    <div class="review_text">{{ review.description|slice(0, 55) }}{% if review.description|length>55 %}...{% endif %}</div>
-                    <div class="review_view-more">Читати детальніше</div>
+                    <div class="review_text">{{ review.description|slice(0, 100) }}{% if review.description|length>100 %}...{% endif %}</div>
+                    <div class="review_view-more" data-id="{{ review.id }}">Читати детальніше</div>
                 </div>
             {% endfor %}
         </div>
@@ -56,7 +56,7 @@
                         <img src="/uploads/{{ article.image }}">
                         <div class="news_title">{{ article.title }}</div>
                         <div class="news_text">
-                            {{ article.description|striptags|raw|slice(0, 100) }}{{ article.description|striptags|raw|length>100?'...' }}
+                            {{ article.shortDescription|slice(0, 100) }}{{ article.shortDescription|length>100?'...' }}
                         </div>
                         <div class="news_view">Дивитись</div>
                 </div>
@@ -109,6 +109,9 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script>
+        let reviews = {{ reviews|json_encode|raw }};
+    </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/reviews.js') }}"></script>
 {% endblock %}

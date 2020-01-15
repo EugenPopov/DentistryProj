@@ -35,7 +35,7 @@ class ReviewController extends AbstractController
     public function index()
     {
         return $this->render('public/reviews.html.twig', [
-            'reviews' => $this->reviewService->findBy([],['queue' => 'ASC']),
+            'reviews' => $this->reviewService->getInArray(),
             'articles' => $this->blogService->findBy([], ['queue' => 'ASC'])
         ]);
     }
