@@ -23,14 +23,14 @@
             <div class="page_title">Вiдгуки про нашу клiнiку</div>
            <div class="active-review">
                <div class="review_photo">
-                    <img src="{{ asset('img/doctor.png') }}" id="review_photo">
+                    <img src="/uploads/{{ reviews|first.image }}" id="review_photo">
                </div>
                <div class="review">
                    <div class="review_title" id="review_title">
-                       Тимур Муцураев
+                       {{ reviews|first.name }}
                    </div>
                    <div class="review_text" id="review_text">
-                       Шукав, де недорого і без проблем зробити панорамний знімок. Вибрав цю клініку і не помилився. Був приємно здивований ціною, якістю роботи і ввічливістю персоналу. На жаль не знаю імен. Тому - спасибі всім.
+                       {{ reviews|first.description }}
                    </div>
                </div>
            </div>
