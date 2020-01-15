@@ -26,4 +26,12 @@ class ReviewRepository extends ServiceEntityRepository
             ->setMaxResults(1)
             ->getQuery()->getOneOrNullResult();
     }
+
+    public function getAllByQueueArray()
+    {
+        return $this->createQueryBuilder('review')
+            ->select('review.id', 'review.name', 'review.description', 'review.image')
+            ->orderBy('review.queue', 'ASC')
+            ->getQuery()->getResult();
+    }
 }

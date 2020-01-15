@@ -18,6 +18,7 @@ class BlogMapper implements DataMapperInterface
         return $model
             ->setTitle($entity->getTitle())
             ->setDescription($entity->getDescription())
+            ->setShortDescription($entity->getShortDescription())
             ->setSeoTitle($entity->getSeoTitle())
             ->setSeoDescription($entity->getSeoDescription());
     }
@@ -28,6 +29,7 @@ class BlogMapper implements DataMapperInterface
         return $entity
             ->setTitle($model->getTitle())
             ->setDescription($model->getDescription())
+            ->setShortDescription($model->getShortDescription())
             ->setSeoTitle($model->getSeoTitle())
             ->setSeoDescription($model->getSeoDescription());
     }

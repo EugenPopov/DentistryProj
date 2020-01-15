@@ -43,4 +43,18 @@ $('.news_slider').slick({
         }
     ]
 });
+$(document).on('click', '.review_view-more', function () {
+    let id = parseInt($(this).attr('data-id'));
+    let review;
+    reviews.forEach(function (item) {
+        if(item['id'] === id){
+            review = item;
+        }
+    });
+    if(review !== undefined){
+        $('#review_photo').attr('src', `/uploads/${review.image}`);
+        $('#review_title').text(review.name);
+        $('#review_text').text(review.description);
+    }
+});
 

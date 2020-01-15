@@ -17,6 +17,10 @@ class BlogModel implements ModelInterface
      */
     private $description;
     /**
+     * @Assert\NotBlank()
+     */
+    private $short_description;
+    /**
      * @Assert\Image()
      */
     private $image;
@@ -57,6 +61,25 @@ class BlogModel implements ModelInterface
     public function setDescription($description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortDescription(): ?string
+    {
+        return $this->short_description;
+    }
+
+    /**
+     * @param mixed $short_description
+     * @return BlogModel
+     */
+    public function setShortDescription(?string $short_description): self
+    {
+        $this->short_description = $short_description;
 
         return $this;
     }

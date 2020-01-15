@@ -25,6 +25,10 @@ class ServiceModel implements ModelInterface
      * @Assert\NotBlank()
      */
     private $description;
+    /**
+     * @Assert\NotBlank()
+     */
+    private $short_description;
     private $additional_info;
     private $mini_services;
     private $seo_title;
@@ -102,6 +106,25 @@ class ServiceModel implements ModelInterface
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortDescription(): ?string
+    {
+        return $this->short_description;
+    }
+
+    /**
+     * @param mixed $short_description
+     * @return ServiceModel
+     */
+    public function setShortDescription(?string $short_description): self
+    {
+        $this->short_description = $short_description;
 
         return $this;
     }
