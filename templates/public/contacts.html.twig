@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contacts.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/contacts_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 {% endblock %}
 {% block body %}
@@ -58,7 +59,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-contact_form">Записатися</button>
+                        <div class="button_wrapper">
+                            <button type="submit" class="btn btn-contact_form">Записатися</button>
+                        </div>
                     </form>
                 </div>
             </div>

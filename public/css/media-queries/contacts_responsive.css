@@ -1,0 +1,39 @@
+@media (max-width: 768px) {
+    .page_top {
+        width: 95%;
+    }
+    .map_wrapper {
+        margin-top: 30px;
+    }
+    .contact_wrapper {
+        flex-direction: row;
+    }
+    .contact_form form .form {
+        margin-top: 0;
+    }
+    .bmd-form-group {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact_wrapper {
+        flex-direction: column;
+    }
+    .contacts {
+        width: 100%;
+    }
+    .contact_form {
+        width: 100%;
+    }
+    .form {
+        padding: 0;
+    }
+    .contact_form form .form {
+        margin-top: 20px;
+    }
+    .contact_form form button {
+        width: 100%;
+    }
+}
+
