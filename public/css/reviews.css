@@ -363,8 +363,10 @@
 
 .promocode_use {
     margin-left: 10px;
-    box-shadow: 0 1px 0 0px #25305e;
+    box-shadow: 0 1px 0 0 #25305e;
     cursor: pointer;
+    color: white!important;
+    text-decoration: none!important;
     transition: all .3s ease-in;
 }
 
