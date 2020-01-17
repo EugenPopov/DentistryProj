@@ -65,4 +65,9 @@ class MainController extends AbstractController
             'reviews' => $this->reviewService->findBy([], ['queue' => 'ASC'])
         ]);
     }
+
+    public function showContacts()
+    {
+        return $this->render('public/contacts.html.twig');
+    }
 }

@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+    {% block title %}{{ get_setting('seo_title_main') }}{% endblock %}
+    {% block description %}{{ get_setting('seo_description_main') }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contacts.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Акции</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="page_title">Контакти</div>
+            <div class="contact_wrapper" id="contact_wrapper">
+                <div class="contacts">
+                    <div class="contacts_address">
+                        qqqqqqqqqqqqqqqqqqqqqq
+                    </div>
+                    <div class="contacts_phones">
+                        091481509
+                    </div>
+                </div>
+                <div class="contact_form">
+                    <form name="form_order">
+                        <div class="form">
+                            <div class="top_form">
+                                <input type="text" name="name" placeholder="Ваше имя">
+                                <input type="tel" name="telephone" id="tel" placeholder="Ваш номер телефону">
+                            </div>
+                            <div class="middle_form">
+                                <input type="date" name="date" id="date" placeholder="Виберіть бажаему дату">
+                                <input type="time" name="time" id="time" placeholder="Виберіть бажаемий час">
+                            </div>
+                            <div class="bottom_form">
+                                <input type="text" name="comment" id="comment" placeholder="Залешить ваш коментар">
+                            </div>
+                            <div class="promocode">
+                                <label>
+                                    <input type="checkbox" id="promo">
+                                    У меня есть промокод
+                                </label>
+                                <div class="promocode_body">
+                                    <div class="promocode_input">
+                                        <input type="text" placeholder="Введiть промокод" id="promocode_input">
+                                        <div class="promocode_use">Застосувати</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-contact_form">Записатися</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map_wrapper">
+        <div class="map_title">
+            ЯК нас знайти?
+        </div>
+        <div class="map">
+            <div class="map_card">
+                <img src="{{ asset('img/house.png') }}">
+                <ul class="address">
+                    <li>
+                        {{get_setting('address')}}
+                    </li>
+                    <li>
+                        {{get_setting('metro')}}
+                    </li>
+                </ul>
+            </div>
+            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{get_setting('address')}}&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {#    {{ encore_entry_script_tags('index_page') }}#}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
+{% endblock %}

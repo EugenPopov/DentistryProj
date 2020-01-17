@@ -20,6 +20,9 @@ reviews:
 promotions:
     path: /promotions
     controller: App\Controller\Pages\PromotionsController::index
+contacts:
+    path: /contacts
+    controller: App\Controller\Pages\MainController::showContacts
 #api
 check_promotion:
     path: /api/v1/promotion

@@ -23,7 +23,7 @@ $('.reviews_slider').slick({
 });
 $('.news_slider').slick({
     dots: true,
-    rows: 3,
+    rows: 2,
     slidesPerRow: 3,
     arrows: false,
     responsive: [
