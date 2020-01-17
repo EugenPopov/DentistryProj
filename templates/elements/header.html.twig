@@ -35,7 +35,8 @@
             </a>
         {% endif %}
         <div class="menu-item header_contacts">
-            {{get_setting('address')}} <br>{{get_setting('phone')}}
+            <a href="http://maps.google.com/maps?q={{get_setting('address')}}" target="_blank">{{get_setting('address')}}</a> <br>
+            <a href="tel:{{get_setting('phone')}}">{{get_setting('phone')}}</a>
         </div>
         <a class="menu-item header_callback" href="{{ path('index')  ~ '#contact_wrapper' }}">
             ЗАПИСАТИСЯ НА ПРИЙОМ

@@ -26,7 +26,7 @@
             <div class="contact_wrapper" id="contact_wrapper">
                 <div class="contacts">
                     <div class="contacts_address">
-                        {{get_setting('address')}}
+                        <a href="http://maps.google.com/maps?q={{get_setting('address')}}" target="_blank">{{get_setting('address')}}</a>
                     </div>
                     <div class="contacts_phones">
                         {{get_setting('phone_textarea')|raw }}
