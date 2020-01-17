@@ -152,6 +152,7 @@ div.menu-item {
 }
 .breadcrumb {
     background-color: transparent;
+    padding: 1rem 0;
 }
 
 .page_up {
