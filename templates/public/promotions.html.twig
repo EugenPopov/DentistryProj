@@ -27,7 +27,7 @@
     </div>
     <div class="promotions">
         {% for promotion in promotions %}
-            <div class="promotion_wrapper">
+            <div class="promotion_wrapper" id="promotion-{{ promotion.id }}">
                 <img src="/uploads/{{ promotion.image }}">
                 <div class="promotion">
                     <div class="promotion_title">{{ promotion.title }}</div>

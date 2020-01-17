@@ -55,7 +55,7 @@
         });
     </script>
     <script>
-        $('#service_form_additionalInfo').parent().after('<div id="service_editor" style="padding-top: 15px" class="form-group"><label for="edit_services">Составные услуги</label><button id="add_new_service" style="margin-left: 10px" type="button" class="btn btn-info btn-sm">Добавить новую</button></div>').after($('#new_service'));
+        $('#service_form_description').parent().after('<div id="service_editor" style="padding-top: 15px" class="form-group"><label for="edit_services">Составные услуги</label><button id="add_new_service" style="margin-left: 10px" type="button" class="btn btn-info btn-sm">Добавить новую</button></div>').after($('#new_service'));
         $('#edit_services').appendTo('#service_editor').after($('#new_service'));
         let all_services;
         try {

@@ -14,3 +14,7 @@ $('.extra_services_slider').slick({
         },
     ]
 });
+$(document).on('click', '.sign_up', function () {
+    localStorage.setItem('comment', service);
+    location.href = '/#contact_wrapper';
+});

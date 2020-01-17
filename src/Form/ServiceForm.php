@@ -49,10 +49,10 @@ class ServiceForm extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('additionalInfo', TextType::class, [
-                'label' => 'Дополнительная информация',
-                'required' => false
-            ])
+//            ->add('additionalInfo', TextType::class, [
+//                'label' => 'Дополнительная информация',
+//                'required' => false
+//            ])
             ->add('miniServices', HiddenType::class)
             ->add('icon', FileType::class,[
                 'label' => 'Иконка',

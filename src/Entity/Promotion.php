@@ -65,6 +65,11 @@ class Promotion implements EntityInterface
      */
     private $applications;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $short_description;
+
     public function __construct()
     {
         $this->applications = new ArrayCollection();
@@ -191,6 +196,18 @@ class Promotion implements EntityInterface
                 $application->setPromotion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->short_description;
+    }
+
+    public function setShortDescription(string $short_description): self
+    {
+        $this->short_description = $short_description;
 
         return $this;
     }

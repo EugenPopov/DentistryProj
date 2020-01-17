@@ -16,6 +16,10 @@ class PromotionModel implements ModelInterface
     /**
      * @Assert\NotBlank()
      */
+    private $short_description;
+    /**
+     * @Assert\NotBlank()
+     */
     private $description;
     private $image;
     private $is_public;
@@ -36,6 +40,25 @@ class PromotionModel implements ModelInterface
     public function setTitle(?string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortDescription()
+    {
+        return $this->short_description;
+    }
+
+    /**
+     * @param mixed $short_description
+     * @return PromotionModel
+     */
+    public function setShortDescription($short_description): self
+    {
+        $this->short_description = $short_description;
 
         return $this;
     }

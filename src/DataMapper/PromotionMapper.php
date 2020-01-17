@@ -18,6 +18,7 @@ class PromotionMapper implements DataMapperInterface
         $model = new PromotionModel();
         return $model
             ->setTitle($entity->getTitle())
+            ->setShortDescription($entity->getShortDescription())
             ->setDescription($entity->getDescription())
             ->setIsActive($entity->getIsActive())
             ->setIsPublic($entity->getIsPublic());
@@ -29,6 +30,7 @@ class PromotionMapper implements DataMapperInterface
         /** @var Promotion $entity */
         return $entity
             ->setTitle($model->getTitle())
+            ->setShortDescription($model->getShortDescription())
             ->setDescription($model->getDescription())
             ->setIsActive($model->getIsActive())
             ->setIsPublic($model->getIsPublic());

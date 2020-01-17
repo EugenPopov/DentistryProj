@@ -64,39 +64,19 @@
         </div>
     </div>
     <div class="promotions_wrapper">
-        <div class="promotion" style="background-image: url(/uploads/blog/09c6ccb670b8e04e4c41728629e8c382.jpg);">
-            <div class="promotion_text">
-                Обеливание за полуцены
+        {% for promotion in promotions %}
+            <div class="promotion" style="background-image: url({{ '/uploads/' ~ promotion.image }});">
+                <div class="promotion_text">
+                    {{ promotion.title }}
+                </div>
+                <div class="promotion_info">
+                    {{ promotion.shortDescription }}
+                </div>
+                <a class="promotion_button" href="{{ path('promotions') ~ '#promotion-' ~ promotion.id }}">
+                    Подробнее
+                </a>
             </div>
-            <div class="promotion_info">
-                текст рыба текст рыба текст рыба текст рыба текст рыба текст рыба
-            </div>
-            <a class="promotion_button">
-                Записаться
-            </a>
-        </div>
-        <div class="promotion" style="background-image: url(/uploads/blog/09c6ccb670b8e04e4c41728629e8c382.jpg);">
-            <div class="promotion_text">
-                Обеливание за полуцены
-            </div>
-            <div class="promotion_info">
-                текст рыба текст рыба текст рыба текст рыба текст рыба текст рыба
-            </div>
-            <a class="promotion_button">
-                Записаться
-            </a>
-        </div>
-        <div class="promotion" style="background-image: url(/uploads/blog/09c6ccb670b8e04e4c41728629e8c382.jpg);">
-            <div class="promotion_text">
-                Обеливание за полуцены
-            </div>
-            <div class="promotion_info">
-                текст рыба текст рыба текст рыба текст рыба текст рыба текст рыба
-            </div>
-            <a class="promotion_button">
-                Записаться
-            </a>
-        </div>
+        {% endfor %}
     </div>
     <div class="contact_wrapper">
         <div class="contact_form">

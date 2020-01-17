@@ -4,10 +4,9 @@
 namespace App\Controller\Pages;
 
 
-use App\Entity\Review;
 use App\Service\BlogService;
+use App\Service\PromotionService;
 use App\Service\ReviewService;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ReviewController extends AbstractController
@@ -20,23 +19,30 @@ class ReviewController extends AbstractController
      * @var BlogService
      */
     private $blogService;
+    /**
+     * @var PromotionService
+     */
+    private $promotionService;
 
     /**
      * ReviewController constructor.
      * @param ReviewService $reviewService
      * @param BlogService $blogService
+     * @param PromotionService $promotionService
      */
-    public function __construct(ReviewService $reviewService, BlogService $blogService)
+    public function __construct(ReviewService $reviewService, BlogService $blogService, PromotionService $promotionService)
     {
         $this->reviewService = $reviewService;
         $this->blogService = $blogService;
+        $this->promotionService = $promotionService;
     }
 
     public function index()
     {
         return $this->render('public/reviews.html.twig', [
             'reviews' => $this->reviewService->getInArray(),
-            'articles' => $this->blogService->findBy([], ['queue' => 'ASC'])
+            'articles' => $this->blogService->findBy([], ['queue' => 'ASC']),
+            'promotions' => $this->promotionService->findBy(['is_active' => true, 'is_public' => true], ['queue' => 'ASC'], 3)
         ]);
     }
 }

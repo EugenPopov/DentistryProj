@@ -31,6 +31,9 @@ class PromotionForm extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Название'
             ])
+            ->add('shortDescription', TextareaType::class, [
+                'label' => 'Короткое описание'
+            ])
             ->add('description', TextareaType::class, [
                 'label' => 'Описание *Обязательно',
                 'attr' => [

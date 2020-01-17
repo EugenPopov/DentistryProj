@@ -73,6 +73,10 @@ $('.reviews_slider').slick({
         },
     ]
 });
+if(localStorage.getItem('comment') !== null){
+    $(document).find('#comment').val(`Я хотiв би записатися за послугою "${localStorage.getItem('comment')}"`);
+    localStorage.removeItem('comment');
+}
 if(localStorage.getItem('promotion') !== null){
     $.ajax({
         method: "POST",
