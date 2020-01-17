@@ -1,13 +1,13 @@
 <nav id="mobile_nav">
     <ul class="mobile_list">
         <li class="menu-item">
+            <a href="{{ path('index') }}">ГОЛОВНА</a>
+        </li>
+        <li class="menu-item">
             <a href="{{ path('promotions') }}">АКЦИИ</a>
         </li>
         <li class="menu-item">
             <a href="{{ path('service_main') }}">ПОСЛУГИ</a>
-        </li>
-        <li class="menu-item">
-            ПРО НАС
         </li>
         <li class="menu-item">
             <a href="{{ path('doctor_main') }}">ЛІКАРІ</a>
@@ -16,13 +16,17 @@
             <a href="{{ path('reviews') }}">ПАЦІЕНТАМ</a>
         </li>
         <li class="menu-item">
-            КОНТАКТИ
+            <a href="{{ path('contacts') }}">
+                КОНТАКТИ
+            </a>
         </li>
         <li class="menu-item">
-            Данила Щербаківького ,52 <br>044 227-19-20
+            {{get_setting('address')}} <br>{{get_setting('phone')}}
         </li>
         <li class="menu-item header_callback">
-            ЗАПИСАТИСЯ НА ПРИЙОМ
+            <a href="{{ path('index')  ~ '#contact_wrapper' }}">
+                ЗАПИСАТИСЯ НА ПРИЙОМ
+            </a>
         </li>
     </ul>
 </nav>
