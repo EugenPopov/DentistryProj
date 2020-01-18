@@ -14,21 +14,20 @@ $('.best_slider').slick({
     prevArrow: "<button class='prev'></button>",
     nextArrow: "<button class='next'></button>",
     appendArrows: $('.best_controls'),
-    // autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 1.8,
-                infinite: false,
+                slidesToShow: 2,
+                infinite: true,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.5,
-                infinite: false,
+                slidesToShow: 1,
+                infinite: true,
             }
         }
     ]
@@ -44,15 +43,15 @@ $('.doctors_slider').slick({
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 2.4,
-                infinite: false,
+                slidesToShow: 2,
+                infinite: true,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.5,
-                infinite: false,
+                slidesToShow: 1,
+                infinite: true,
             }
         }
     ]
@@ -69,6 +68,7 @@ $('.reviews_slider').slick({
             breakpoint: 769,
             settings: {
                 slidesToShow: 1,
+                infinite: true
             }
         },
     ]

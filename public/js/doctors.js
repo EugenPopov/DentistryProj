@@ -9,15 +9,15 @@ $('.doctors_slider').slick({
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 2.3,
-                infinite: false,
+                slidesToShow: 2,
+                infinite: true,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.4,
-                infinite: false,
+                slidesToShow: 1,
+                infinite: true,
             }
         }
     ]

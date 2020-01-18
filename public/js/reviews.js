@@ -68,15 +68,15 @@ $('.gallery_slider').slick({
         {
             breakpoint: 769,
             settings: {
-                slidesToShow: 2.4,
-                infinite: false,
+                slidesToShow: 2,
+                infinite: true,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.5,
-                infinite: false,
+                slidesToShow: 1,
+                infinite: true,
             }
         }
     ]
