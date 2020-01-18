@@ -135,6 +135,9 @@
 .best_item {
     padding: 10px 30px;
 }
+.best_item:focus {
+    outline: none;
+}
 .best_img {
     width: 100%;
     border-bottom-right-radius: 75%;

@@ -181,6 +181,11 @@ nav.footer a {
     cursor: pointer;
     color: black!important;
     text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+nav.footer a:hover {
+    font-size: 17px;
 }
 
 .breadcrumb-item+.breadcrumb-item:before {

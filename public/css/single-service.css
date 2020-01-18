@@ -1,5 +1,7 @@
 .breadcrumb {
     background: unset;
+    width: 90%;
+    margin: auto;
 }
 .page_top-content {
     width: 95%;

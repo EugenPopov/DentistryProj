@@ -46,6 +46,16 @@
                     <div class="review_text">{{ review.description|slice(0, 100) }}{% if review.description|length>100 %}...{% endif %}</div>
                     <div class="review_view-more" data-id="{{ review.id }}">Читати детальніше</div>
                 </div>
+                <div class="review">
+                    <div class="review_title">{{ review.name }}</div>
+                    <div class="review_text">{{ review.description|slice(0, 100) }}{% if review.description|length>100 %}...{% endif %}</div>
+                    <div class="review_view-more" data-id="{{ review.id }}">Читати детальніше</div>
+                </div>
+                <div class="review">
+                    <div class="review_title">{{ review.name }}</div>
+                    <div class="review_text">{{ review.description|slice(0, 100) }}{% if review.description|length>100 %}...{% endif %}</div>
+                    <div class="review_view-more" data-id="{{ review.id }}">Читати детальніше</div>
+                </div>
             {% endfor %}
         </div>
     </div>
@@ -63,6 +73,9 @@
                 </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="promotions_title">
+        Акции
     </div>
     <div class="promotions_wrapper">
         {% for promotion in promotions %}
