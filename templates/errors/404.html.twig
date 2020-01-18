@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{#    {% block title %}{{ get_setting('seo_title_main') }}{% endblock %}#}
+{#    {% block description %}{{ get_setting('seo_description_main') }}{% endblock %}#}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/error.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/error_responsive.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="error_wrapper">
+            <div class="error">
+                <img src="{{ asset('img/service.png') }}">
+                <div class="error_status">404</div>
+                <div class="error_message">Сторiнку не знайдено</div>
+                <a href="{{ path('index') }}">На головну</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
+{% endblock %}

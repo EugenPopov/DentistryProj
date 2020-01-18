@@ -26,6 +26,9 @@ promotions:
 contacts:
     path: /contacts
     controller: App\Controller\Pages\MainController::showContacts
+error:
+    path: /error
+    controller: App\Controller\Pages\MainController::showError
 #api
 check_promotion:
     path: /api/v1/promotion

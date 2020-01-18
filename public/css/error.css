@@ -1,0 +1,52 @@
+.page_top_wrapper {
+    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+}
+
+.error_wrapper {
+    height: calc(100vh - 224px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    height: 75%;
+    background: #fafafa;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error img {
+    height: 50%;
+    padding: 15px 0;
+}
+
+.error_status {
+    font-size: 10vh;
+    font-weight: bold;
+    color: #25305e;
+}
+
+.error_message {
+    font-size: 5vh;
+    text-transform: lowercase;
+    color: #25305e;
+}
+
+.error a {
+    color: white;
+    background: #25305e;
+    width: 40%;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+.error a:hover {
+    background: transparent;
+    color: black;
+}

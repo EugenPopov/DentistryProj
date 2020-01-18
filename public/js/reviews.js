@@ -55,6 +55,7 @@ $(document).on('click', '.review_view-more', function () {
         $('#review_photo').attr('src', `/uploads/${review.image}`);
         $('#review_title').text(review.name);
         $('#review_text').text(review.description);
+        $('html,body').animate({scrollTop: $('.page_top_wrapper').offset().top}, 500, 'swing');
     }
 });
 $('.gallery_slider').slick({

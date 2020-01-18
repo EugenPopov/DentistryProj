@@ -71,4 +71,9 @@ class MainController extends AbstractController
     {
         return $this->render('public/contacts.html.twig');
     }
+
+    public function showError()
+    {
+        return $this->render('errors/404.html.twig');
+    }
 }
