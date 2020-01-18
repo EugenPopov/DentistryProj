@@ -33,14 +33,6 @@
         background: linear-gradient(to left, #76E0C1 45%, transparent 45%);
         padding-bottom: 30px;
     }
-    .contact_form-title.mobile {
-        display: flex;
-        text-align: left;
-        padding: 20px;
-    }
-    .contact_form-title.desktop {
-        display: none;
-    }
     .contact_form {
         width: 100%;
     }

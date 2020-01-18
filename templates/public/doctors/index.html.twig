@@ -63,18 +63,30 @@
             <div class="contact_form-title desktop">
                 ЗАПИСАТИСЯ НА ПРИЙОМ
             </div>
-            <form>
+            <form name="form_order">
                 <div class="form">
                     <div class="top_form">
-                        <input type="text" id="name" placeholder="Ваше имя">
-                        <input type="tel" id="tel" placeholder="Ваш номер телефону">
+                        <input type="text" name="name" placeholder="Ваше имя">
+                        <input type="tel" name="telephone" id="tel" placeholder="Ваш номер телефону">
                     </div>
                     <div class="middle_form">
-                        <input type="date" id="date" placeholder="Виберіть бажаему дату">
-                        <input type="time" id="time" placeholder="Виберіть бажаемий час">
+                        <input type="date" name="date" id="date" placeholder="Виберіть бажаему дату">
+                        <input type="time" name="time" id="time" placeholder="Виберіть бажаемий час">
                     </div>
                     <div class="bottom_form">
-                        <input type="text" id="comment" placeholder="Залешить ваш коментар">
+                        <input type="text" name="comment" id="comment" placeholder="Залешить ваш коментар">
+                    </div>
+                    <div class="promocode">
+                        <label>
+                            <input type="checkbox" id="promo">
+                            У меня есть промокод
+                        </label>
+                        <div class="promocode_body">
+                            <div class="promocode_input">
+                                <input type="text" placeholder="Введiть промокод" id="promocode_input">
+                                <div class="promocode_use">Застосувати</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-contact_form">Записатися</button>
@@ -87,6 +99,8 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/doctors.js') }}"></script>
 {% endblock %}

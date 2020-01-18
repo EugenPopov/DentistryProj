@@ -64,6 +64,14 @@
     nav.footer a:nth-child(5) {
         display: none;
     }
+    .contact_form-title.mobile {
+        display: flex;
+        text-align: left;
+        padding: 20px;
+    }
+    .contact_form-title.desktop {
+        display: none;
+    }
 }
 @media (max-width: 480px) {
     .mobile_nav-toogle {
