@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{#{% block title %}{{ service.seoTitle?service.seoTitle:get_setting('seo_title_service') }}{% endblock %}#}
+{#{% block description %}{{ service.seoDescription?service.seoDescription:get_setting('seo_description_service') }}{% endblock %}#}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/single-post.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media-queries/single-post_responsive.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="page_top_wrapper">
+        {% include '/elements/header.html.twig' %}
+        {% include 'elements/mobile_header.html.twig'%}
+        <div class="page_top-content">
+            <div class="page_top">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('reviews') }}">Пациентам</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">qq</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="post">
+            <img src="{{ asset('img/doctor.png') }}">
+            <div class="post_title">qqqqqqqqqqqqqqq</div>
+            <div class="post_text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit libero eget lobortis scelerisque. Suspendisse sit amet justo mi. Curabitur ultrices odio sit amet scelerisque bibendum. Ut sit amet sodales magna, sit amet sodales augue. Nunc sit amet mollis justo, nec feugiat ligula. Phasellus tristique risus ut lobortis aliquam. Cras ac lorem id libero cursus vulputate eu ac odio.
+
+                Donec vitae diam est. Vestibulum sed velit iaculis, malesuada magna sed, ullamcorper turpis. Proin fermentum cursus odio et ullamcorper. Maecenas dignissim pretium nibh. Praesent non euismod arcu. Cras in tristique dolor, eget tincidunt massa. Curabitur odio sem, congue vel semper eget, sollicitudin tincidunt nulla. Integer hendrerit lectus a elit porta finibus non vitae nulla. Vestibulum egestas imperdiet libero ut varius.
+
+                Curabitur eu ligula odio. In hac habitasse platea dictumst. Nulla rutrum turpis vel neque condimentum, id posuere metus luctus. Pellentesque arcu diam, consectetur congue tempor varius, cursus ut dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vitae mauris eu augue bibendum dictum. Vivamus sagittis elit quis aliquam accumsan. Proin viverra magna in imperdiet placerat. Vivamus aliquet non nisi non laoreet. In molestie dolor id congue rhoncus. Aliquam mi dolor, luctus sed sollicitudin ac, sollicitudin a justo. Aenean scelerisque sit amet risus eget egestas. Suspendisse sed purus sit amet dolor consectetur ultricies. Suspendisse eleifend purus sit amet mauris gravida imperdiet. Nam ut ultricies lorem, at tempus lacus. Etiam malesuada iaculis elit, vitae volutpat nulla euismod at.
+
+                Nam consectetur pharetra nisi, sed egestas magna molestie laoreet. Maecenas eu urna sapien. Quisque dapibus at magna eu pulvinar. Sed sagittis dignissim convallis. Etiam id massa ut tellus convallis vestibulum ac sodales nunc. Maecenas blandit dolor et ligula consectetur, nec sodales purus aliquam. Nullam ut accumsan turpis, cursus porta risus. Nulla facilisi. In rutrum lorem ligula, nec consequat neque blandit et. Etiam aliquet diam consectetur, aliquet mi tincidunt, tincidunt urna. Praesent feugiat dignissim ligula, vel vestibulum massa suscipit vel. Nam eu feugiat quam.
+                Aenean gravida, massa at maximus porta, orci ipsum sagittis ligula, dapibus fringilla sapien nisl at lacus. Pellentesque nec libero vehicula, accumsan erat et, posuere dolor. Mauris eget porta dolor. Curabitur viverra vehicula ipsum, quis tempor turpis egestas eu. Morbi lobortis ullamcorper turpis, eu porttitor lacus tempor quis. Quisque tortor enim, bibendum vel tempor ut, aliquam eu metus. Duis nisi ipsum, rutrum nec metus at, aliquam dictum ante. Donec eleifend tellus tincidunt elit varius egestas. Vestibulum et fermentum urna. Quisque rhoncus fringilla est, id congue nulla tristique ac. Nullam quis maximus lorem, non ultricies velit.
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        {% include '/elements/footer.html.twig' %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        {#let service = '{{ service.title|escape('js') }}';#}
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/single_service.js') }}"></script>
+{% endblock %}

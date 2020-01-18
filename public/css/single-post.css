@@ -1,0 +1,32 @@
+.page_top_wrapper {
+    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+}
+
+.page_top-content {
+    width: 85%;
+    margin: auto;
+}
+
+.post {
+    width: 70%;
+    margin: auto;
+}
+
+.post img {
+    float: right;
+    margin: 0 0 15px 15px;
+    height: 100%;
+    width: 25%;
+}
+
+.post_title {
+    width: 75%;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    word-break: break-word;
+}
+
+.post_text {
+    text-align: justify;
+}

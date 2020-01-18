@@ -1,0 +1,33 @@
+@media (max-width: 1000px) {
+    .post img {
+        width: 35%;
+    }
+    .post_title {
+        width: calc(65% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .post img {
+        width: 40%;
+    }
+    .post_title {
+        width: calc(60% - 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .post{
+        width: 95%;
+    }
+    .post img {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .post_title {
+        width: 100%;
+        margin: 20px 0;
+        font-size: 30px;
+    }
+}

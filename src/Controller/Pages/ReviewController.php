@@ -56,5 +56,6 @@ class ReviewController extends AbstractController
 
     public function singlePost()
     {
+        return $this->render('public/single_post.html.twig');
     }
 }
