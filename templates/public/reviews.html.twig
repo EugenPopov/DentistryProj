@@ -121,10 +121,9 @@
         <div class="controls gallery_controls">
         </div>
         <div class="gallery_slider">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
-            <img src="{{ asset('img/doctor.png') }}">
+            {% for work in gallery %}
+                <img src="/uploads/{{ work.image }}">
+            {% endfor %}
         </div>
     </div>
     <footer>
