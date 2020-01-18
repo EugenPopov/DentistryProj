@@ -53,9 +53,4 @@ class ReviewController extends AbstractController
             'gallery' => $this->galleryService->findBy([], ['queue' => 'ASC'])
         ]);
     }
-
-    public function singlePost()
-    {
-        return $this->render('public/single_post.html.twig');
-    }
 }

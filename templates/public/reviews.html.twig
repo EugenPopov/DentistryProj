@@ -59,7 +59,11 @@
                         <div class="news_text">
                             {{ article.shortDescription|slice(0, 100) }}{{ article.shortDescription|length>100?'...' }}
                         </div>
-                        <div class="news_view">Дивитись</div>
+                        <div class="news_view">
+                            <a href="{{ path('single_post', {'slug': article.slug}) }}">
+                                Дивитись
+                            </a>
+                        </div>
                 </div>
             {% endfor %}
         </div>

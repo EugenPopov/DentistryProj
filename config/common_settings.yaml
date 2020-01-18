@@ -53,3 +53,9 @@ seo_title_reviews:
 seo_description_reviews:
     label: 'Сео описание на пациентах'
     value: 'Пациентам стомасвит описание'
+seo_title_blog:
+    label: 'Сео тайтл в блоге'
+    value: 'Блог стомасвит'
+seo_description_blog:
+    label: 'Сео описание в блоге'
+    value: 'Блог стомасвит описание'
