@@ -6,6 +6,7 @@ namespace App\Service;
 
 use App\Entity\Application;
 use App\Repository\ApplicationRepository;
+use App\Service\MailSender\MailSender;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -23,21 +24,32 @@ class ApplicationService
      * @var EntityManagerInterface
      */
     private $entityManager;
+    /**
+     * @var MailSender
+     */
+    private $mailSender;
 
     /**
      * OrderService constructor.
      * @param ApplicationRepository $applicationRepository
      * @param PromotionService $promotionService
      * @param EntityManagerInterface $entityManager
+     * @param MailSender $mailSender
      */
-    public function __construct(ApplicationRepository $applicationRepository, PromotionService $promotionService, EntityManagerInterface $entityManager)
+    public function __construct(
+        ApplicationRepository $applicationRepository,
+        PromotionService $promotionService,
+        EntityManagerInterface $entityManager,
+        MailSender $mailSender
+    )
     {
         $this->applicationRepository = $applicationRepository;
         $this->promotionService = $promotionService;
         $this->entityManager = $entityManager;
+        $this->mailSender = $mailSender;
     }
 
-    public function create(string $name, string $phone, string $date, string $time, string $comment, $promotion)
+    public function create(string $name, string $phone, string $date, string $time, string $comment, $promotion, bool $notify = false)
     {
         try {
             $date = $date ? new DateTime($date . ' ' . $time) : null;
@@ -58,6 +70,10 @@ class ApplicationService
 
         $this->entityManager->persist($application);
         $this->entityManager->flush();
+
+        if($notify){
+            $this->mailSender->sendNotification($application);
+        }
 
         return $application;
     }

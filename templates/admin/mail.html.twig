@@ -1,0 +1,5 @@
+<h1>{{ application.name }} оставил новую заявку на сайте.</h1>
+Телефон: <a href="tel:{{ application.phone }}">{{ application.phone }}</a><br>
+Желаемое время: {{ application.date ? application.date|date('d-m-Y H:i') : 'Не указано' }}<br>
+Комментарий: {{ application.comment ? application.comment : 'Не указан' }}<br>
+Акция: {{ application.promotion ? application.promotion.title : 'Не указана' }}
