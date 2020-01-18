@@ -21,16 +21,22 @@ class ApiController extends AbstractController
      * @var ApplicationService
      */
     private $orderService;
+    /**
+     * @var \Swift_Mailer
+     */
+    private $mailer;
 
     /**
      * ApiController constructor.
      * @param PromotionService $promotionService
      * @param ApplicationService $orderService
+     * @param \Swift_Mailer $mailer
      */
-    public function __construct(PromotionService $promotionService, ApplicationService $orderService)
+    public function __construct(PromotionService $promotionService, ApplicationService $orderService, \Swift_Mailer $mailer)
     {
         $this->promotionService = $promotionService;
         $this->orderService = $orderService;
+        $this->mailer = $mailer;
     }
 
     public function checkPromotion(Request $request)
@@ -47,7 +53,7 @@ class ApiController extends AbstractController
         $time = $request->get('time');
         $comment = $request->get('comment');
         $promotion = $request->get('promotion');
-        $application = $this->orderService->create($name, $phone, $date, $time, $comment, $promotion);
+        $application = $this->orderService->create($name, $phone, $date, $time, $comment, $promotion, true);
 
         return new JsonResponse($application->getId());
     }

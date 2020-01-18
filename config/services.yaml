@@ -32,6 +32,10 @@ services:
         arguments:
             - '%kernel.project_dir%/config/common_settings.yaml'
 
+    App\Service\MailSender\MailSender:
+        arguments:
+            -   '%env(string:MAIL)%'
+
 
 
     # add more service definitions when explicit configuration is needed

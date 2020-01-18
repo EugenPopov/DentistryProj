@@ -38,7 +38,7 @@
                                             <th scope="row">{{ application.id }}</th>
                                             <td>{{ application.name }}</td>
                                             <td><a href="tel:{{ application.phone }}">{{ application.phone }}</a></td>
-                                            <td>{{ application.date|date('d-m-Y H:i') }}</td>
+                                            <td>{{ application.date ? application.date|date('d-m-Y H:i') : 'Не указано' }}</td>
                                             <td>{{ application.createdAt|date('d-m-Y H:i') }}</td>
                                             <td>{{ application.comment }}</td>
                                             <td>{{ application.promotion ? application.promotion.title : 'Без акции' }}</td>

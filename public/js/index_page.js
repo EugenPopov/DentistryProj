@@ -154,13 +154,9 @@ $(document).on('click', '.promocode_change', function () {
     $('.promocode_change').remove();
     $('#promocode_input').focus();
 });
-
-
 $('#tel').mask('+38 (999) 999 - 99 - 99', {
     placeholder: '+38(___)___-__-__'
 });
-
-
 $(function() {
     $("form[name='form_order']").validate({
         language: 'ru',

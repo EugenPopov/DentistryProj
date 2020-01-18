@@ -6,6 +6,7 @@ namespace App\Controller\Pages;
 
 use App\Service\CommonSettings\CommonSettingsInterface;
 use App\Service\DoctorService;
+use App\Service\MailSender\MailSender;
 use App\Service\MainPageSliderService;
 use App\Service\ReviewService;
 use App\Service\ServiceService;
