@@ -45,4 +45,8 @@ class ReviewController extends AbstractController
             'promotions' => $this->promotionService->findBy(['is_active' => true, 'is_public' => true], ['queue' => 'ASC'], 3)
         ]);
     }
+
+    public function singlePost()
+    {
+    }
 }

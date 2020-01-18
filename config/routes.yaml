@@ -17,6 +17,9 @@ doctor_single:
 reviews:
     path: /reviews
     controller: App\Controller\Pages\ReviewController::index
+single_post:
+    path: /post
+    controller: App\Controller\Pages\ReviewController::singlePost
 promotions:
     path: /promotions
     controller: App\Controller\Pages\PromotionsController::index
