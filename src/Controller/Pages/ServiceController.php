@@ -27,7 +27,7 @@ class ServiceController extends AbstractController
     public function index()
     {
         return $this->render('public/services/index.html.twig', [
-            'services' => $this->service->all()
+            'services' => $this->service->findBy([], ['queue' => 'ASC'])
         ]);
     }
 
