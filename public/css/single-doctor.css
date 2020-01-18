@@ -110,6 +110,7 @@ ul.doctor_functions.mobile {
 .certificates_slider img {
     padding: 15px;
     transition: all .3s ease-in;
+    width: 100%;
 }
 
 .certificates_slider img:hover {

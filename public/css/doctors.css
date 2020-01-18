@@ -67,9 +67,14 @@
     background: url(/img/next.png);
 }
 
+.certificates_wrapper {
+    width: 85%;
+    margin: auto;
+}
 .certificates_slider img {
     padding: 15px;
     transition: all .3s ease-in;
+    width: 100%;
 }
 
 .certificates_slider img:hover {

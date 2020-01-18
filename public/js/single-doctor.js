@@ -171,3 +171,12 @@ $(function() {
         }
     });
 });
+let fancybox = $("[data-fancybox]");
+if (fancybox.length) {
+    fancybox.fancybox({
+        buttons: ["close"],
+        loop: true,
+        clickContent: false,
+        overlay: null
+    });
+}
