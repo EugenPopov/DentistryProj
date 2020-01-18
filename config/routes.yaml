@@ -18,8 +18,8 @@ reviews:
     path: /reviews
     controller: App\Controller\Pages\ReviewController::index
 single_post:
-    path: /post
-    controller: App\Controller\Pages\ReviewController::singlePost
+    path: /post-{slug}
+    controller: App\Controller\Pages\BlogController::singlePost
 promotions:
     path: /promotions
     controller: App\Controller\Pages\PromotionsController::index

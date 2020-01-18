@@ -31,7 +31,7 @@ class BlogForm extends AbstractType
 
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Название (Видно только администратору)'
+                'label' => 'Название'
             ])
             ->add('shortDescription', TextareaType::class,[
                 'label' => 'Короткое описание'
