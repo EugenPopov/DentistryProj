@@ -8,11 +8,20 @@
 }
 
 @media (max-width: 768px) {
+    .page_top_wrapper {
+        padding-bottom: 70px;
+    }
+    .post {
+        width: 85%;
+    }
     .post img {
         width: 40%;
     }
     .post_title {
         width: calc(60% - 30px);
+    }
+    footer {
+        width: 85%;
     }
 }
 
@@ -29,5 +38,8 @@
         width: 100%;
         margin: 20px 0;
         font-size: 30px;
+    }
+    footer {
+        width: 95%;
     }
 }

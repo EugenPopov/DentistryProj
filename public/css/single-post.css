@@ -1,5 +1,5 @@
 .page_top_wrapper {
-    background: linear-gradient(to bottom, transparent 98%, #fafafa 98%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
+    background: linear-gradient(to bottom, transparent 40%, #fafafa 40%), linear-gradient(to left, #76E0C1 40%, transparent 40%);
 }
 
 .page_top-content {
@@ -29,4 +29,13 @@
 
 .post_text {
     text-align: justify;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fafafa;
+    padding-top: 20px;
 }
