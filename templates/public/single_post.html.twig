@@ -15,13 +15,18 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ path('index') }}">Головна</a></li>
-                        <li class="breadcrumb-item"><a href="{{ path('reviews') }}">Новини</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('reviews') }}">Пацієнтам</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ blog.title }}</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="post">
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('blog_update', {'id': blog.id}) }}" class="btn btn-primary active btn-lg" target="_blank">
+                    Отредактировать
+                </a>
+            {% endif %}
             <img src="/uploads/{{ blog.image }}">
             <div class="post_title">{{ blog.title }}</div>
             <div class="post_text">{{ blog.description|raw }}</div>

@@ -33,6 +33,13 @@
                     <div class="promotion_title">{{ promotion.title }}</div>
                     <div class="promotion_text">{{ promotion.description|raw }}</div>
                     <div class="promotion_use" data-code="{{ promotion.code }}">Использовать</div>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div class="" data-code="{{ promotion.code }}">
+                            <a href="{{ path('promotion_update', {'id': promotion.id}) }}" class="btn btn-primary btn-sm active" target="_blank">
+                                Отредактировать
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
