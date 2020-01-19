@@ -142,7 +142,7 @@
     width: 100%;
     border-bottom-right-radius: 75%;
     height: 40vh;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .best_item-title {
@@ -192,6 +192,7 @@ a.best_item-more:hover {
 }
 .doctor_img {
     width: 100%;
+    object-fit: cover;
 }
 
 .doctor_item-title {
@@ -228,7 +229,7 @@ a.best_item-more:hover {
 .review_img{
     max-width: 50%;
     height: 40vh;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .review {
