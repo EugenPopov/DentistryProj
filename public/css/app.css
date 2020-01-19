@@ -160,6 +160,15 @@ div.menu-item {
 .breadcrumb-item {
     text-transform: capitalize;
 }
+
+.breadcrumb-item a {
+    transition: all .2s ease-in;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: none;
+}
+
 .breadcrumb {
     background-color: transparent;
     padding: 1rem 0;
@@ -443,6 +452,7 @@ nav.footer a:hover {
 .promocode_body {
     display: none;
     flex-direction: column;
+    padding: 5px 0;
 }
 
 .promocode_body.active {
@@ -489,4 +499,8 @@ nav.footer a:hover {
 
 .contact_form-title.mobile {
     display: none;
+}
+
+.pretty {
+    line-height: 1.1;
 }
