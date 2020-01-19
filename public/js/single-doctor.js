@@ -142,8 +142,8 @@ $(function() {
             }
         },
         messages: {
-            name: 'Введите ваше имя',
-            telephone: 'Введите ваш телефон'
+            name: `Введіть ваше ім'я`,
+            telephone: 'Введіть ваш телефон'
         },
 
         submitHandler: function(form) {

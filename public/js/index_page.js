@@ -74,7 +74,7 @@ $('.reviews_slider').slick({
     ]
 });
 if(localStorage.getItem('comment') !== null){
-    $(document).find('#comment').val(`Я хотiв би записатися за послугою "${localStorage.getItem('comment')}"`);
+    $(document).find('#comment').val(`Я хотів(-ла) би записатися за послугою "${localStorage.getItem('comment')}"`);
     localStorage.removeItem('comment');
 }
 if(localStorage.getItem('promotion') !== null){
@@ -169,8 +169,8 @@ $(function() {
             }
         },
         messages: {
-            name: 'Введите ваше имя',
-            telephone: 'Введите ваш телефон'
+            name: `Введіть ваше ім'я`,
+            telephone: 'Введіть ваш телефон'
         },
 
         submitHandler: function(form) {
