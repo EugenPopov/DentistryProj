@@ -11,3 +11,6 @@ function modalWindow(word) {
     $(".modal_text").text(word);
     $("#modal").modal("show");
 }
+$('#date').datepicker({
+    minDate: new Date()
+});
