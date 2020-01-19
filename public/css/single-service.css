@@ -131,7 +131,7 @@
     width: 100%;
     border-bottom-right-radius: 75%;
     height: 40vh;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .extra_services_item-title {
