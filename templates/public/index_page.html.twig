@@ -25,6 +25,11 @@
             <div class="top_carousel">
                 {% for slide in slides %}
                 <div class="top_carousel_item">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('main_page_slider_update', {'id': slide.id}) }}" class="btn btn-primary active btn-lg" style="position: absolute" target="_blank">
+                            Отредактировать
+                        </a>
+                    {% endif %}
                     {% if slide.link is not empty %}
                         <a target="_blank" href="{{ slide.link }}">
                     {% endif %}

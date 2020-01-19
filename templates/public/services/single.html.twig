@@ -21,7 +21,6 @@
                         <li class="breadcrumb-item active" aria-current="page">{{ service.title }}</li>
                     </ol>
                 </nav>
-
             </div>
         </div>
         <div class="service_wrapper">
@@ -29,6 +28,11 @@
                 <div class="service">
                     <div class="service_info">
                         <img src="/uploads/{{ service.image }}">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('service_update', {'id': service.id}) }}" class="btn btn-primary active btn-lg" target="_blank">
+                                Отредактировать
+                            </a>
+                        {% endif %}
                         <div class="service_title">{{ service.title }}</div>
                         <div class="service_text">
                             {{ service.description|raw }}

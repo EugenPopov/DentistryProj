@@ -140,7 +140,7 @@ $(document).on('click', '.promocode_use', function () {
                 else{
                     input.focus();
                     promotion = false;
-                    let parent_span = $('<span class="promocode_message" style="color: red"></span>').html('<i class="fas fa-exclamation-triangle"></i> Невiрний промокод');
+                    let parent_span = $('<span class="promocode_message" style="color: red"></span>').html('<i class="fas fa-exclamation-triangle"></i> Невірний промокод');
                     $('.promocode_body').append(parent_span);
                 }
             });
@@ -193,7 +193,9 @@ $(function() {
                     $('.promocode_message').remove();
                     $('.promocode_change').remove();
                     promotion = false;
-                    $('.promocode_body').slideToggle(false);
+                    if($('.promocode_body').is(':visible')){
+                        $('.promocode_body').slideToggle(false);
+                    }
                 });
         }
     });

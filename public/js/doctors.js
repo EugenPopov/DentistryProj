@@ -139,7 +139,9 @@ $(function() {
                     $('.promocode_message').remove();
                     $('.promocode_change').remove();
                     promotion = false;
-                    $('.promocode_body').slideToggle(false);
+                    if($('.promocode_body').is(':visible')){
+                        $('.promocode_body').slideToggle(false);
+                    }
                 });
         }
     });
