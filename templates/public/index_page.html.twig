@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
@@ -134,7 +132,7 @@
                 </div>
                 <div class="middle_form">
                     <input type="date" name="date" id="date" placeholder="Виберіть бажану дату">
-                    <input type="time" name="time" id="time" placeholder="Виберіть бажаний час">
+                    <input type="text" name="time" id="time" placeholder="Виберіть бажаний час">
                 </div>
                 <div class="bottom_form">
                     <input type="text" name="comment" id="comment" placeholder="Залиште ваш коментар">
@@ -185,4 +183,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
+    <script>
+        $('#time').timepicker({
+            'minTime': '9:00',
+            'maxTime': '19:30',
+            'timeFormat': 'H:i'
+        });
+    </script>
 {% endblock %}

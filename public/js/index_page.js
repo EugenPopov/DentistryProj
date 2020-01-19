@@ -198,4 +198,8 @@ $(function() {
         }
     });
 });
-
+$('#time').timepicker({
+    'minTime': '9:00',
+    'maxTime': '19:30',
+    'timeFormat': 'H:i'
+});

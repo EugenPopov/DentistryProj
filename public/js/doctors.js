@@ -153,3 +153,8 @@ if (fancybox.length) {
         overlay: null
     });
 }
+$('#time').timepicker({
+    'minTime': '9:00',
+    'maxTime': '19:30',
+    'timeFormat': 'H:i'
+});
