@@ -34,8 +34,8 @@
 }
 .service img {
     width: 100%;
-    height: 35vh;
-    object-fit: cover;
+    height: 20vh;
+    object-fit: scale-down;
 }
 .service_title {
     font-weight: 600;
