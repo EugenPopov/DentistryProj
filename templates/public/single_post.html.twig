@@ -40,6 +40,6 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="{{ asset('vendor/slick-slider/slick.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/single_service.js') }}"></script>
 {% endblock %}

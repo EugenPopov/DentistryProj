@@ -5,7 +5,7 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/index-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/index-page_responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick-slider/slick.css') }}"/>
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
@@ -183,10 +183,9 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-{#    {{ encore_entry_script_tags('index_page') }}#}
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{{ asset('admin/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/slick-slider/slick.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/index_page.js') }}"></script>
     <script>
         $('#time').timepicker({

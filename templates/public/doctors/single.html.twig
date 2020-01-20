@@ -5,8 +5,8 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/single-doctor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-queries/single-doctor_responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/slick-slider/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fancybox/jquery.fancybox.min.css') }}">
 {% endblock %}
 {% block body %}
     <div class="page_top_wrapper">
@@ -136,9 +136,9 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="{{ asset('admin/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/slick-slider/slick.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/fancybox/jquery.fancybox.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/single-doctor.js') }}"></script>
 {% endblock %}
