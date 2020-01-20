@@ -202,7 +202,8 @@ a.best_item-more:hover {
 .doctor_img {
     width: 100%;
     object-fit: cover;
-    height: 30vh;
+    height: 35vh;
+    object-position: top;
 }
 
 .doctor_item-title {

@@ -34,6 +34,7 @@
     width: 100%;
     height: 40vh;
     object-fit: cover;
+    object-position: top;
 }
 
 .doctor_item a {
@@ -75,6 +76,9 @@
     padding: 15px;
     transition: all .3s ease-in;
     width: 100%;
+    height: 35vh;
+    object-fit: contain;
+    object-position: center;
 }
 
 .certificates_slider img:hover {
