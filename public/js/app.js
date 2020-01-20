@@ -12,5 +12,9 @@ function modalWindow(word) {
     $("#modal").modal("show");
 }
 $('#date').datepicker({
-    minDate: new Date()
+    minDate: new Date(),
+    onSelect: function (date) {
+        console.log(date);
+        $('#date').value = date;
+    }
 });
