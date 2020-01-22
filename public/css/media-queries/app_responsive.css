@@ -24,6 +24,9 @@
     .mobile_nav-toogle {
         display: block;
     }
+    #main-header-toggle {
+        display: block;
+    }
     .main_menu {
         display: none;
     }

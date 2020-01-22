@@ -27,6 +27,13 @@ body {
     display: none;
 }
 
+#main-header-toggle {
+    display: none;
+    width: 60px;
+    height: 55px;
+    cursor: pointer;
+}
+
 .mobile_nav-toogle {
     height: 3px;
     width: 30px;
