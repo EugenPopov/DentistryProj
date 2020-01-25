@@ -99,4 +99,13 @@ class ApplicationService
     {
         return $this->applicationRepository->getSearchQuery();
     }
+
+    public function removeOld(): void
+    {
+        $applications = $this->applicationRepository->findBy(['is_new' => false]);
+        foreach ($applications as $application) {
+            $this->entityManager->remove($application);
+        }
+        $this->entityManager->flush();
+    }
 }

@@ -210,6 +210,9 @@ application_index:
 application_update_is_new:
     path: /adminPanel/application/updateIsNew/{id}
     controller: App\Controller\Admin\ApplicationController::updateIsNew
+application_remove_old:
+    path: /adminPanel/application/remove_old
+    controller: App\Controller\Admin\ApplicationController::removeOld
 #common_settings
 common_settings_index:
     path: /adminPanel/settings

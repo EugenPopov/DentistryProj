@@ -45,6 +45,12 @@ class ApplicationController extends AbstractController
         ]);
     }
 
+    public function removeOld()
+    {
+        $this->applicationService->removeOld();
+        return $this->redirectToRoute('application_index');
+    }
+
     public function updateIsNew(Application $application)
     {
         $application->setIsNew(!$application->getIsNew());
