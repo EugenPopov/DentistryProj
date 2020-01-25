@@ -20,6 +20,13 @@
                 КОНТАКТИ
             </a>
         </li>
+        {% if is_granted('ROLE_ADMIN') %}
+            <li class="menu-item">
+                <a href="{{ path('admin_index') }}">
+                    АДМІН ПАНЕЛЬ
+                </a>
+            </li>
+        {% endif %}
         <li class="menu-item">
             <a href="http://maps.google.com/maps?q={{get_setting('address')}}" target="_blank">{{get_setting('address')}}</a> <br>
             <a href="tel:{{get_setting('phone')}}">{{get_setting('phone')}}</a>
