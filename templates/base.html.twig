@@ -35,7 +35,7 @@
         </div>
     </div>
     <div id="preloader" {% if get_preloader_show() == false %}style="display: none"{% endif %}>
-        <img src="{{ asset('img/43399a32927265.5698df500f0a0.gif') }}">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
         {% block body %}{% endblock %}
         {% block javascripts %}
@@ -46,8 +46,6 @@
             <script src="{{ asset('vendor/datepicker/js/datepicker.min.js') }}"></script>
             <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
             <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-{#            {{ encore_entry_script_tags('app') }}#}
-
         {% endblock %}
     </body>
 </html>
