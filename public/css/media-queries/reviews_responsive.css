@@ -66,4 +66,8 @@
     .gallery_wrapper {
         margin-top: 30px;
     }
+
+    .contact_form form {
+        width: 95%;
+    }
 }
