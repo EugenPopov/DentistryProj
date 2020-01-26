@@ -166,6 +166,8 @@ ul.doctor_functions.mobile {
 
 .gallery_slider img {
     padding: 15px;
+    height: 35vh;
+    object-fit: contain;
 }
 
 footer {
