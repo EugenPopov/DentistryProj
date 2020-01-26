@@ -12,6 +12,10 @@ body {
     font-family: "Futura PT Book", sans-serif!important;
 }
 
+div:focus {
+    outline: none;
+}
+
 .main_header {
     width: 95%;
     margin: 0 auto;
