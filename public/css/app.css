@@ -517,7 +517,8 @@ nav.footer a:hover {
 }
 
 #preloader {
-    position: absolute;
+    user-select: none;
+    position: fixed;
     width: 100%;
     height: 100%;
     display: flex;

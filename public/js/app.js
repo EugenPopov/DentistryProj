@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+    $('#preloader').fadeOut();
+});
+
 $('.page_up').on('click', function () {
     $('html,body').animate({scrollTop: $('.page_top_wrapper').offset().top}, 500, 'swing');
 });

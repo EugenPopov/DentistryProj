@@ -265,15 +265,27 @@
 .contact_wrapper {
     width: 95%;
     display: flex;
-    margin: 60px auto 0;
+    margin: 60px auto;
 }
 
 .contact_form {
     width: 80%;
 }
 
+.contact_form .bmd-form-group {
+    padding-top: 0;
+}
+
+.contact_form form {
+    height: 100%;
+}
+
+.btn-contact_form {
+    z-index: 100000 !important;
+}
+
 .gallery_wrapper {
-    margin-top: 100px;
+    padding-top: 100px;
     padding-bottom: 45px;
     background: linear-gradient(to right, #76E0C1 50%, transparent 50%);
 }
