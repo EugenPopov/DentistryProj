@@ -18,11 +18,13 @@
 
 .contact_form {
     width: 70%;
+    margin-top: -50px;
 }
 
 .contact_form form {
     height: 100%;
     justify-content: center;
+    background: #fafafa;
 }
 
 .form {
@@ -51,4 +53,8 @@
 
 .button_wrapper button {
     width: 50%;
+}
+
+.btn-contact_form {
+    width: 80%;
 }
