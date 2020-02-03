@@ -328,7 +328,7 @@ nav.footer a {
 }
 
 nav.footer a:hover {
-    font-size: 17px;
+    color: #76e0c1!important;
 }
 
 .breadcrumb-item+.breadcrumb-item:before {
