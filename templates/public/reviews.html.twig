@@ -81,12 +81,12 @@
     <div class="promotions_wrapper">
         {% for promotion in promotions %}
             <div class="promotion" style="background-image: url({{ '/uploads/' ~ promotion.image }});">
-                <div class="promotion_text">
-                    {{ promotion.title }}
-                </div>
-                <div class="promotion_info">
-                    {{ promotion.shortDescription }}
-                </div>
+{#                <div class="promotion_text">#}
+{#                    {{ promotion.title }}#}
+{#                </div>#}
+{#                <div class="promotion_info">#}
+{#                    {{ promotion.shortDescription }}#}
+{#                </div>#}
                 <a class="promotion_button" href="{{ path('promotions') ~ '#promotion-' ~ promotion.id }}">
                     Подробнее
                 </a>
